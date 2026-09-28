@@ -12,6 +12,16 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
+  /* PHOTOS — each slot names its file in an inline background-image (see assets/media/README.md).
+     When the file loads, hide the placeholder label. */
+  document.querySelectorAll(".media__img[style*='url(']").forEach(function (el) {
+    var m = el.getAttribute("style").match(/url\(['"]?([^'")]+)/);
+    if (!m) return;
+    var probe = new Image();
+    probe.onload = function () { el.parentElement.classList.add("has-photo"); };
+    probe.src = m[1];
+  });
+
   /* MOBILE MENU */
   var toggle = document.querySelector(".menu-toggle");
   if (toggle) {

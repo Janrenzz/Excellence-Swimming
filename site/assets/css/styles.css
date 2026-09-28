@@ -258,9 +258,14 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   background-size: cover; background-position: center;
 }
 .media__img {
-  position: absolute; inset: 0; background: inherit; background-size: cover; background-position: center;
+  position: absolute; inset: 0;
+  /* Real photo (inline background-image url per slot) sits above the art-directed placeholder (--ph).
+     A missing file simply falls back to the placeholder. */
+  background-image: var(--img, none), var(--ph, none);
+  background-size: cover; background-position: center;
   transition: transform var(--dur-slow) var(--ease);
 }
+.has-photo > .media__tag, .has-photo .media__tag { display: none; }
 .media__img > img { width: 100%; height: 100%; object-fit: cover; }
 a:hover .media__img, .media--hover:hover .media__img { transform: scale(1.03); }
 .media__tag {
@@ -278,39 +283,39 @@ a:hover .media__img, .media--hover:hover .media__img { transform: scale(1.03); }
 
 /* Art-directed placeholders (replace with photography) */
 .ph-underwater .media__img, .ph-underwater.media__img {
-  background:
+  --ph:
     radial-gradient(60% 40% at 30% 18%, rgba(255,255,255,0.22), transparent 70%),
     radial-gradient(40% 30% at 72% 30%, rgba(127,183,179,0.35), transparent 70%),
     repeating-radial-gradient(circle at 40% 0%, rgba(255,255,255,0.05) 0 2px, transparent 2px 22px),
     linear-gradient(180deg, #3E7F88 0%, #1B5566 40%, #0C2F40 100%);
 }
 .ph-lane .media__img {
-  background:
+  --ph:
     repeating-linear-gradient(90deg, transparent 0 15%, rgba(255,255,255,0.55) 15% 15.6%, transparent 15.6% 16.2%, rgba(197,184,159,0.7) 16.2% 16.8%, transparent 16.8% 25%),
     radial-gradient(50% 60% at 50% 40%, rgba(255,255,255,0.18), transparent 70%),
     linear-gradient(160deg, #5FA3A4 0%, #2E6F7C 45%, #123A4D 100%);
 }
 .ph-aerial .media__img {
-  background:
+  --ph:
     linear-gradient(90deg, transparent 0 12%, rgba(245,243,238,0.9) 12% 13%, transparent 13% 87%, rgba(245,243,238,0.9) 87% 88%, transparent 88%),
     repeating-linear-gradient(90deg, transparent 0 9.6%, rgba(255,255,255,0.35) 9.6% 10%),
     radial-gradient(70% 60% at 40% 40%, rgba(255,255,255,0.14), transparent 70%),
     linear-gradient(180deg, #4F9699 0%, #2A6A77 50%, #174657 100%);
 }
 .ph-coach .media__img {
-  background:
+  --ph:
     radial-gradient(28% 22% at 50% 34%, rgba(197,184,159,0.55), transparent 70%),
     radial-gradient(46% 42% at 50% 86%, rgba(7,26,38,0.55), transparent 70%),
     linear-gradient(180deg, #2B5F6E 0%, #173E4F 60%, #0B2533 100%);
 }
 .ph-portrait .media__img {
-  background:
+  --ph:
     radial-gradient(22% 16% at 50% 30%, rgba(234,231,223,0.55), transparent 72%),
     radial-gradient(44% 34% at 50% 78%, rgba(18,58,77,0.9), transparent 72%),
     linear-gradient(180deg, #D9D4C8 0%, #BFB6A3 55%, #8E8676 100%);
 }
 .ph-group .media__img {
-  background:
+  --ph:
     radial-gradient(16% 12% at 22% 42%, rgba(245,243,238,0.4), transparent 70%),
     radial-gradient(16% 12% at 50% 36%, rgba(245,243,238,0.4), transparent 70%),
     radial-gradient(16% 12% at 78% 44%, rgba(245,243,238,0.4), transparent 70%),
@@ -318,13 +323,13 @@ a:hover .media__img, .media--hover:hover .media__img { transform: scale(1.03); }
     linear-gradient(175deg, #4E8F92 0%, #245E6C 55%, #0F3445 100%);
 }
 .ph-dive .media__img {
-  background:
+  --ph:
     radial-gradient(18% 50% at 50% 30%, rgba(255,255,255,0.3), transparent 70%),
     repeating-radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.05) 0 3px, transparent 3px 26px),
     linear-gradient(180deg, #A9CFCB 0%, #4C8D93 30%, #154A5C 75%, #071A26 100%);
 }
 .ph-warm .media__img {
-  background:
+  --ph:
     radial-gradient(60% 50% at 70% 30%, rgba(255,255,255,0.35), transparent 70%),
     linear-gradient(160deg, #E4DCCB 0%, #C5B89F 55%, #8F8570 100%);
 }
@@ -365,6 +370,9 @@ a:hover .media__img, .media--hover:hover .media__img { transform: scale(1.03); }
 .page-hero__title { grid-column: 1 / span 7; display: flex; flex-direction: column; gap: var(--s-3); }
 .page-hero__aside { grid-column: 9 / span 4; display: flex; flex-direction: column; gap: var(--s-4); align-items: flex-start; }
 .page-hero__media { margin-top: clamp(48px, 2.5rem + 3vw, 96px); }
+.page-hero--image { position: relative; overflow: hidden; min-height: min(78vh, 760px); display: flex; align-items: flex-end; }
+.page-hero--image > .media { position: absolute; inset: 0; }
+.page-hero--image > .container { position: relative; z-index: 2; }
 
 /* ---------- 10. HOME SECTIONS -------------------------------------------- */
 /* Trust */
@@ -417,14 +425,21 @@ a:hover .media__img, .media--hover:hover .media__img { transform: scale(1.03); }
 .immersive__content { position: relative; z-index: 2; width: 100%; max-width: var(--max); margin-inline: auto; padding: 0 var(--gutter) clamp(56px, 3rem + 5vw, 120px); }
 .immersive__title { font-size: clamp(3rem, 1.5rem + 6.4vw, 7rem); line-height: 0.94; letter-spacing: -0.035em; text-transform: uppercase; }
 
+/* Introduction imagery */
+.intro__media-main { grid-column: 1 / span 7; margin-top: clamp(56px, 3rem + 4vw, 112px); }
+.intro__media-detail { grid-column: 9 / span 4; margin-top: clamp(176px, 9rem + 8vw, 272px); }
+/* Why Us image */
+.why__media { margin-top: clamp(56px, 3rem + 4vw, 112px); }
+
 /* Clinic list rows (Home preview) */
 .clinic-rows { border-top: 1px solid var(--line-strong); }
 .clinic-row {
-  display: grid; grid-template-columns: 2fr 5fr 2fr auto; gap: var(--grid-gap); align-items: center;
+  display: grid; grid-template-columns: 160px 2fr 5fr 2fr auto; gap: var(--grid-gap); align-items: center;
   padding-block: clamp(24px, 1.2rem + 1.2vw, 40px); border-bottom: 1px solid var(--line-strong);
   transition: background-color var(--dur) var(--ease);
 }
 .clinic-row:hover { background-color: rgba(234,231,223,0.6); }
+.clinic-row__thumb { width: 100%; }
 .clinic-row__date { display: flex; flex-direction: column; gap: 4px; }
 .clinic-row__day { font-size: var(--fs-h3); line-height: 1; letter-spacing: -0.02em; }
 .clinic-row__main { display: flex; flex-direction: column; gap: 8px; }
@@ -613,9 +628,12 @@ a:hover .media__img, .media--hover:hover .media__img { transform: scale(1.03); }
   .why__head, .why__lead { grid-column: 1 / -1; }
   .why__lead { margin-top: var(--s-4); }
   .principles { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--s-6); }
-  .clinic-row { grid-template-columns: 1fr 3fr; }
-  .clinic-row__level { grid-column: 2; }
-  .clinic-row .link-arrow { grid-column: 2; justify-self: start; }
+  .intro__media-main { grid-column: 1 / span 8; }
+  .intro__media-detail { grid-column: 9 / span 4; margin-top: clamp(160px, 20vw, 220px); }
+  .clinic-row { grid-template-columns: 200px 1fr; row-gap: var(--s-1); }
+  .clinic-row__thumb { grid-row: span 4; align-self: start; }
+  .clinic-row > :not(.clinic-row__thumb) { grid-column: 2; }
+  .clinic-row .link-arrow { justify-self: start; }
   .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .team-grid > :nth-child(2) { margin-top: var(--s-10); }
   .team-grid > :nth-child(3) { grid-column: 1; }
@@ -661,8 +679,11 @@ a:hover .media__img, .media--hover:hover .media__img { transform: scale(1.03); }
   .lesson-option__media { aspect-ratio: 4 / 5; }
   .lessons__cta .btn { width: 100%; }
   .principles { grid-template-columns: 1fr; row-gap: var(--s-4); }
+  .intro__media-main { grid-column: 1 / -1; }
+  .intro__media-detail { display: none; }
   .clinic-row { grid-template-columns: 1fr; gap: var(--s-2); }
-  .clinic-row__level, .clinic-row .link-arrow { grid-column: 1; }
+  .clinic-row > :not(.clinic-row__thumb) { grid-column: 1; }
+  .clinic-row__thumb { grid-row: auto; aspect-ratio: 16 / 9; }
   .team-grid { grid-template-columns: 1fr; row-gap: var(--s-6); }
   .team-grid > :nth-child(2) { margin-top: 0; }
   .testimonial__media { grid-column: 1 / -1; aspect-ratio: 4 / 3; }

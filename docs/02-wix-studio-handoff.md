@@ -59,5 +59,5 @@ Anything shown in `[brackets]` with a dotted underline is a placeholder. **Do no
 - Coach names, roles, specialties, biographies, certifications and experience
 - Testimonials (real quotes, with the client's permission)
 - The confirmed **service list**: remove any of the seven services the academy does not offer
-- Every image placeholder (labelled `Image · …`): replace with real photography
+- Every image placeholder (labelled `Image · …`): replace with real photography. See `site/assets/media/README.md` for the full shot list, filenames and aspect ratios
 - The hero drone video

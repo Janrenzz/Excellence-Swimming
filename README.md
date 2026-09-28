@@ -12,6 +12,7 @@ site/                    Responsive HTML/CSS reference (the visual source of tru
   styleguide.html                00 Design System (variables + components)
   src/                           Page sources + shared header/footer partials
   build.py                       Assembles src → site/*.html
+  assets/media/README.md         Photo shot list: drop files in with these names and they appear automatically
 design-system/tokens.json        Colour, type, spacing, radius, layout tokens (Figma Variables)
 docs/01-figma-build-spec.md      Figma file, components, Auto Layout, frames, responsive rules
 docs/02-wix-studio-handoff.md    Export checklist, Wix mapping, video, CMS, content to replace

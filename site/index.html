@@ -58,8 +58,8 @@
   <section class="hero" id="Hero" aria-labelledby="hero-title">
     <!-- Hero_Video_Background · REPLACE WITH DRONE BACKGROUND VIDEO IN WIX STUDIO -->
     <div class="hero__media ph-aerial" id="Hero_Video_Background">
-      <div class="media__img" aria-hidden="true"></div>
-      <video autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="">
+      <div class="media__img" style="background-image: url('assets/media/home-hero-drone-still.jpg'), var(--ph, none)" aria-hidden="true"></div>
+      <video autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="assets/media/home-hero-drone-still.jpg">
         <source src="assets/media/hero-drone.mp4" type="video/mp4">
       </video>
     </div>
@@ -101,6 +101,8 @@
         <p class="t-body-lg">We coach the swimmer, not the syllabus. Every session begins with where you are today and builds, stroke by stroke, toward where you want to be — with honest feedback, clear technique and steady progress.</p>
         <a class="link-arrow" href="our-team.html#Philosophy"><span class="link-arrow__text">Our Approach</span><span class="arrow" aria-hidden="true">→</span></a>
       </div>
+      <div class="media ratio-3x2 intro__media-main ph-lane reveal"><div class="media__img" style="background-image: url('assets/media/home-intro-coach-deck.jpg'), var(--ph, none)" role="img" aria-label="Coach on deck guiding a swimmer through a lane"></div><span class="media__tag">Image · Coach on deck</span></div>
+      <div class="media ratio-4x5 intro__media-detail ph-underwater reveal"><div class="media__img" style="background-image: url('assets/media/home-intro-stroke-detail.jpg'), var(--ph, none)" role="img" aria-label="Close-up of a swimmer’s hand entering the water"></div><span class="media__tag">Image · Stroke detail</span></div>
     </div>
   </section>
 
@@ -117,35 +119,35 @@
       <!-- Service Block ×5 — confirm final service list before launch -->
       <div class="services-grid">
         <a class="service-block reveal" href="private-group-lessons.html#Private">
-          <div class="media ratio-4x3 ph-coach"><div class="media__img" role="img" aria-label="Coach giving one-on-one instruction at the pool edge"></div><span class="media__tag">Image · Coach &amp; swimmer</span></div>
+          <div class="media ratio-4x3 ph-coach"><div class="media__img" style="background-image: url('assets/media/home-service-private.jpg'), var(--ph, none)" role="img" aria-label="Coach giving one-on-one instruction at the pool edge"></div><span class="media__tag">Image · Coach &amp; swimmer</span></div>
           <div class="service-block__meta">
             <div class="service-block__top"><h3 class="t-h3">Private Lessons</h3><span class="service-block__num">01</span></div>
             <p class="t-body service-block__text">One swimmer, one coach, one clear plan.</p>
           </div>
         </a>
         <a class="service-block reveal" href="private-group-lessons.html#Group">
-          <div class="media ratio-4x5 ph-group"><div class="media__img" role="img" aria-label="Small group of swimmers training across lanes"></div><span class="media__tag">Image · Group session</span></div>
+          <div class="media ratio-4x5 ph-group"><div class="media__img" style="background-image: url('assets/media/home-service-group.jpg'), var(--ph, none)" role="img" aria-label="Small group of swimmers training across lanes"></div><span class="media__tag">Image · Group session</span></div>
           <div class="service-block__meta">
             <div class="service-block__top"><h3 class="t-h3">Group Lessons</h3><span class="service-block__num">02</span></div>
             <p class="t-body service-block__text">Structured coaching in small groups.</p>
           </div>
         </a>
         <a class="service-block reveal" href="services.html#stroke-development">
-          <div class="media ratio-4x5 ph-underwater"><div class="media__img" role="img" aria-label="Underwater view of a freestyle stroke"></div><span class="media__tag">Image · Underwater stroke</span></div>
+          <div class="media ratio-4x5 ph-underwater"><div class="media__img" style="background-image: url('assets/media/home-service-technique.jpg'), var(--ph, none)" role="img" aria-label="Underwater view of a freestyle stroke"></div><span class="media__tag">Image · Underwater stroke</span></div>
           <div class="service-block__meta">
             <div class="service-block__top"><h3 class="t-h3">Technique Development</h3><span class="service-block__num">03</span></div>
             <p class="t-body service-block__text">Refine every stroke with precise feedback.</p>
           </div>
         </a>
         <a class="service-block reveal" href="services.html#performance-training">
-          <div class="media ratio-4x5 ph-lane"><div class="media__img" role="img" aria-label="Swimmer racing down a lane"></div><span class="media__tag">Image · Lane training</span></div>
+          <div class="media ratio-4x5 ph-lane"><div class="media__img" style="background-image: url('assets/media/home-service-performance.jpg'), var(--ph, none)" role="img" aria-label="Swimmer racing down a lane"></div><span class="media__tag">Image · Lane training</span></div>
           <div class="service-block__meta">
             <div class="service-block__top"><h3 class="t-h3">Performance Coaching</h3><span class="service-block__num">04</span></div>
             <p class="t-body service-block__text">Speed, endurance and race preparation.</p>
           </div>
         </a>
         <a class="service-block reveal" href="upcoming-clinics.html">
-          <div class="media ratio-4x5 ph-dive"><div class="media__img" role="img" aria-label="Swimmer diving into the pool"></div><span class="media__tag">Image · Dive start</span></div>
+          <div class="media ratio-4x5 ph-dive"><div class="media__img" style="background-image: url('assets/media/home-service-clinics.jpg'), var(--ph, none)" role="img" aria-label="Swimmer diving into the pool"></div><span class="media__tag">Image · Dive start</span></div>
           <div class="service-block__meta">
             <div class="service-block__top"><h3 class="t-h3">Clinics</h3><span class="service-block__num">05</span></div>
             <p class="t-body service-block__text">Focused sessions on a single skill.</p>
@@ -166,14 +168,14 @@
       </div>
       <div class="lessons-split">
         <a class="lesson-option reveal" href="private-group-lessons.html#Private">
-          <div class="media lesson-option__media ph-coach"><div class="media__img" role="img" aria-label="Private lesson: coach and swimmer in the water"></div><span class="media__tag">Image · Private lesson</span></div>
+          <div class="media lesson-option__media ph-coach"><div class="media__img" style="background-image: url('assets/media/home-lessons-private.jpg'), var(--ph, none)" role="img" aria-label="Private lesson: coach and swimmer in the water"></div><span class="media__tag">Image · Private lesson</span></div>
           <div class="lesson-option__body">
             <div class="stack gap-1"><h3 class="t-h2">Private</h3><p class="t-body">Personalized one-on-one coaching.</p></div>
             <span class="arrow" aria-hidden="true" style="font-size: 24px">→</span>
           </div>
         </a>
         <a class="lesson-option reveal" href="private-group-lessons.html#Group">
-          <div class="media lesson-option__media ph-group"><div class="media__img" role="img" aria-label="Group lesson: small group training together"></div><span class="media__tag">Image · Group lesson</span></div>
+          <div class="media lesson-option__media ph-group"><div class="media__img" style="background-image: url('assets/media/home-lessons-group.jpg'), var(--ph, none)" role="img" aria-label="Group lesson: small group training together"></div><span class="media__tag">Image · Group lesson</span></div>
           <div class="lesson-option__body">
             <div class="stack gap-1"><h3 class="t-h2">Group</h3><p class="t-body">Structured coaching in a supportive environment.</p></div>
             <span class="arrow" aria-hidden="true" style="font-size: 24px">→</span>
@@ -196,6 +198,7 @@
         </div>
         <p class="t-body-lg t-muted why__lead reveal">Four principles guide every lesson, whatever your age, level or ambition.</p>
       </div>
+      <div class="media ratio-21x9 why__media ph-dive reveal"><div class="media__img" style="background-image: url('assets/media/home-why-training.jpg'), var(--ph, none)" role="img" aria-label="Swimmers training at dawn in an outdoor pool"></div><span class="media__tag">Image · Training session</span></div>
       <ol class="principles">
         <li class="principle reveal"><span class="principle__num">01</span><span class="principle__title">Personalized</span><span class="principle__text">Sessions designed around your goals, not a fixed curriculum.</span></li>
         <li class="principle reveal"><span class="principle__num">02</span><span class="principle__title">Progressive</span><span class="principle__text">Clear milestones so every swimmer sees measurable progress.</span></li>
@@ -207,7 +210,7 @@
 
   <!-- 08_Immersive_Image -->
   <section class="immersive" id="Immersive_Image" aria-labelledby="immersive-title">
-    <div class="media ph-underwater"><div class="media__img" role="img" aria-label="Swimmer gliding underwater with light rays"></div></div>
+    <div class="media ph-underwater"><div class="media__img" style="background-image: url('assets/media/home-immersive-underwater.jpg'), var(--ph, none)" role="img" aria-label="Swimmer gliding underwater with light rays"></div></div>
     <div class="overlay overlay--bottom" aria-hidden="true"></div>
     <div class="immersive__content reveal">
       <h2 class="immersive__title" id="immersive-title">Every stroke.<br>More confidence.</h2>
@@ -227,18 +230,21 @@
       <!-- Clinic Row ×3 — bind to Wix CMS "Clinics" collection; placeholders only -->
       <div class="clinic-rows">
         <a class="clinic-row reveal" href="upcoming-clinics.html">
+          <div class="media ratio-4x3 clinic-row__thumb ph-underwater"><div class="media__img" style="background-image: url('assets/media/home-clinic-1.jpg'), var(--ph, none)" aria-hidden="true"></div></div>
           <div class="clinic-row__date"><span class="clinic-row__day t-num ph">[DD]</span><span class="t-label ph">[Month YYYY]</span></div>
           <div class="clinic-row__main"><h3 class="t-h3 ph">[Clinic Name]</h3><p class="t-body ph">[One-line description of the clinic focus.]</p></div>
           <span class="clinic-row__level ph">[Level]</span>
           <span class="link-arrow"><span class="link-arrow__text">Details</span><span class="arrow" aria-hidden="true">→</span></span>
         </a>
         <a class="clinic-row reveal" href="upcoming-clinics.html">
+          <div class="media ratio-4x3 clinic-row__thumb ph-dive"><div class="media__img" style="background-image: url('assets/media/home-clinic-2.jpg'), var(--ph, none)" aria-hidden="true"></div></div>
           <div class="clinic-row__date"><span class="clinic-row__day t-num ph">[DD]</span><span class="t-label ph">[Month YYYY]</span></div>
           <div class="clinic-row__main"><h3 class="t-h3 ph">[Clinic Name]</h3><p class="t-body ph">[One-line description of the clinic focus.]</p></div>
           <span class="clinic-row__level ph">[Level]</span>
           <span class="link-arrow"><span class="link-arrow__text">Details</span><span class="arrow" aria-hidden="true">→</span></span>
         </a>
         <a class="clinic-row reveal" href="upcoming-clinics.html">
+          <div class="media ratio-4x3 clinic-row__thumb ph-lane"><div class="media__img" style="background-image: url('assets/media/home-clinic-3.jpg'), var(--ph, none)" aria-hidden="true"></div></div>
           <div class="clinic-row__date"><span class="clinic-row__day t-num ph">[DD]</span><span class="t-label ph">[Month YYYY]</span></div>
           <div class="clinic-row__main"><h3 class="t-h3 ph">[Clinic Name]</h3><p class="t-body ph">[One-line description of the clinic focus.]</p></div>
           <span class="clinic-row__level ph">[Level]</span>
@@ -260,15 +266,15 @@
       </div>
       <div class="team-grid">
         <a class="coach-card reveal" href="our-team.html#coach-1">
-          <div class="media ratio-3x4 ph-portrait"><div class="media__img" role="img" aria-label="Portrait of coach"></div><span class="media__tag">Portrait · Coach 01</span></div>
+          <div class="media ratio-3x4 ph-portrait"><div class="media__img" style="background-image: url('assets/media/coach-1.jpg'), var(--ph, none)" role="img" aria-label="Portrait of coach"></div><span class="media__tag">Portrait · Coach 01</span></div>
           <div class="coach-card__info"><h3 class="t-h3 ph">[Coach Name]</h3><span class="coach-card__role ph">[Role]</span><span class="coach-card__spec ph">[Specialty]</span></div>
         </a>
         <a class="coach-card reveal" href="our-team.html#coach-2">
-          <div class="media ratio-3x4 ph-portrait"><div class="media__img" role="img" aria-label="Portrait of coach"></div><span class="media__tag">Portrait · Coach 02</span></div>
+          <div class="media ratio-3x4 ph-portrait"><div class="media__img" style="background-image: url('assets/media/coach-2.jpg'), var(--ph, none)" role="img" aria-label="Portrait of coach"></div><span class="media__tag">Portrait · Coach 02</span></div>
           <div class="coach-card__info"><h3 class="t-h3 ph">[Coach Name]</h3><span class="coach-card__role ph">[Role]</span><span class="coach-card__spec ph">[Specialty]</span></div>
         </a>
         <a class="coach-card reveal" href="our-team.html#coach-3">
-          <div class="media ratio-3x4 ph-portrait"><div class="media__img" role="img" aria-label="Portrait of coach"></div><span class="media__tag">Portrait · Coach 03</span></div>
+          <div class="media ratio-3x4 ph-portrait"><div class="media__img" style="background-image: url('assets/media/coach-3.jpg'), var(--ph, none)" role="img" aria-label="Portrait of coach"></div><span class="media__tag">Portrait · Coach 03</span></div>
           <div class="coach-card__info"><h3 class="t-h3 ph">[Coach Name]</h3><span class="coach-card__role ph">[Role]</span><span class="coach-card__spec ph">[Specialty]</span></div>
         </a>
       </div>
@@ -278,7 +284,7 @@
   <!-- 11_Testimonials — real client quotes only -->
   <section class="section section--neutral" id="Testimonials" aria-labelledby="testimonials-title">
     <div class="container testimonial" data-testimonials>
-      <div class="media ratio-4x5 testimonial__media ph-warm reveal"><div class="media__img" role="img" aria-label="Swimmer smiling at the pool edge"></div><span class="media__tag">Image · Supporting photo</span></div>
+      <div class="media ratio-4x5 testimonial__media ph-warm reveal"><div class="media__img" style="background-image: url('assets/media/home-testimonial.jpg'), var(--ph, none)" role="img" aria-label="Swimmer smiling at the pool edge"></div><span class="media__tag">Image · Supporting photo</span></div>
       <div class="testimonial__body reveal">
         <p class="t-label eyebrow" id="testimonials-title">In Their Words</p>
         <div class="testimonial__slides" aria-live="polite">
@@ -324,7 +330,7 @@
 
   <!-- 13_Final_CTA -->
   <section class="final-cta on-dark" id="Final_CTA" aria-labelledby="final-title">
-    <div class="media ph-lane"><div class="media__img" aria-hidden="true"></div></div>
+    <div class="media ph-lane"><div class="media__img" style="background-image: url('assets/media/home-final-cta.jpg'), var(--ph, none)" aria-hidden="true"></div></div>
     <div class="overlay overlay--navy" aria-hidden="true"></div>
     <div class="container final-cta__inner reveal" id="book">
       <h2 class="t-h1" id="final-title">Ready to<br>dive in?</h2>
