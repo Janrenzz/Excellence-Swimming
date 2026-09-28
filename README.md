@@ -27,6 +27,21 @@ python3 -m http.server -d site 8080   # open http://localhost:8080
 
 To change the header or footer, edit `site/src/partials/*`. To change a page, edit `site/src/*.html`. Then run `python3 site/build.py`.
 
+## Import into Figma (html.to.design)
+
+The `gh-pages` branch serves the site at https://janrenzz.github.io/Excellence-Swimming/. In html.to.design choose **Import from URL**, add `?capture` so every section shows at rest (no scroll reveals), and set the viewport:
+
+| Frame | URL | Viewport |
+|---|---|---|
+| 00_Components | `…/components.html?capture` | 1440 |
+| 01_Home | `…/index.html?capture` | 1280 · 390 |
+| 02_Services | `…/services.html?capture` | 1280 · 390 |
+| 03_Private_Group | `…/private-group-lessons.html?capture` | 1280 · 390 |
+| 04_Clinics | `…/upcoming-clinics.html?capture` | 1280 · 390 |
+| 05_Team | `…/our-team.html?capture` | 1280 · 390 |
+
+To refresh the hosted copy after changes, copy `site/` onto the `gh-pages` branch and push.
+
 ## Art direction
 
 **High-end sports academy + premium wellness brand + minimal editorial website.**
