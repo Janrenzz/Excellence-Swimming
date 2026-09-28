@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Components — Excellence Swimming</title>
+<meta name="robots" content="noindex">
+<!-- 00_Components board for html.to.design import (viewport 1440).
+     Each variant carries its Figma variant name in its id and visible label. -->
+<link rel="preload" href="assets/fonts/sora-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Sora";font-weight:800;font-display:swap;src:url("assets/fonts/sora-latin-800-normal.woff2") format("woff2")}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#EAE7DF;font-family:Sora,sans-serif;font-weight:800;color:#111820}
+a{text-decoration:none;color:inherit}
+.board{display:flex;flex-direction:column;gap:48px;width:1440px;padding:80px}
+.board-head{display:flex;flex-direction:column;gap:16px;padding-bottom:40px;border-bottom:1px solid rgba(17,24,32,.32)}
+.board-title{font-size:64px;line-height:.98;letter-spacing:-.03em;text-transform:uppercase}
+.board-sub{font-size:16px;line-height:1.6;color:#4A5560;max-width:760px}
+.comp{display:flex;flex-direction:column;gap:24px;padding:40px;background:#F5F3EE;border-radius:8px}
+.comp-name{font-size:24px;letter-spacing:-.01em;text-transform:uppercase}
+.comp-note{font-size:13px;line-height:1.5;color:#4A5560}
+.variants{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start}
+.variants.stack{flex-direction:column}
+.cell{display:flex;flex-direction:column;gap:12px}
+.cell-label{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#4A5560}
+.dark{background:#071A26;padding:32px;border-radius:4px}
+.dark .cell-label{color:rgba(255,255,255,.72)}
+.btn{display:flex;align-items:center;justify-content:center;height:52px;padding:0 28px;border-radius:4px;font-size:14px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;align-self:flex-start}
+.sm{height:44px;padding:0 20px}
+.p-light{background:#071A26;color:#fff}.p-light-h{background:#123A4D;color:#fff}.p-light-p{background:#0A2230;color:#fff}
+.p-dark{background:#F5F3EE;color:#071A26}.p-dark-h{background:#fff;color:#071A26}.p-dark-p{background:#DDD9D0;color:#071A26}
+.s-light{border:1px solid #071A26;color:#071A26}.s-light-h{background:#071A26;color:#fff}
+.s-dark{border:1px solid #fff;color:#fff}.s-dark-h{background:#F5F3EE;color:#071A26}
+/* Text Link: label + arrow; the underline is a real 1px element (no background tricks) */
+.tl{display:flex;align-items:center;gap:10px;height:44px;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.tl-t{display:flex;flex-direction:column;gap:4px}
+.tl-u{display:block;height:1px;width:35%;background:currentColor}
+.tl-h .tl-u{width:100%}
+.tl-light{color:#fff}
+.nav{display:flex;flex-direction:column;gap:6px;font-size:14px;color:#fff}
+.nav-u{display:block;height:2px;width:100%;background:#7FB7B3}
+.eb{display:flex;align-items:center;gap:12px;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#123A4D}
+.eb-r{display:block;width:24px;height:2px;background:currentColor}
+.eb-d{color:#7FB7B3}
+.h2{font-size:56px;line-height:1.02;letter-spacing:-.025em;text-transform:uppercase}
+.h3{font-size:32px;line-height:1.1;letter-spacing:-.015em;text-transform:uppercase}
+.body{font-size:16px;line-height:1.65;color:#4A5560}
+.header{display:flex;align-items:center;justify-content:space-between;width:1280px;height:84px;padding:0 64px;color:#fff}
+.hdr-scrolled{background:#071A26;border-bottom:1px solid rgba(255,255,255,.2)}
+.hdr-trans{background:#2E6F7C}
+.logo{display:flex;flex-direction:column;gap:5px;line-height:1}
+.logo-n{font-size:17px;letter-spacing:.14em}.logo-s{font-size:10px;letter-spacing:.42em;opacity:.7}
+.navrow{display:flex;gap:32px;font-size:14px}
+.header-m{display:flex;align-items:center;justify-content:space-between;width:390px;height:68px;padding:0 20px;background:#071A26;color:#fff}
+.burger{display:flex;flex-direction:column;gap:8px;width:24px}.burger i{display:block;height:2px;background:#fff}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;width:1152px}
+.shl{display:flex;flex-direction:column;gap:24px}
+.img{display:flex;align-items:flex-end;padding:16px;background:#2B5F6E;color:rgba(255,255,255,.8);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.portrait{background:#BFB6A3}
+.svc{display:flex;flex-direction:column;gap:24px}
+.ci{display:flex;flex-direction:column;gap:8px}
+.svc-top{display:flex;justify-content:space-between;align-items:baseline}
+.num{font-size:13px;letter-spacing:.16em;color:#4A5560}
+.feat{display:flex;justify-content:space-between;align-items:center;width:1152px}
+.feat-b{display:flex;flex-direction:column;gap:32px;width:470px}
+.facts{display:flex;flex-direction:column;width:100%;border-top:1px solid rgba(17,24,32,.32)}
+.fr{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(17,24,32,.16)}
+.fr-k{width:120px;flex-shrink:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#4A5560;padding-top:3px}
+.fr-v{font-size:15px;line-height:1.5}
+.crow{display:flex;align-items:center;gap:24px;width:1152px;padding:32px 0;border-top:1px solid rgba(17,24,32,.32);border-bottom:1px solid rgba(17,24,32,.32)}
+.cdate{display:flex;flex-direction:column;gap:4px;width:170px}
+.cmain{display:flex;flex-direction:column;gap:8px;width:470px}
+.lvl{width:150px;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.cblock{display:flex;justify-content:space-between;width:1152px;align-items:flex-start}
+.cb-b{display:flex;flex-direction:column;gap:32px;width:470px}
+.avail{display:flex;align-items:center;gap:8px;font-size:15px}.dot{display:block;width:8px;height:8px;border-radius:50%;background:#7FB7B3}
+.coach{display:flex;flex-direction:column;gap:24px;width:368px}
+.role{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#4A5560}
+.prof{display:flex;justify-content:space-between;width:1152px;align-items:flex-start}
+.prof-b{display:flex;flex-direction:column;gap:32px;width:568px;padding-top:32px}
+.chips{display:flex;gap:8px}.chip{padding:8px 12px;border:1px solid rgba(17,24,32,.32);border-radius:4px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.acc-list{display:flex;flex-direction:column;border-top:1px solid rgba(17,24,32,.32)}
+.acc{display:flex;flex-direction:column;width:560px;border-bottom:1px solid rgba(17,24,32,.16)}
+.acc-t{display:flex;justify-content:space-between;align-items:center;height:56px;font-size:14px;letter-spacing:.1em;text-transform:uppercase}
+.acc-p{padding-bottom:24px;font-size:15px;line-height:1.65;color:#4A5560}
+.testi{display:flex;justify-content:space-between;align-items:center;width:1152px}
+.tb{display:flex;flex-direction:column;gap:40px;width:568px}
+.quote{font-size:36px;line-height:1.25;letter-spacing:-.015em}
+.ctrl{display:flex;align-items:center;gap:16px;padding-top:24px;border-top:1px solid rgba(17,24,32,.32)}
+.count{flex:1;font-size:14px;letter-spacing:.1em}
+.ib{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:1px solid rgba(17,24,32,.32);border-radius:4px;font-size:18px}
+.step{display:flex;flex-direction:column;gap:16px;width:360px;padding-top:24px;border-top:1px solid rgba(17,24,32,.32)}
+.stn{font-size:64px;line-height:1;letter-spacing:-.03em;color:#123A4D}
+.stt{margin-top:16px;font-size:17px;letter-spacing:.08em;text-transform:uppercase}
+.sttx{font-size:15px;line-height:1.6;color:#4A5560}
+.step-d{border-top-color:rgba(255,255,255,.2);color:#fff}.step-d .stn{color:#7FB7B3}.step-d .sttx{color:rgba(255,255,255,.72)}
+.footer{display:flex;flex-direction:column;width:1280px;padding:112px 64px 0;background:#071A26;color:#fff}
+.ft{display:flex;gap:24px;padding-bottom:96px}
+.fb{display:flex;flex-direction:column;gap:32px;width:368px;margin-right:120px}
+.fb p{font-size:15px;color:rgba(255,255,255,.72)}
+.fc{display:flex;flex-direction:column;gap:16px;width:200px}
+.fc-h{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#7FB7B3}
+.fc span{font-size:15px;color:rgba(255,255,255,.86)}
+.fbot{display:flex;justify-content:space-between;padding:32px 0;border-top:1px solid rgba(255,255,255,.2);font-size:13px;color:rgba(255,255,255,.72)}
+</style>
+</head>
+<body>
+<div class="board" id="00_Components">
+
+<div class="board-head"><div class="eb"><span class="eb-r"></span>Excellence Swimming · Design System</div><div class="board-title">Components</div><div class="board-sub">Sora 800 · Navy #071A26 · Ocean #123A4D · Cream #F5F3EE · Neutral #EAE7DF · Aqua #7FB7B3 · Warm #C5B89F. In Figma: select a component’s variant frames → Create multiple components → rename each to its label → Combine as variants.</div></div>
+
+<div class="comp" id="Primary Button"><div class="comp-name">Primary Button</div><div class="comp-note">One frame · one fill · one live text layer · radius 4 · height 52 (Small 44)</div>
+<div class="variants">
+<div class="cell"><span class="cell-label">Surface=Light, State=Default, Size=Default</span><a class="btn p-light" id="Surface=Light, State=Default, Size=Default">Book a Lesson</a></div>
+<div class="cell"><span class="cell-label">Surface=Light, State=Hover, Size=Default</span><a class="btn p-light-h" id="Surface=Light, State=Hover, Size=Default">Book a Lesson</a></div>
+<div class="cell"><span class="cell-label">Surface=Light, State=Pressed, Size=Default</span><a class="btn p-light-p" id="Surface=Light, State=Pressed, Size=Default">Book a Lesson</a></div>
+<div class="cell"><span class="cell-label">Surface=Light, State=Default, Size=Small</span><a class="btn sm p-light" id="Surface=Light, State=Default, Size=Small">Book a Lesson</a></div>
+<div class="cell dark"><span class="cell-label">Surface=Dark, State=Default, Size=Default</span><a class="btn p-dark" id="Surface=Dark, State=Default, Size=Default">Book a Lesson</a></div>
+<div class="cell dark"><span class="cell-label">Surface=Dark, State=Hover, Size=Default</span><a class="btn p-dark-h" id="Surface=Dark, State=Hover, Size=Default">Book a Lesson</a></div>
+<div class="cell dark"><span class="cell-label">Surface=Dark, State=Pressed, Size=Default</span><a class="btn p-dark-p" id="Surface=Dark, State=Pressed, Size=Default">Book a Lesson</a></div>
+<div class="cell dark"><span class="cell-label">Surface=Dark, State=Default, Size=Small</span><a class="btn sm p-dark" id="Surface=Dark, State=Default, Size=Small">Book a Lesson</a></div>
+</div></div>
+
+<div class="comp" id="Secondary Button"><div class="comp-name">Secondary Button</div><div class="comp-note">1px inside stroke, no fill · fills solid on hover</div>
+<div class="variants">
+<div class="cell"><span class="cell-label">Surface=Light, State=Default</span><a class="btn s-light" id="Surface=Light, State=Default">View Group Lessons</a></div>
+<div class="cell"><span class="cell-label">Surface=Light, State=Hover</span><a class="btn s-light-h" id="Surface=Light, State=Hover">View Group Lessons</a></div>
+<div class="cell dark"><span class="cell-label">Surface=Dark, State=Default</span><a class="btn s-dark" id="Surface=Dark, State=Default">Contact Us</a></div>
+<div class="cell dark"><span class="cell-label">Surface=Dark, State=Hover</span><a class="btn s-dark-h" id="Surface=Dark, State=Hover">Contact Us</a></div>
+</div></div>
+
+<div class="comp" id="Text Link"><div class="comp-name">Text Link</div><div class="comp-note">Label + arrow · underline 35% → 100% on hover · arrow moves 4px right</div>
+<div class="variants">
+<div class="cell"><span class="cell-label">Surface=Light, State=Default</span><a class="tl" id="Surface=Light, State=Default"><span class="tl-t"><span>Explore Services</span><span class="tl-u"></span></span><span>→</span></a></div>
+<div class="cell"><span class="cell-label">Surface=Light, State=Hover</span><a class="tl tl-h" id="Surface=Light, State=Hover"><span class="tl-t"><span>Explore Services</span><span class="tl-u"></span></span><span>→</span></a></div>
+<div class="cell dark"><span class="cell-label">Surface=Dark, State=Default</span><a class="tl tl-light" id="Surface=Dark, State=Default"><span class="tl-t"><span>View All Clinics</span><span class="tl-u"></span></span><span>→</span></a></div>
+<div class="cell dark"><span class="cell-label">Surface=Dark, State=Hover</span><a class="tl tl-light tl-h" id="Surface=Dark, State=Hover"><span class="tl-t"><span>View All Clinics</span><span class="tl-u"></span></span><span>→</span></a></div>
+</div></div>
+
+<div class="comp" id="Navigation Link"><div class="comp-name">Navigation Link</div>
+<div class="variants"><div class="cell dark" style="flex-direction:row;gap:48px">
+<div class="cell"><span class="cell-label">State=Default</span><div class="nav" id="State=Default" style="opacity:.86"><span>Services</span><span class="nav-u" style="opacity:0"></span></div></div>
+<div class="cell"><span class="cell-label">State=Hover</span><div class="nav" id="State=Hover"><span>Services</span><span class="nav-u"></span></div></div>
+<div class="cell"><span class="cell-label">State=Active</span><div class="nav" id="State=Active"><span>Services</span><span class="nav-u"></span></div></div>
+</div></div></div>
+
+<div class="comp" id="Eyebrow Label"><div class="comp-name">Eyebrow Label</div>
+<div class="variants">
+<div class="cell"><span class="cell-label">Surface=Light</span><div class="eb" id="Surface=Light"><span class="eb-r"></span><span>What We Offer</span></div></div>
+<div class="cell dark"><span class="cell-label">Surface=Dark</span><div class="eb eb-d" id="Surface=Dark"><span class="eb-r"></span><span>Why Choose Us</span></div></div>
+</div></div>
+
+<div class="comp" id="Section Heading"><div class="comp-name">Section Heading</div>
+<div class="variants stack">
+<div class="cell"><span class="cell-label">Link=True</span><div class="sh" id="Link=True"><div class="shl"><div class="eb"><span class="eb-r"></span><span>What We Offer</span></div><div class="h2">Coaching for<br>every goal.</div></div><a class="tl"><span class="tl-t"><span>Explore Services</span><span class="tl-u"></span></span><span>→</span></a></div></div>
+<div class="cell"><span class="cell-label">Link=False</span><div class="sh" id="Link=False"><div class="shl"><div class="eb"><span class="eb-r"></span><span>Getting Started</span></div><div class="h2">Three steps.<br>That’s it.</div></div></div></div>
+</div></div>
+
+<div class="comp" id="Header"><div class="comp-name">Header</div><div class="comp-note">Fixed · 84px desktop / 68px mobile · Transparent over Home hero → Scrolled (Deep Navy)</div>
+<div class="variants stack">
+<div class="cell"><span class="cell-label">State=Transparent, Breakpoint=Desktop</span><div class="header hdr-trans" id="State=Transparent, Breakpoint=Desktop"><div class="logo"><span class="logo-n">EXCELLENCE</span><span class="logo-s">SWIMMING</span></div><div class="navrow"><span>Home</span><span>Services</span><span>Private &amp; Group Lessons</span><span>Upcoming Clinics</span><span>Our Team</span></div><a class="btn sm p-dark" style="align-self:center">Book a Lesson</a></div></div>
+<div class="cell"><span class="cell-label">State=Scrolled, Breakpoint=Desktop</span><div class="header hdr-scrolled" id="State=Scrolled, Breakpoint=Desktop"><div class="logo"><span class="logo-n">EXCELLENCE</span><span class="logo-s">SWIMMING</span></div><div class="navrow"><span>Home</span><span>Services</span><span>Private &amp; Group Lessons</span><span>Upcoming Clinics</span><span>Our Team</span></div><a class="btn sm p-dark" style="align-self:center">Book a Lesson</a></div></div>
+<div class="cell"><span class="cell-label">State=Scrolled, Breakpoint=Mobile</span><div class="header-m" id="State=Scrolled, Breakpoint=Mobile"><div class="logo"><span class="logo-n">EXCELLENCE</span><span class="logo-s">SWIMMING</span></div><div class="burger"><i></i><i></i></div></div></div>
+</div></div>
+
+<div class="comp" id="Service Block"><div class="comp-name">Service Block</div>
+<div class="variants">
+<div class="cell"><span class="cell-label">Ratio=4:3</span><div class="svc" id="Ratio=4:3" style="width:560px"><div class="img" style="height:420px">IMG · Coach &amp; swimmer</div><div class="ci"><div class="svc-top"><span class="h3">Private Lessons</span><span class="num">01</span></div><span class="body">One swimmer, one coach, one clear plan.</span></div></div></div>
+<div class="cell"><span class="cell-label">Ratio=4:5</span><div class="svc" id="Ratio=4:5" style="width:368px"><div class="img" style="height:460px">IMG · Group session</div><div class="ci"><div class="svc-top"><span class="h3">Group Lessons</span><span class="num">02</span></div><span class="body">Structured coaching in small groups.</span></div></div></div>
+</div></div>
+
+<div class="comp" id="Service Feature"><div class="comp-name">Service Feature</div><div class="comp-note">Services page · alternate Layout per row</div>
+<div class="variants stack">
+<div class="cell"><span class="cell-label">Layout=Image Left</span><div class="feat" id="Layout=Image Left"><div class="img" style="width:564px;height:423px">IMG · Service</div><div class="feat-b"><span class="num">01 / 07</span><span class="h2" style="font-size:48px">Learn-to-Swim</span><span class="body">Water confidence, safety and the fundamentals of every stroke — taught patiently, at the swimmer’s pace.</span><div class="facts"><div class="fr"><span class="fr-k">Who it’s for</span><span class="fr-v">Beginners of any age.</span></div><div class="fr"><span class="fr-k">Main benefit</span><span class="fr-v">Safe, confident independence in the water.</span></div></div><a class="tl"><span class="tl-t"><span>Book a Lesson</span><span class="tl-u"></span></span><span>→</span></a></div></div></div>
+<div class="cell"><span class="cell-label">Layout=Image Right</span><div class="feat" id="Layout=Image Right"><div class="feat-b"><span class="num">02 / 07</span><span class="h2" style="font-size:48px">Private Coaching</span><span class="body">One-on-one sessions with a coach’s full attention and a personal plan.</span><div class="facts"><div class="fr"><span class="fr-k">Who it’s for</span><span class="fr-v">Swimmers with specific goals.</span></div><div class="fr"><span class="fr-k">Main benefit</span><span class="fr-v">Faster, more precise progress.</span></div></div><a class="tl"><span class="tl-t"><span>View Private Lessons</span><span class="tl-u"></span></span><span>→</span></a></div><div class="img" style="width:564px;height:423px">IMG · Service</div></div></div>
+</div></div>
+
+<div class="comp" id="Clinic Row"><div class="comp-name">Clinic Row</div><div class="comp-note">Home preview · bind to CMS “Clinics”</div>
+<div class="variants"><div class="crow" id="Clinic Row"><div class="img" style="width:160px;height:120px"></div><div class="cdate"><span class="h3">[DD]</span><span class="eb">[Month YYYY]</span></div><div class="cmain"><span class="h3">[Clinic Name]</span><span class="body">[One-line description of the clinic focus.]</span></div><span class="lvl">[Level]</span><a class="tl"><span class="tl-t"><span>Details</span><span class="tl-u"></span></span><span>→</span></a></div></div></div>
+
+<div class="comp" id="Clinic Block"><div class="comp-name">Clinic Block</div><div class="comp-note">Availability is always written as text, never colour alone</div>
+<div class="variants stack">
+<div class="cell"><span class="cell-label">Availability=Available</span><div class="cblock" id="Availability=Available"><div class="img" style="width:564px;height:423px">IMG · Clinic</div><div class="cb-b"><div style="display:flex;gap:16px;align-items:baseline"><span class="h2">[DD]</span><span class="eb">[Month YYYY]</span></div><span class="eb">[Level]</span><span class="h3">[Clinic Name]</span><span class="body">[Two-sentence description.]</span><div class="facts"><div class="fr"><span class="fr-k">Time</span><span class="fr-v">[00:00 – 00:00]</span></div><div class="fr"><span class="fr-k">Location</span><span class="fr-v">[Pool / venue]</span></div><div class="fr"><span class="fr-k">Coach</span><span class="fr-v">[Coach Name]</span></div><div class="fr"><span class="fr-k">Availability</span><span class="avail"><span class="dot"></span><span>[X] spots remaining</span></span></div><div class="fr"><span class="fr-k">Price</span><span class="fr-v">[Price]</span></div></div><a class="btn p-light">Reserve Your Spot</a></div></div></div>
+<div class="cell"><span class="cell-label">Availability=Full</span><div class="cblock" id="Availability=Full"><div class="img" style="width:564px;height:423px">IMG · Clinic</div><div class="cb-b"><div style="display:flex;gap:16px;align-items:baseline"><span class="h2">[DD]</span><span class="eb">[Month YYYY]</span></div><span class="eb">[Level]</span><span class="h3">[Clinic Name]</span><span class="body">[Two-sentence description.]</span><div class="facts"><div class="fr"><span class="fr-k">Availability</span><span class="avail"><span class="dot" style="background:#C5B89F"></span><span>Fully booked — join the waitlist</span></span></div></div><a class="btn s-light">Join Waitlist</a></div></div></div>
+</div></div>
+
+<div class="comp" id="Coach Card"><div class="comp-name">Coach Card</div>
+<div class="variants"><div class="coach" id="Coach Card"><div class="img portrait" style="height:490px">Portrait · 3:4</div><div class="ci"><span class="h3">[Coach Name]</span><span class="role">[Role]</span><span class="body" style="font-size:14px">[Specialty]</span></div></div></div></div>
+
+<div class="comp" id="Coach Profile"><div class="comp-name">Coach Profile</div><div class="comp-note">Team page · alternate Layout per coach</div>
+<div class="variants stack">
+<div class="cell"><span class="cell-label">Layout=Image Left</span><div class="prof" id="Layout=Image Left"><div class="img portrait" style="width:464px;height:580px">Portrait · 4:5</div><div class="prof-b"><span class="role">[Role]</span><span class="h2">[Coach Name]</span><div class="chips"><span class="chip">[Specialty]</span><span class="chip">[Specialty]</span><span class="chip">[Specialty]</span></div><span class="body" style="font-size:18px">[A short, personal introduction.]</span><div class="acc-list"><div class="acc"><div class="acc-t"><span>Biography</span><span>−</span></div><div class="acc-p">[Full biography supplied by the coach.]</div></div><div class="acc"><div class="acc-t"><span>Certifications</span><span>+</span></div></div><div class="acc"><div class="acc-t"><span>Experience</span><span>+</span></div></div></div></div></div></div>
+<div class="cell"><span class="cell-label">Layout=Image Right</span><div class="prof" id="Layout=Image Right"><div class="prof-b"><span class="role">[Role]</span><span class="h2">[Coach Name]</span><div class="chips"><span class="chip">[Specialty]</span><span class="chip">[Specialty]</span></div><span class="body" style="font-size:18px">[A short, personal introduction.]</span><div class="acc-list"><div class="acc"><div class="acc-t"><span>Biography</span><span>−</span></div><div class="acc-p">[Full biography supplied by the coach.]</div></div><div class="acc"><div class="acc-t"><span>Certifications</span><span>+</span></div></div><div class="acc"><div class="acc-t"><span>Experience</span><span>+</span></div></div></div></div><div class="img portrait" style="width:464px;height:580px">Portrait · 4:5</div></div></div>
+</div></div>
+
+<div class="comp" id="Accordion Item"><div class="comp-name">Accordion Item</div>
+<div class="variants">
+<div class="cell"><span class="cell-label">State=Closed</span><div class="acc" id="State=Closed"><div class="acc-t"><span>Certifications</span><span>+</span></div></div></div>
+<div class="cell"><span class="cell-label">State=Open</span><div class="acc" id="State=Open"><div class="acc-t"><span>Biography</span><span>−</span></div><div class="acc-p">Panel content in Body / Small, Text / Muted.</div></div></div>
+</div></div>
+
+<div class="comp" id="Testimonial"><div class="comp-name">Testimonial</div><div class="comp-note">One quote at a time · real quotes only</div>
+<div class="variants"><div class="testi" id="Testimonial"><div class="img" style="width:464px;height:580px;background:#C5B89F">IMG · Supporting photo</div><div class="tb"><div class="eb"><span class="eb-r"></span><span>In Their Words</span></div><span class="quote">“[Add a real testimonial from a swimmer or parent.]”</span><div class="ci"><span>[Client Name]</span><span class="body" style="font-size:14px">[Program]</span></div><div class="ctrl"><span class="count">01 / 03</span><span class="ib">←</span><span class="ib">→</span></div></div></div></div></div>
+
+<div class="comp" id="Step"><div class="comp-name">Step</div>
+<div class="variants">
+<div class="cell"><span class="cell-label">Surface=Light</span><div class="step" id="Surface=Light"><span class="stn">01</span><span class="stt">Choose your service</span><span class="sttx">Private, group or a focused clinic.</span></div></div>
+<div class="cell dark"><span class="cell-label">Surface=Dark</span><div class="step step-d" id="Surface=Dark"><span class="stn">01</span><span class="stt">Personalized</span><span class="sttx">Sessions designed around your goals.</span></div></div>
+</div></div>
+
+<div class="comp" id="Facts List"><div class="comp-name">Facts List</div>
+<div class="variants"><div class="facts" id="Facts List" style="width:470px"><div class="fr"><span class="fr-k">Who it’s for</span><span class="fr-v">Beginners of any age.</span></div><div class="fr"><span class="fr-k">Main benefit</span><span class="fr-v">Safe, confident independence in the water.</span></div></div></div></div>
+
+<div class="comp" id="Footer"><div class="comp-name">Footer</div>
+<div class="variants"><div class="footer" id="Breakpoint=Desktop"><div class="ft"><div class="fb"><div class="logo"><span class="logo-n">EXCELLENCE</span><span class="logo-s">SWIMMING</span></div><p>Personalized swim coaching for every level, goal and age.</p><a class="btn p-dark">Book a Lesson</a></div><div class="fc"><span class="fc-h">Explore</span><span>Home</span><span>Services</span><span>Private &amp; Group Lessons</span><span>Upcoming Clinics</span><span>Our Team</span></div><div class="fc"><span class="fc-h">Visit</span><span>[Facility name]</span><span>[Street address]</span><span>[City, Postcode]</span></div><div class="fc"><span class="fc-h">Contact</span><span>[Email address]</span><span>[Phone number]</span><span>[Instagram]</span></div></div><div class="fbot"><span>© 2026 Excellence Swimming. All rights reserved.</span><span>Privacy Policy · Terms</span></div></div></div></div>
+
+</div>
+</body>
+</html>
