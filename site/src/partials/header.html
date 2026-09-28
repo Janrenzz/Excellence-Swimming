@@ -1,0 +1,29 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- 01_Header · Component: Header (variant set by page) -->
+<header class="header{{variant}}" id="Header">
+  <div class="header__inner">
+    <a class="logo" href="index.html" aria-label="Excellence Swimming — Home">
+      <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M2 11c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M2 18c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".7"/>
+        <path d="M2 25c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".4"/>
+      </svg>
+      <span class="logo__word"><span class="logo__name">EXCELLENCE</span><span class="logo__sub">SWIMMING</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+        {{nav}}
+    </nav>
+    <div class="header__cta">
+      <a class="btn btn--light btn--sm" href="#book">Book a Lesson</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="menu-toggle__bars" aria-hidden="true"></span><span class="visually-hidden">Open menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+  <nav class="mobile-menu__links" aria-label="Mobile">
+        {{mobile_nav}}
+  </nav>
+  <a class="btn btn--light btn--block" href="#book">Book a Lesson</a>
+</div>
