@@ -35,3 +35,13 @@ In Figma these are **image fills** on the matching frames. In Wix Studio, upload
 | `team-final-cta.jpg` | Team · Final CTA | Lane lines (under a navy overlay) | 16:9 |
 
 The hero **video** goes in as `hero-drone.mp4` (muted, looped, under about 6 MB).
+
+## Current status
+
+Filled from the academy's own media, graded with slight desaturation and a touch of contrast:
+- `hero-drone.mp4` and `home-hero-drone-still.jpg`: the coach-demonstration clip (IMG_9693), re-encoded to H.264 with no audio (4.4 MB)
+- Video stills (coach on deck): `home-intro-coach-deck`, `home-lessons-private`, `services-private-coaching`, `lessons-hero-private`, `lessons-private`, `team-hero-group`
+- Indoor pool photo: `home-why-training`, `home-final-cta`, `services-hero-aerial`, `lessons-group`, `clinics-hero`, `team-final-cta`
+- Group-on-deck photo: `home-lessons-group`, `services-group-coaching`, `services-final-cta`, `lessons-hero-group`
+
+Still using placeholders (waiting for stock or academy photos): the Home services mosaic, immersive section, clinic thumbnails and testimonial image; the Services pages for Learn-to-Swim, Adult, Stroke, Performance and Clinics; the Private & Group final CTA; the clinic images and Clinics final CTA; and the coach portraits (`coach-1` to `coach-3`, which must be real).
