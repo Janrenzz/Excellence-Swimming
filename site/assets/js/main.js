@@ -1,8 +1,11 @@
 /* Excellence Swimming — interactions (each maps to a documented Wix Studio interaction,
    see docs/interactions.md). Kept intentionally small. */
 (function () {
-  document.documentElement.classList.add("js");
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  /* ?capture renders every section at rest (no scroll reveals) for design-tool imports
+     such as html.to.design. */
+  var capture = /[?&]capture/.test(location.search);
+  if (!capture) document.documentElement.classList.add("js");
+  var reduceMotion = capture || window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* HEADER — Transparent → Deep Navy on scroll (home only; inner pages are solid). */
   var header = document.querySelector(".header");
