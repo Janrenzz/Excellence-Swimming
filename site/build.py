@@ -7,7 +7,7 @@ Tokens in a page source:
   {{footer}}
 Run:  python3 site/build.py
 """
-import pathlib, re
+import hashlib, pathlib, re
 
 ROOT = pathlib.Path(__file__).parent
 SRC, PARTIALS = ROOT / "src", ROOT / "src" / "partials"
@@ -41,8 +41,17 @@ def header(variant, active):
     return html
 
 
+def asset_version():
+    """Short hash of the CSS + JS so browsers fetch fresh files after every change."""
+    h = hashlib.sha1()
+    for f in ("assets/css/styles.css", "assets/js/main.js"):
+        h.update((ROOT / f).read_bytes())
+    return h.hexdigest()[:8]
+
+
 def head(title, desc):
-    return read("head.html").replace("{{title}}", title).replace("{{description}}", desc)
+    return (read("head.html").replace("{{title}}", title).replace("{{description}}", desc)
+            .replace("{{version}}", asset_version()))
 
 
 def build():

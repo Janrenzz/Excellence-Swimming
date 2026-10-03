@@ -18,7 +18,7 @@ The HTML in `/site` is the visual source of truth. Import it into Figma with htm
 
 - **Colour:** three brand colours only. Ink Navy `#0E1B2C`, Warm White `#FAF8F4`, Champagne Gold `#C6A969`. Gold Ink `#876628` is the same gold, deepened for small text on white. Everything else is a transparency of Ink or Warm White. Import `design-system/tokens.json`.
 - **Gold rules:** use gold only for thin lines, chips, the credential bar, small labels and the logo mark. Never use it as a background or button fill.
-- **Page flow:** sections alternate **Warm White** `#FAF8F4` and **Sand** `#F1ECE2` (Warm White, deepened) so each section reads as its own block. **Ink** is used for the Home hero, one emphasis section per page (Home: Why Excellence) and the footer. Every section keeps its full top and bottom padding.
+- **Page flow:** sections alternate **Warm White** `#FAF8F4` and **Sand** `#ECE5D6` (Warm White, deepened) so each section reads as its own block. **Ink** is used for the Home hero, one emphasis section per page (Home: Why Excellence) and the footer. Every section keeps its full top and bottom padding.
   - Home: Hero (Ink/video) · Credentials + Founder (White) · Why Excellence (Ink) · Book (Sand) · Services (White) · Testimonials (Sand) · Footer (Ink)
   - Lessons: Hero (White) · Formats (Sand) · Coaches (White)
   - Clinics: Hero (White) · Upcoming (Sand) · Recent (White) · Team clinics (Sand)
