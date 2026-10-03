@@ -15,6 +15,7 @@
   /* The three brand colours */
   --ink: #0E1B2C;            /* Ink Navy — text, nav, footer, primary buttons */
   --paper: #FAF8F4;          /* Warm White — page background */
+  --sand: #F1ECE2;           /* Warm White, deepened — alternate section background */
   --gold: #C6A969;           /* Champagne Gold — rules, chips, labels on dark */
 
   /* Tints of those three (not new colours) */
@@ -94,7 +95,16 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
 /* ---------- 4. LAYOUT --------------------------------------------------- */
 .container { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); }
 .section { padding-block: var(--section-y); }
-.section + .section { padding-top: 0; }        /* paper sections flow without doubled gaps */
+/* Section backgrounds: Warm White and Sand alternate; Ink is used once per page for emphasis.
+   Every section keeps its full padding so each background change reads as a new section. */
+.section--sand { background: var(--sand); }
+.section--ink { background: var(--ink); color: var(--paper); }
+.section--ink .point { border-top-color: var(--gold); }
+.section--ink .point__text { color: var(--paper-muted); }
+.section--sand .form { background: var(--paper); }
+.section--sand .cal, .section--sand .cal__summary { background: var(--paper); }
+.section--sand .cal__summary { border-left: 1px solid var(--ink-line); }
+.cal-shell.section--sand { padding-top: 56px; }
 .rule { height: 1px; background: var(--ink-line); border: 0; margin: 0; }
 .rule--gold { background: var(--gold); }
 .grid-12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: var(--grid-gap); }
