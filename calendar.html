@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a Lesson — Excellence Swimming</title>
+<meta name="description" content="Browse live availability by coach and location and book your swim lesson in a few taps.">
+<meta name="theme-color" content="#071A26">
+<link rel="preload" href="assets/fonts/sora-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css">
+<script src="assets/js/main.js" defer></script>
+
+</head>
+<body class="page-calendar">
+<!-- FRAME: 04_Calendar · every Book Now on the site lands here.
+     Wix build: Tabs element (one tab per lesson format) → each tab holds a Wix Bookings
+     "Booking Calendar" widget set to that service, with Location + Staff filters switched on. -->
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- 01_Header · Component: Header (State: Transparent on Home hero → Solid on scroll; Solid on all other pages) -->
+<header class="header header--solid" id="Header">
+  <div class="header__inner">
+    <a class="logo" href="index.html" aria-label="Excellence Swimming home">
+      <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M2 12c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M2 20c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+      </svg>
+      <span class="logo__word"><span class="logo__name">EXCELLENCE</span><span class="logo__sub">SWIMMING</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="index.html">Home</a>
+        <a class="nav__link" href="lessons.html">Lessons</a>
+        <a class="nav__link" href="clinics.html">Clinics</a>
+        <a class="nav__link" href="calendar.html" aria-current="page">Calendar</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+    </nav>
+    <div class="header__cta">
+      <a class="btn btn--sm header__book" href="calendar.html">Book Now</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="menu-toggle__bars" aria-hidden="true"></span><span class="visually-hidden">Open menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+  <nav class="mobile-menu__links" aria-label="Mobile">
+        <a class="" href="index.html">Home</a>
+        <a class="" href="lessons.html">Lessons</a>
+        <a class="" href="clinics.html">Clinics</a>
+        <a class="" href="calendar.html" aria-current="page">Calendar</a>
+        <a class="" href="contact.html">Contact</a>
+  </nav>
+  <a class="btn btn--light btn--block" href="calendar.html">Book Now</a>
+</div>
+
+
+<main id="main">
+
+  <section class="cal-head" aria-labelledby="cal-title">
+    <div class="container cal-head__row">
+      <div class="stack gap-2">
+        <p class="t-label eyebrow">Calendar</p>
+        <h1 class="t-h1" id="cal-title">Book a lesson.</h1>
+      </div>
+      <p class="signin">Booked before? <a href="#">Sign in</a> to see or change your bookings.</p>
+    </div>
+  </section>
+
+  <section class="cal-shell" aria-label="Availability">
+    <div class="container">
+      <div class="tabs cal-tabs" role="tablist" aria-label="Lesson format" data-cal-tabs>
+        <button class="tab" role="tab" aria-selected="true" data-format="1:1"><span class="tab__ratio">1:1</span><span class="tab__name"> Private</span><span class="cal-tab__sub">1 swimmer</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-format="2:1"><span class="tab__ratio">2:1</span><span class="tab__name"> Semi-private</span><span class="cal-tab__sub">2 swimmers</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-format="3:1"><span class="tab__ratio">3:1</span><span class="tab__name"> Small group</span><span class="cal-tab__sub">3 swimmers</span></button>
+        <button class="tab" role="tab" aria-selected="false" data-format="4:1"><span class="tab__ratio">4:1</span><span class="tab__name"> Small group</span><span class="cal-tab__sub">4 swimmers</span></button>
+      </div>
+
+      <div class="cal" data-cal>
+        <div class="cal__filters">
+          <div class="field"><label for="f-coach">Coach</label>
+            <select class="input" id="f-coach" data-filter="coach">
+              <option value="any">Any coach</option>
+              <option value="ruslan">Coach Ruslan</option>
+              <option value="coach-2">[Coach 2]</option>
+            </select></div>
+          <div class="field"><label for="f-loc">Location</label>
+            <select class="input" id="f-loc" data-filter="location">
+              <option value="any">Any location</option>
+              <option value="loc-1">[Location 1]</option>
+              <option value="loc-2">[Location 2]</option>
+            </select></div>
+          <p class="cal__tz">Times shown in [time zone]</p>
+        </div>
+
+        <div class="cal__month">
+          <div class="month__head">
+            <button class="icon-btn" type="button" data-month="-1" aria-label="Previous month">←</button>
+            <p class="month__title" data-month-title aria-live="polite"></p>
+            <button class="icon-btn" type="button" data-month="1" aria-label="Next month">→</button>
+          </div>
+          <div class="month__grid" data-month-grid></div>
+        </div>
+
+        <div class="week" data-week aria-label="Choose a day"></div>
+
+        <div class="cal__slots">
+          <p class="slots__title" data-slots-title aria-live="polite"></p>
+          <div data-slots></div>
+        </div>
+
+        <aside class="cal__summary" aria-label="Booking summary">
+          <p class="slots__title">Your booking</p>
+          <ul class="summary__list" data-summary></ul>
+          <a class="btn btn--block" href="#" data-next aria-disabled="true">Next</a>
+          <p class="note">Next takes you to secure checkout to add swimmer details and pay.</p>
+        </aside>
+      </div>
+      <p class="cal-note">Prototype: availability shown here is sample data. On the live site it comes from Wix Bookings.</p>
+    </div>
+  </section>
+
+  <!-- Mobile only · sticky booking summary -->
+  <div class="cal-sticky" data-sticky>
+    <p class="cal-sticky__text" data-sticky-text>Pick a time<span>Choose a day, then a time</span></p>
+    <a class="btn btn--sm" href="#" data-next aria-disabled="true">Next</a>
+  </div>
+
+</main>
+
+<!-- Footer · Component: Footer (includes the closing Book Now call to action) -->
+<footer class="footer on-dark" id="Footer">
+  <div class="container">
+    <div class="footer__cta">
+      <h2 class="t-h1">Your next lesson<br>is a few taps away.</h2>
+      <a class="btn btn--light" href="calendar.html">Book Now</a>
+    </div>
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="logo" href="index.html" aria-label="Excellence Swimming home">
+          <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M2 12c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M2 20c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+          </svg>
+          <span class="logo__word"><span class="logo__name">EXCELLENCE</span><span class="logo__sub">SWIMMING</span></span>
+        </a>
+        <p>Elite private lessons and clinics, led by Canadian Olympian Coach Ruslan.</p>
+      </div>
+      <div class="footer__col">
+        <h2 class="t-label">Pages</h2>
+        <a href="index.html">Home</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="clinics.html">Clinics</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer__col">
+        <h2 class="t-label">Contact</h2>
+        <p class="ph">[Email address]</p>
+        <p class="ph">[Phone number]</p>
+        <p class="ph">[Instagram handle]</p>
+      </div>
+      <div class="footer__col">
+        <h2 class="t-label">Locations</h2>
+        <p class="ph">[Location 1]</p>
+        <p class="ph">[Location 2]</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span class="t-num">2026</span> Excellence Swimming</p>
+      <div class="footer__legal"><a href="#">Privacy</a><a href="#">Booking policy</a></div>
+    </div>
+  </div>
+</footer>
+<!-- Mobile Book Bar · pinned to the bottom of the screen on phones (hidden on the Calendar page) -->
+<div class="book-bar" id="Book_Bar"><a class="btn btn--block" href="calendar.html">Book Now</a></div>
+
+</body>
+</html>
