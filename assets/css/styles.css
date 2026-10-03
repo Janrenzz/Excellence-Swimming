@@ -433,6 +433,8 @@ textarea.input { min-height: 132px; resize: vertical; }
   .cal-sticky__text { flex: 1; min-width: 0; font-size: 13px; line-height: 1.35; }
   .cal-sticky__text span { display: block; color: var(--ink-muted); font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .page-calendar .footer { padding-bottom: 104px; }
+  /* Embedded calendar (Home): summary bar sits inline under the slots instead of pinned */
+  .page-home .cal-sticky { position: static; margin-inline: calc(var(--gutter) * -1); box-shadow: none; border-bottom: 1px solid var(--ink-line-strong); }
   .tab { padding: 0 16px; }
   .cal-tabs { display: grid; grid-template-columns: repeat(4, 1fr); overflow: visible; }
   .cal-tabs .tab { padding: 10px 4px; text-align: center; }
