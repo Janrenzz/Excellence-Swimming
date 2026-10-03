@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Excellence Swimming</title>
+<meta name="description" content="Contact Excellence Swimming, ask a question, or join the waitlist for lessons and clinics.">
+<meta name="theme-color" content="#071A26">
+<link rel="preload" href="assets/fonts/sora-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css">
+<script src="assets/js/main.js" defer></script>
+
+</head>
+<body class="page-contact">
+<!-- FRAME: 05_Contact -->
+<a class="skip-link" href="#main">Skip to content</a>
+<!-- 01_Header · Component: Header (State: Transparent on Home hero → Solid on scroll; Solid on all other pages) -->
+<header class="header header--solid" id="Header">
+  <div class="header__inner">
+    <a class="logo" href="index.html" aria-label="Excellence Swimming home">
+      <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M2 12c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <path d="M2 20c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+      </svg>
+      <span class="logo__word"><span class="logo__name">EXCELLENCE</span><span class="logo__sub">SWIMMING</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+        <a class="nav__link" href="index.html">Home</a>
+        <a class="nav__link" href="lessons.html">Lessons</a>
+        <a class="nav__link" href="clinics.html">Clinics</a>
+        <a class="nav__link" href="calendar.html">Calendar</a>
+        <a class="nav__link" href="contact.html" aria-current="page">Contact</a>
+    </nav>
+    <div class="header__cta">
+      <a class="btn btn--sm header__book" href="calendar.html">Book Now</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="menu-toggle__bars" aria-hidden="true"></span><span class="visually-hidden">Open menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobile-menu">
+  <nav class="mobile-menu__links" aria-label="Mobile">
+        <a class="" href="index.html">Home</a>
+        <a class="" href="lessons.html">Lessons</a>
+        <a class="" href="clinics.html">Clinics</a>
+        <a class="" href="calendar.html">Calendar</a>
+        <a class="" href="contact.html" aria-current="page">Contact</a>
+  </nav>
+  <a class="btn btn--light btn--block" href="calendar.html">Book Now</a>
+</div>
+
+
+<main id="main">
+
+  <section class="page-hero" id="Hero" aria-labelledby="hero-title" style="padding-bottom: 48px">
+    <div class="container">
+      <div class="stack gap-3 reveal">
+        <p class="t-label eyebrow">Contact</p>
+        <h1 class="t-h1" id="hero-title">Get in touch.</h1>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="Contact" style="padding-top: 0">
+    <div class="container grid-12 contact-grid">
+      <div class="contact-grid__info reveal">
+        <p class="t-body t-muted">Questions about lessons, clinics or scheduling? Send us a note and we’ll reply within [1 business day].</p>
+        <ul class="info-list">
+          <li><span class="t-label">Email</span><span class="ph">[Email address]</span></li>
+          <li><span class="t-label">Phone</span><span class="ph">[Phone number]</span></li>
+          <li><span class="t-label">Locations</span><span class="ph">[Location 1]</span><span class="ph">[Location 2]</span></li>
+          <li><span class="t-label">Instagram</span><span class="ph">[@handle]</span></li>
+        </ul>
+        <a class="btn" href="calendar.html" style="align-self: flex-start">Book Now</a>
+      </div>
+
+      <!-- Wix: Tabs element · each tab holds one Wix Form -->
+      <div class="contact-grid__forms reveal">
+        <div class="tabs" role="tablist" aria-label="Choose a form" data-form-tabs>
+          <button class="tab" role="tab" id="tab-general" aria-controls="panel-general" aria-selected="true">General inquiry</button>
+          <button class="tab" role="tab" id="tab-waitlist" aria-controls="panel-waitlist" aria-selected="false">Waitlist</button>
+        </div>
+
+        <div role="tabpanel" id="panel-general" aria-labelledby="tab-general">
+          <form class="form" data-demo-form novalidate aria-label="General inquiry">
+            <div class="field"><label for="g-name">Name <span class="req">*</span></label><input class="input" id="g-name" required autocomplete="name"><span class="field__error">Enter your name.</span></div>
+            <div class="field"><label for="g-email">Email <span class="req">*</span></label><input class="input" id="g-email" type="email" required autocomplete="email"><span class="field__error">Enter an email address like name@email.com.</span></div>
+            <div class="field"><label for="g-phone">Phone</label><input class="input" id="g-phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="g-topic">Topic</label>
+              <select class="input" id="g-topic"><option>Lessons</option><option>Clinics</option><option>Team clinics</option><option>Something else</option></select></div>
+            <div class="field field--full"><label for="g-msg">Message <span class="req">*</span></label><textarea class="input" id="g-msg" required></textarea><span class="field__error">Add a short message.</span></div>
+            <div class="form__foot"><p class="note"><span class="req" style="color: var(--gold-ink)">*</span> Required</p><button class="btn" type="submit">Send message</button></div>
+          </form>
+        </div>
+
+        <div role="tabpanel" id="panel-waitlist" aria-labelledby="tab-waitlist" hidden>
+          <form class="form" data-demo-form novalidate aria-label="Waitlist">
+            <div class="field field--full"><label for="w-for">Join the waitlist for <span class="req">*</span></label>
+              <select class="input" id="w-for" required><option value="">Choose one</option><option>A lesson time that’s fully booked</option><option>A specific coach</option><option>The next clinic</option></select><span class="field__error">Choose what you’re waiting for.</span></div>
+            <div class="field"><label for="w-name">Parent / swimmer name <span class="req">*</span></label><input class="input" id="w-name" required autocomplete="name"><span class="field__error">Enter a name.</span></div>
+            <div class="field"><label for="w-email">Email <span class="req">*</span></label><input class="input" id="w-email" type="email" required autocomplete="email"><span class="field__error">Enter an email address like name@email.com.</span></div>
+            <div class="field"><label for="w-format">Lesson format</label><select class="input" id="w-format"><option>Any</option><option>1:1 Private</option><option>2:1 Semi-private</option><option>3:1 Small group</option><option>4:1 Small group</option></select></div>
+            <div class="field"><label for="w-coach">Coach</label><select class="input" id="w-coach"><option>Any coach</option><option>Coach Ruslan</option><option>[Coach 2]</option></select></div>
+            <div class="field"><label for="w-loc">Location</label><select class="input" id="w-loc"><option>Any location</option><option>[Location 1]</option><option>[Location 2]</option></select></div>
+            <div class="field"><label for="w-age">Swimmer age</label><input class="input" id="w-age" type="number" min="2" inputmode="numeric"></div>
+            <div class="field field--full"><label for="w-times">Days and times that work</label><input class="input" id="w-times" placeholder="e.g. weekday mornings, Saturday afternoon"><span class="field__hint">We’ll contact you when a matching spot opens.</span></div>
+            <div class="form__foot"><p class="note"><span class="req" style="color: var(--gold-ink)">*</span> Required</p><button class="btn" type="submit">Join waitlist</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer · Component: Footer (includes the closing Book Now call to action) -->
+<footer class="footer on-dark" id="Footer">
+  <div class="container">
+    <div class="footer__cta">
+      <h2 class="t-h1">Your next lesson<br>is a few taps away.</h2>
+      <a class="btn btn--light" href="calendar.html">Book Now</a>
+    </div>
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="logo" href="index.html" aria-label="Excellence Swimming home">
+          <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M2 12c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M2 20c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
+          </svg>
+          <span class="logo__word"><span class="logo__name">EXCELLENCE</span><span class="logo__sub">SWIMMING</span></span>
+        </a>
+        <p>Elite private lessons and clinics, led by Canadian Olympian Coach Ruslan.</p>
+      </div>
+      <div class="footer__col">
+        <h2 class="t-label">Pages</h2>
+        <a href="index.html">Home</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="clinics.html">Clinics</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer__col">
+        <h2 class="t-label">Contact</h2>
+        <p class="ph">[Email address]</p>
+        <p class="ph">[Phone number]</p>
+        <p class="ph">[Instagram handle]</p>
+      </div>
+      <div class="footer__col">
+        <h2 class="t-label">Locations</h2>
+        <p class="ph">[Location 1]</p>
+        <p class="ph">[Location 2]</p>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span class="t-num">2026</span> Excellence Swimming</p>
+      <div class="footer__legal"><a href="#">Privacy</a><a href="#">Booking policy</a></div>
+    </div>
+  </div>
+</footer>
+<!-- Mobile Book Bar · pinned to the bottom of the screen on phones (hidden on the Calendar page) -->
+<div class="book-bar" id="Book_Bar"><a class="btn btn--block" href="calendar.html">Book Now</a></div>
+
+</body>
+</html>

@@ -1,43 +1,46 @@
-<!-- 14_Footer · Component: Footer -->
+<!-- Footer · Component: Footer (includes the closing Book Now call to action) -->
 <footer class="footer on-dark" id="Footer">
   <div class="container">
-    <div class="footer__top">
+    <div class="footer__cta">
+      <h2 class="t-h1">Your next lesson<br>is a few taps away.</h2>
+      <a class="btn btn--light" href="calendar.html">Book Now</a>
+    </div>
+    <div class="footer__grid">
       <div class="footer__brand">
-        <a class="logo" href="index.html" aria-label="Excellence Swimming — Home">
+        <a class="logo" href="index.html" aria-label="Excellence Swimming home">
           <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <path d="M2 11c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-            <path d="M2 18c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".7"/>
-            <path d="M2 25c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".4"/>
+            <path d="M2 12c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M2 20c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".55"/>
           </svg>
           <span class="logo__word"><span class="logo__name">EXCELLENCE</span><span class="logo__sub">SWIMMING</span></span>
         </a>
-        <p>Personalized swim coaching for every level, goal and age.</p>
-        <a class="btn btn--light" href="#book">Book a Lesson</a>
+        <p>Elite private lessons and clinics, led by Canadian Olympian Coach Ruslan.</p>
       </div>
       <div class="footer__col">
-        <h2>Explore</h2>
+        <h2 class="t-label">Pages</h2>
         <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="private-group-lessons.html">Private &amp; Group Lessons</a>
-        <a href="upcoming-clinics.html">Upcoming Clinics</a>
-        <a href="our-team.html">Our Team</a>
+        <a href="lessons.html">Lessons</a>
+        <a href="clinics.html">Clinics</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="contact.html">Contact</a>
       </div>
       <div class="footer__col">
-        <h2>Visit</h2>
-        <p class="ph">[Facility name]</p>
-        <p class="ph">[Street address]</p>
-        <p class="ph">[City, Postcode]</p>
+        <h2 class="t-label">Contact</h2>
+        <p class="ph">[Email address]</p>
+        <p class="ph">[Phone number]</p>
+        <p class="ph">[Instagram handle]</p>
       </div>
       <div class="footer__col">
-        <h2>Contact</h2>
-        <a class="ph" href="mailto:hello@example.com">[Email address]</a>
-        <a class="ph" href="tel:+000000000">[Phone number]</a>
-        <a class="ph" href="#">[Instagram]</a>
+        <h2 class="t-label">Locations</h2>
+        <p class="ph">[Location 1]</p>
+        <p class="ph">[Location 2]</p>
       </div>
     </div>
     <div class="footer__bottom">
-      <p>© <span class="t-num">2026</span> Excellence Swimming. All rights reserved.</p>
-      <div class="footer__legal"><a href="#">Privacy Policy</a><a href="#">Terms</a></div>
+      <p>© <span class="t-num">2026</span> Excellence Swimming</p>
+      <div class="footer__legal"><a href="#">Privacy</a><a href="#">Booking policy</a></div>
     </div>
   </div>
 </footer>
+<!-- Mobile Book Bar · pinned to the bottom of the screen on phones (hidden on the Calendar page) -->
+<div class="book-bar" id="Book_Bar"><a class="btn btn--block" href="calendar.html">Book Now</a></div>

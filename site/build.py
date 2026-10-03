@@ -14,10 +14,10 @@ SRC, PARTIALS = ROOT / "src", ROOT / "src" / "partials"
 
 NAV = [
     ("home", "index.html", "Home"),
-    ("services", "services.html", "Services"),
-    ("lessons", "private-group-lessons.html", "Private &amp; Group Lessons"),
-    ("clinics", "upcoming-clinics.html", "Upcoming Clinics"),
-    ("team", "our-team.html", "Our Team"),
+    ("lessons", "lessons.html", "Lessons"),
+    ("clinics", "clinics.html", "Clinics"),
+    ("calendar", "calendar.html", "Calendar"),
+    ("contact", "contact.html", "Contact"),
 ]
 
 

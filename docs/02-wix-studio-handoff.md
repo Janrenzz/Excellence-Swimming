@@ -1,63 +1,76 @@
-# Figma → Wix Studio Handoff
+# Wix Studio Build Guide (v2)
 
-## Before export: checklist
+Everything in the design is buildable with native Wix Studio and Wix apps (Bookings, Events, Forms, CMS). No custom code is required. The table marks the two places where Wix's own widget decides the final look, and the one optional code snippet.
 
-- [ ] Desktop page frames are exactly **1280px** wide, and the Wix Studio editor is set to 1280.
-- [ ] Every section is a direct child of the page frame, ordered top to bottom as it appears.
-- [ ] Groups that should respond to screen size use Auto Layout (they become **Stacks**).
-- [ ] All text is live text using the shared text styles (none outlined).
-- [ ] Colours come from variables. No stray hex values.
-- [ ] Photos are **image fills** on simple frames. Logo and icons are simple **SVG** vectors.
-- [ ] Buttons are one frame, one fill and one text layer each.
-- [ ] No complex masks, blend modes, blurs or effects that only work in Figma.
-- [ ] Layers have descriptive names (see 01-figma-build-spec.md §8).
-- [ ] `Hero_Video_Background`, `Hero_Overlay` and `Hero_Content` are separate layers. The hero is never flattened.
+## Can Wix do it natively?
 
-## Export
-
-1. Install the official **Figma to Wix Studio** plugin.
-2. Export one page frame at a time, starting with `01_Home_Desktop`.
-3. In Wix Studio, check the section structure, then set up the tablet and mobile breakpoints using the 768/390 frames as the reference.
-
-## Rebuild in Wix Studio
-
-| Figma | Wix Studio |
-|---|---|
-| Page section frame | **Section** (full width, background on section) |
-| Auto Layout group | **Stack** (direction/gap/padding preserved) |
-| Grid compositions (services mosaic, 12-col splits) | **CSS Grid** on section/container |
-| Header component | Global **Header** → *Sticky / Freeze*; Scroll effect: background Transparent → `#071A26` (Home only). Inner pages: solid Navy |
-| Mobile menu | Wix **Menu** + hamburger (Navy full-screen panel) |
-| Colour / text variables | **Site Styles** → Theme colours + Text themes (Sora is available in Wix fonts) |
-| Button component | Wix **Button** with design presets (Default / Hover / Pressed) |
-| Accordion | Wix **Accordion** element or Collapsible text |
-| Testimonial slider | **Slideshow** (one slide at a time, arrows, no autoplay) |
-
-### Hero video
-1. Select the `02_Hero` section → **Change Background → Video** → upload the drone video.
-2. Use the Figma still as the **poster/fallback image**.
-3. Add the overlay as a **section background overlay** gradient: top Navy 45% → bottom Navy 85%. Add a second, left-to-right Navy 55% → 0% layer if the text needs more contrast.
-4. Video settings: muted, loop and autoplay on desktop. On mobile, use the poster image if the file is heavy (keep the video under about 6 MB, 1080p).
-
-### CMS (never publish placeholder data)
-| Collection | Fields | Used on |
+| Design element | Wix Studio feature | Native? |
 |---|---|---|
-| **Clinics** | Name, Date, Time, Location, Level, Coach (ref), Description, Availability, Price, Image, Booking link | Home `09_Clinics` (next 3), Clinics page. Show `03b_Empty_State` when the dataset is empty |
-| **Coaches** | Name, Role, Specialties (tags), Short intro, Biography, Certifications, Experience, Portrait | Home `10_Team`, Team page |
-| **Testimonials** | Quote, Name, Program, Photo (optional), Consent confirmed | Home `11_Testimonials` |
-| **Services** | Name, Summary, Who it's for, Main benefit, Image, CTA link, Order | Services page, Home preview |
+| 5 pages + nav + Book Now in the header | Pages, global Header, Menu, Button linked to the Calendar page | Yes |
+| Hero video with overlay | Section background → Video, plus an overlay colour | Yes |
+| Header transparent over the hero → solid on scroll | Header scroll effect (background change on scroll) | Yes. If your editor version lacks it, use the Solid header on Home too |
+| Credential bar | Horizontal Stack of text with gold dots | Yes |
+| Founder, Why Excellence, Lessons/Clinics links, quotes | Stacks, Text, Line, Image | Yes |
+| Coaches & pricing rows | CMS collection "Coaches" → Repeater | Yes |
+| Calendar: lesson-format tabs | Tabs element, one Booking Calendar widget per tab | Yes (setup below) |
+| Calendar: coach + location filters, month view, time slots, summary, Next → checkout | Wix Bookings Booking Calendar widget, with Location and Staff filters turned on | Yes. **The widget's own layout**: we style it (fonts, colours, buttons) in its design panel. Spacing will be close to the mock-up, not identical |
+| Mobile calendar sticky summary | The Bookings widget's mobile layout (its own Next button) | **Approximation**: Wix's widget handles this itself. Our sticky bar shows the intended behaviour |
+| "Book with Ruslan" opens the calendar with Ruslan already selected | URL parameters aren't read by the widget natively | Option A (no code): link to the Calendar, and the customer taps the Coach filter. Option B: a short Velo snippet (provided on request) |
+| Clinics list | Wix Events widget, List layout | Yes |
+| Clinics empty state | The Events widget's "no upcoming events" message, plus a waitlist strip that's always visible | Yes (setup below) |
+| Team clinic form, general inquiry, waitlist | Wix Forms (required fields, success message, email notifications) | Yes |
+| Contact form tabs | Tabs element | Yes |
+| Mobile Book Now bar | Container pinned to the bottom of the screen, mobile breakpoint only | Yes |
+| Sign in to see bookings | Wix Members "My Bookings" page | Yes |
+| Animations | Entrance, scroll, hover and loop animations | Yes (see 03-interactions.md) |
 
-### Booking
-Every **BOOK A LESSON** link points to `#book` in the reference site. In Wix, link it to the **Wix Bookings** service list, or to a specific service page for the "Book Private Lesson" and "Reserve Your Spot" buttons.
+## Wix Bookings setup (do this first; the design depends on it)
 
-## Content to replace before launch
+1. **Staff:** add each coach (Ruslan, Coach 2, …) with their working hours.
+2. **Locations:** add each pool under Business Info → Locations.
+3. **Services:** create four appointment services: *1:1 Private*, *2:1 Semi-private*, *3:1 Small group*, *4:1 Small group*. For each one:
+   - Assign the coaches who teach it and the locations.
+   - Set the duration.
+   - Set the price. If prices differ by coach, use the service's **price options / variants by staff member**. If your plan doesn't offer that, create one service per coach and format instead (e.g. "1:1 Private · Ruslan").
+4. **Calendar page:** add a Tabs element with four tabs. In each tab, add **Bookings → Booking Calendar**, choose that tab's service, then turn on **Filters: Location, Staff** and pick the Monthly layout. In the widget's design panel, set:
+   - Font: Sora
+   - Text: Ink `#0E1B2C`
+   - Background: Warm White `#FAF8F4`
+   - Selected day and time slot: Ink fill with Warm White text
+   - Accents: Gold `#C6A969`
+   - Button: Ink with a 4px radius
+5. **Book Now:** link every Book Now button to the Calendar page. That's the header, hero, footer, mobile bar and coach rows.
+6. **Sign-in:** add Wix Members, so returning customers can sign in and use "My Bookings" to reschedule.
 
-Anything shown in `[brackets]` with a dotted underline is a placeholder. **Do not invent it.**
+## Wix Events setup (Clinics)
 
-- Facility name, address, email, phone, social links (footer)
-- Clinic details (all fields)
-- Coach names, roles, specialties, biographies, certifications and experience
-- Testimonials (real quotes, with the client's permission)
-- The confirmed **service list**: remove any of the seven services the academy does not offer
-- Every image placeholder (labelled `Image · …`): replace with real photography. See `site/assets/media/README.md` for the full shot list, filenames and aspect ratios
-- The hero drone video
+- Create each clinic as an event with registration or tickets.
+- On the Clinics page, add the **Events** widget with the List layout and Upcoming events only. Style it like the Event Row component: date, title, details line, Register button.
+- **Empty state:** in the widget settings, change the "no upcoming events" text to "New dates coming soon." Then place a small waitlist strip under the widget ("Want first notice of new clinics? Join the waitlist →"). It's useful whether or not clinics are listed, so no show/hide logic is needed.
+- **Team clinics:** use a Wix Form with the fields shown in the design, and set its email notifications to go to you.
+
+## CMS: "Coaches" collection
+
+| Field | Type |
+|---|---|
+| Name | Text |
+| Role | Text |
+| Photo | Image |
+| Credentials | Tags |
+| Focus | Text |
+| Price 1:1 | Text |
+| Price 2:1 | Text |
+| Price 3:1 | Text |
+| Price 4:1 | Text |
+| Order | Number |
+
+Connect it to a repeater on the Lessons page. The founder section on Home is designed separately, as static content.
+
+## Before launch, replace
+
+- Ruslan's portrait, his first-person intro, and the details for each credential (Games, year, event)
+- Other coaches' names, photos, credentials and focus
+- Prices, currency, session lengths and locations
+- Contact details, reply times and the time zone line on the Calendar
+- Real testimonials, used with permission
+- Hero video. The current clip shows a "Saint Charles Water Polo & Swimming" banner; replace it if that's not your facility.

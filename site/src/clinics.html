@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{head:Clinics — Excellence Swimming|Upcoming swim clinics with Excellence Swimming, plus clinics for teams and clubs.}}
+</head>
+<body class="page-clinics">
+<!-- FRAME: 03_Clinics -->
+{{header:solid:clinics}}
+
+<main id="main">
+
+  <!-- 02_Hero · the page's one image -->
+  <section class="page-hero" id="Hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="grid-12 page-hero__grid">
+        <div class="page-hero__title reveal">
+          <p class="t-label eyebrow">Clinics</p>
+          <h1 class="t-h1" id="hero-title">Focused clinics.<br>Real gains.</h1>
+        </div>
+        <div class="page-hero__aside reveal">
+          <p class="t-body-lg t-muted">Short, intensive sessions on one skill, open to individual swimmers or run for your team.</p>
+          <a class="link-arrow" href="#team-clinics"><span class="link-arrow__text">Book a team clinic</span><span class="arrow" aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="media ratio-21x9 page-hero__media ph-water reveal">
+        <div class="media__img" style="background-image: url('assets/media/clinics-hero.jpg')" role="img" aria-label="Swimmers gathered on deck before a clinic"></div>
+        <span class="media__tag">Image · Clinic group</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03_Upcoming · Wix Events widget (List layout). Items come from Wix Events, never typed into the page. -->
+  <section class="section" id="Upcoming" aria-labelledby="upcoming-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-head__text">
+          <p class="t-label eyebrow">Upcoming</p>
+          <h2 class="t-h2" id="upcoming-title">Open clinics.</h2>
+        </div>
+      </div>
+
+      <div class="events" data-clinic-list>
+        <article class="event reveal">
+          <div class="event__date"><span class="event__day ph">[DD]</span><span class="event__month ph">[Mon YYYY]</span></div>
+          <div class="event__body"><h3 class="t-h3 ph">[Clinic name]</h3><p class="event__meta ph">[Time] · [Location] · [Age / level]</p><p class="t-body t-muted ph">[One-line summary of what swimmers will work on.]</p></div>
+          <a class="btn" href="#">Register</a>
+        </article>
+        <article class="event reveal">
+          <div class="event__date"><span class="event__day ph">[DD]</span><span class="event__month ph">[Mon YYYY]</span></div>
+          <div class="event__body"><h3 class="t-h3 ph">[Clinic name]</h3><p class="event__meta ph">[Time] · [Location] · [Age / level]</p><p class="t-body t-muted ph">[One-line summary of what swimmers will work on.]</p></div>
+          <a class="btn" href="#">Register</a>
+        </article>
+      </div>
+
+      <!-- 03b_Empty_State · shown when no clinics are scheduled. Preview: clinics.html?state=empty -->
+      <div class="empty" data-clinic-empty hidden>
+        <p class="t-label">No clinics scheduled</p>
+        <h3 class="t-h2">New dates<br>coming soon.</h3>
+        <p class="t-body t-muted">Join the clinic waitlist and we’ll email you as soon as the next clinic opens.</p>
+        <div class="btn-row">
+          <a class="btn" href="contact.html#waitlist">Join the waitlist</a>
+          <a class="link-arrow" href="calendar.html"><span class="link-arrow__text">Book a lesson instead</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04_Team_Clinics · Wix Forms -->
+  <section class="section" id="team-clinics" aria-labelledby="team-title">
+    <div class="container grid-12 team-clinics">
+      <div class="team-clinics__text reveal">
+        <p class="t-label eyebrow">For teams &amp; clubs</p>
+        <h2 class="t-h2" id="team-title">Team clinics.</h2>
+        <p class="t-body t-muted">We bring a clinic to your team, built around the skills your coaches want to work on.</p>
+        <ul class="ticks">
+          <li>Starts, turns, underwaters or stroke technique</li>
+          <li>At your pool or ours</li>
+          <li>Planned with your head coach</li>
+        </ul>
+        <p class="note">We reply within [2 business days].</p>
+      </div>
+      <div class="team-clinics__form reveal">
+        <form class="form" data-demo-form novalidate aria-label="Team clinic request">
+          <div class="field"><label for="tc-team">Team or club <span class="req">*</span></label><input class="input" id="tc-team" name="team" required autocomplete="organization"><span class="field__error">Enter your team or club name.</span></div>
+          <div class="field"><label for="tc-name">Your name <span class="req">*</span></label><input class="input" id="tc-name" name="name" required autocomplete="name"><span class="field__error">Enter your name.</span></div>
+          <div class="field"><label for="tc-email">Email <span class="req">*</span></label><input class="input" id="tc-email" name="email" type="email" required autocomplete="email"><span class="field__error">Enter an email address like name@club.com.</span></div>
+          <div class="field"><label for="tc-phone">Phone</label><input class="input" id="tc-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field"><label for="tc-size">Number of swimmers <span class="req">*</span></label><input class="input" id="tc-size" name="size" type="number" min="1" inputmode="numeric" required><span class="field__error">Enter roughly how many swimmers.</span></div>
+          <div class="field"><label for="tc-level">Age range / level</label><input class="input" id="tc-level" name="level" placeholder="e.g. 11–14, provincial level"></div>
+          <div class="field field--full"><label for="tc-dates">Preferred dates</label><input class="input" id="tc-dates" name="dates"></div>
+          <div class="field field--full"><label for="tc-notes">What would you like the clinic to focus on?</label><textarea class="input" id="tc-notes" name="notes"></textarea></div>
+          <div class="form__foot"><p class="note"><span class="req" style="color: var(--gold-ink)">*</span> Required</p><button class="btn" type="submit">Send request</button></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{{footer}}
+</body>
+</html>
