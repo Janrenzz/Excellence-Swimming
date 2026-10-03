@@ -46,7 +46,7 @@ To refresh the hosted copy after changes, copy `site/` onto the `gh-pages` branc
 
 **Premium, athletic, approachable. Built to get returning customers to booking fast, and to make Coach Ruslan's credentials obvious to first-time visitors within seconds.**
 
-- **Three colours.** Ink Navy `#0E1B2C` for text, nav, footer and buttons. Warm White `#FAF8F4` for the page. Champagne Gold `#C6A969` only for thin rules, chips, small labels and the credential bar. Pages stay light; Ink appears only in the hero video and the footer.
+- **Three colours.** Ink Navy `#0E1B2C` for text, nav, footer and buttons. Warm White `#FAF8F4` for the page. Champagne Gold `#C6A969` only for thin rules, chips, small labels and the credential bar. Sections alternate Warm White and Sand (a deeper tint of the same warm white) so each one reads as its own block; Ink is used for the hero, one emphasis section on Home, and the footer.
 - **Sora 800 throughout.** Oversized uppercase headlines, short body copy capped near 50 characters per line.
 - **Credentials first.** The hero says what we offer in two seconds, the credential bar proves it, and the founder section follows immediately.
 - **Booking everywhere it matters.** Every Book Now goes to the Calendar page, and the same booking calendar is embedded on Home so returning customers can book without leaving it. Phones get a pinned Book Now bar, and the Calendar page has a pinned booking summary.
