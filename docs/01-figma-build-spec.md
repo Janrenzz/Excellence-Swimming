@@ -45,7 +45,8 @@ The HTML in `/site` is the visual source of truth. Import it into Figma with htm
 | Event Row | State = Scheduled / Empty | Wix Events widget (List layout); empty state in the widget settings |
 | Form Field | State = Default / Focus / Error · Type = Input / Select / Textarea | Wix Forms fields (styled in the form's design panel) |
 | Tabs | Use = Forms / Lesson format | Tabs element |
-| Calendar parts | Day, Slot, Booking Summary | Wix Bookings Booking Calendar widget (design panel) |
+| Calendar Widget (tabs + filters + month + slots + summary) | Placement = Calendar page / Home embed | Wix Bookings Booking Calendar widget (design panel). The same widget is placed on both pages |
+| Calendar parts | Day, Slot, Booking Summary | Parts of that widget |
 | Book Bar · Calendar Sticky Summary | none | Container pinned to the bottom of the screen, mobile breakpoint only |
 | Footer | none | Global footer |
 
@@ -53,7 +54,7 @@ The HTML in `/site` is the visual source of truth. Import it into Figma with htm
 
 | Frame | Sections, in order |
 |---|---|
-| **Home** | Header (Transparent) · Hero (video) · Credentials · Founder · Why Excellence · Services (Lessons + Clinics) · Testimonials · Footer (with Book Now) |
+| **Home** | Header (Transparent) · Hero (video) · Credentials · Founder · Why Excellence · Book (embedded booking calendar, same component as the Calendar page) · Services (Lessons + Clinics) · Testimonials · Footer (with Book Now) |
 | **Lessons** | Header · Hero + one image · Formats (1:1, 2:1, 3:1, 4:1) · Coaches & pricing (one row per coach) · Footer |
 | **Clinics** | Header · Hero + one image · Open clinics (Events list, with an empty-state variant) · Team clinics (text + form) · Footer |
 | **Calendar** | Header · Title + sign-in link · Lesson-format tabs · Booking widget (filters, month, slots, summary) · Footer |

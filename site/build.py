@@ -51,6 +51,7 @@ def build():
         html = re.sub(r"\{\{head:([^|}]+)\|([^}]+)\}\}", lambda m: head(m[1], m[2]), html)
         html = re.sub(r"\{\{header:(\w+):(\w+)\}\}", lambda m: header(m[1], m[2]), html)
         html = html.replace("{{footer}}", read("footer.html"))
+        html = re.sub(r"\{\{partial:([\w-]+)\}\}", lambda m: read(m[1] + ".html"), html)
         (ROOT / page.name).write_text(html)
         print("built", page.name)
 

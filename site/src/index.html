@@ -82,7 +82,24 @@
     </div>
   </section>
 
-  <!-- 06_Services · Lessons + Clinics, no images (the founder carries this part of the page) -->
+  <!-- 06_Book · same Wix Bookings calendar as the Calendar page, embedded so returning customers can book from Home -->
+  <section class="section" id="Book" aria-labelledby="book-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-head__text">
+          <p class="t-label eyebrow">Book a lesson</p>
+          <h2 class="t-h2" id="book-title">Find your<br>next lesson.</h2>
+        </div>
+        <div class="stack gap-2" style="align-items: flex-start">
+          <p class="signin">Booked before? <a href="#">Sign in</a> to manage your bookings.</p>
+          <a class="link-arrow" href="calendar.html"><span class="link-arrow__text">Open full calendar</span><span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      {{partial:calendar-widget}}
+    </div>
+  </section>
+
+  <!-- 07_Services · Lessons + Clinics, no images (the founder carries this part of the page) -->
   <section class="section" id="Services" aria-labelledby="services-title">
     <div class="container">
       <div class="section-head reveal">
@@ -108,7 +125,7 @@
     </div>
   </section>
 
-  <!-- 07_Testimonials · real quotes only -->
+  <!-- 08_Testimonials · real quotes only -->
   <section class="section" id="Testimonials" aria-labelledby="testimonials-title">
     <div class="container">
       <div class="section-head reveal">

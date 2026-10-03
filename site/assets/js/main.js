@@ -114,16 +114,17 @@
   });
 
   /* CALENDAR — stand-in for the Wix Bookings Booking Calendar widget, with sample availability. */
-  var cal = $("[data-cal]");
-  if (cal) initCalendar();
+  $$("[data-cal-widget]").forEach(initCalendar);
 
-  function initCalendar() {
+  function initCalendar(root) {
+    var $ = function (sel) { return root.querySelector(sel); };
+    var $$ = function (sel) { return Array.prototype.slice.call(root.querySelectorAll(sel)); };
     var COACHES = { ruslan: "Coach Ruslan", "coach-2": "[Coach 2]" };
     var LOCS = { "loc-1": "[Location 1]", "loc-2": "[Location 2]" };
     var params = new URLSearchParams(location.search);
     var state = { format: "1:1", coach: "any", location: "any", day: null, slot: null, monthOffset: 0 };
     if (params.get("coach") && COACHES[params.get("coach")]) state.coach = params.get("coach");
-    $("#f-coach").value = state.coach;
+    $("[data-filter=coach]").value = state.coach;
 
     var today = new Date(); today.setHours(0, 0, 0, 0);
     var DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];

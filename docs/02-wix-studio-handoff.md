@@ -12,6 +12,7 @@ Everything in the design is buildable with native Wix Studio and Wix apps (Booki
 | Credential bar | Horizontal Stack of text with gold dots | Yes |
 | Founder, Why Excellence, Lessons/Clinics links, quotes | Stacks, Text, Line, Image | Yes |
 | Coaches & pricing rows | CMS collection "Coaches" → Repeater | Yes |
+| Booking calendar embedded on Home | Same Tabs + Booking Calendar widgets as the Calendar page (copy the section, or save it as a reusable section) | Yes |
 | Calendar: lesson-format tabs | Tabs element, one Booking Calendar widget per tab | Yes (setup below) |
 | Calendar: coach + location filters, month view, time slots, summary, Next → checkout | Wix Bookings Booking Calendar widget, with Location and Staff filters turned on | Yes. **The widget's own layout**: we style it (fonts, colours, buttons) in its design panel. Spacing will be close to the mock-up, not identical |
 | Mobile calendar sticky summary | The Bookings widget's mobile layout (its own Next button) | **Approximation**: Wix's widget handles this itself. Our sticky bar shows the intended behaviour |
@@ -39,8 +40,9 @@ Everything in the design is buildable with native Wix Studio and Wix apps (Booki
    - Selected day and time slot: Ink fill with Warm White text
    - Accents: Gold `#C6A969`
    - Button: Ink with a 4px radius
-5. **Book Now:** link every Book Now button to the Calendar page. That's the header, hero, footer, mobile bar and coach rows.
-6. **Sign-in:** add Wix Members, so returning customers can sign in and use "My Bookings" to reschedule.
+5. **Home embed:** copy the finished Tabs + calendar section onto the Home page (Book section, after Why Excellence). On the mobile breakpoint, leave the widget's own Next button inline, because Home already has the pinned Book Now bar.
+6. **Book Now:** link every Book Now button to the Calendar page. That's the header, hero, footer, mobile bar and coach rows.
+7. **Sign-in:** add Wix Members, so returning customers can sign in and use "My Bookings" to reschedule.
 
 ## Wix Events setup (Clinics)
 
