@@ -200,15 +200,18 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
 .creds__item { display: inline-flex; align-items: center; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink); white-space: nowrap; }
 .creds__item + .creds__item::before { content: ""; width: 4px; height: 4px; margin-inline: 11px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
 
-/* Founder */
-.founder { align-items: start; row-gap: 48px; }
-.founder__media { grid-column: 1 / span 6; }
-.founder__body { grid-column: 8 / span 5; display: flex; flex-direction: column; gap: 32px; padding-top: 16px; }
-.founder__quote { font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem); line-height: 1.55; max-width: 34em; }
-.honours { border-top: 1px solid var(--gold); }
-.honours li { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: baseline; padding-block: 14px; border-bottom: 1px solid var(--ink-line); }
-.honours__title { font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; }
-.honours__detail { font-size: 13px; color: var(--ink-muted); text-align: right; }
+/* Founder — photo + intro side by side, then a career-highlights band */
+.founder { align-items: center; row-gap: 40px; }
+.founder__media { grid-column: 1 / span 7; }
+.founder__body { grid-column: 9 / span 4; display: flex; flex-direction: column; gap: 24px; }
+.founder__intro { font-size: var(--fs-body-lg); line-height: 1.7; color: var(--ink-muted); max-width: 40ch; }
+.founder__sign { display: flex; flex-direction: column; gap: 4px; padding-top: 12px; border-top: 1px solid var(--gold); align-self: stretch; }
+.draft-tag { align-self: flex-start; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-ink); padding: 5px 8px; border: 1px dashed var(--gold); }
+.highlights { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: clamp(56px, 3rem + 3vw, 96px); border-top: 1px solid var(--gold); }
+.highlight { display: flex; flex-direction: column; gap: 10px; padding: 32px 32px 32px 0; border-bottom: 1px solid var(--ink-line); }
+.highlight:not(:nth-child(3n+1)) { padding-left: 32px; border-left: 1px solid var(--ink-line); }
+.highlight__title { overflow-wrap: break-word; font-size: clamp(1.25rem, 1rem + 0.8vw, 1.75rem); line-height: 1.08; letter-spacing: -0.015em; text-transform: uppercase; }
+.highlight__detail { overflow-wrap: break-word; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-ink); }
 
 /* Why Excellence — three points on hairlines */
 .points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--grid-gap); }
@@ -375,8 +378,11 @@ textarea.input { min-height: 132px; resize: vertical; }
 @media (max-width: 1023px) {
   :root { --gutter: 40px; --grid-gap: 20px; --header-h: 72px; }
   .page-hero__title, .page-hero__aside { grid-column: 1 / -1; }
-  .founder__media { grid-column: 1 / span 6; }
-  .founder__body { grid-column: 7 / span 6; padding-top: 0; }
+  .founder__media { grid-column: 1 / -1; }
+  .founder__body { grid-column: 1 / span 9; }
+  .highlight { padding: 24px 20px 24px 0; }
+  .highlight:not(:nth-child(3n+1)) { padding-left: 20px; }
+  .highlight__title { font-size: 18px; }
   .formats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; }
   .coach { grid-template-columns: 200px minmax(0, 1fr); }
   .coach .prices { grid-column: 1 / -1; }
@@ -395,6 +401,11 @@ textarea.input { min-height: 132px; resize: vertical; }
   .hero__stack .btn-row .link-arrow { justify-content: center; }
   .creds__inner { justify-content: flex-start; padding-block: 18px; mask-image: linear-gradient(90deg, #000 85%, transparent); }
   .founder__media, .founder__body { grid-column: 1 / -1; }
+  .highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .highlight, .highlight:not(:nth-child(3n+1)) { padding: 22px 16px 22px 0; border-left: 0; }
+  .highlight:nth-child(2n) { padding-left: 16px; border-left: 1px solid var(--ink-line); }
+  .highlight__title { font-size: 14px; }
+  .highlight__detail { font-size: 10.5px; letter-spacing: 0.08em; }
   .points, .quotes { grid-template-columns: 1fr; row-gap: 32px; }
   .offers { grid-template-columns: 1fr; }
   .offer, .offer + .offer { padding: 32px 0; border-left: 0; }
