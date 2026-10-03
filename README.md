@@ -55,4 +55,4 @@ To refresh the hosted copy after changes, copy `site/` onto the `gh-pages` branc
 
 ## Content honesty
 
-Anything in `[brackets]` with a dotted underline is a placeholder for real details (prices, locations, other coaches, testimonials, credential specifics). Ruslan's intro is a marked draft for him to rewrite.
+Real content (coaches, rates, credentials, location, contact details, clinics, photos) comes from excellenceswimming.com. Anything still in `[brackets]` with a dotted underline is a placeholder: credential details, session length, the second location, testimonials, and Ruslan's first-person intro, which is a marked draft for him to rewrite.

@@ -68,11 +68,22 @@ Everything in the design is buildable with native Wix Studio and Wix apps (Booki
 
 Connect it to a repeater on the Lessons page. The founder section on Home is designed separately, as static content.
 
-## Before launch, replace
+## Content status
 
-- Ruslan's portrait, his first-person intro, and the details for each credential (Games, year, event)
-- Other coaches' names, photos, credentials and focus
-- Prices, currency, session lengths and locations
-- Contact details, reply times and the time zone line on the Calendar
-- Real testimonials, used with permission
-- Hero video. The current clip shows a "Saint Charles Water Polo & Swimming" banner; replace it if that's not your facility.
+Pulled from excellenceswimming.com:
+- Coaches and rates (Ruslan $150 / 160 / 180 / 200; Hannah $130 / 150 / 165 / 180, not at St. Charles)
+- Credentials and best strokes
+- Location: St. Charles Prep, 2010 E Broad St, Bexley, OH 43209
+- Email and phone
+- The "Committed to Excellence" tagline
+- Services copy and team-clinic description
+- Recent clinics
+- Coach photos
+
+Still to confirm or supply before launch:
+- **Commonwealth Games Medallist:** it's in the brief but not on the current site. Confirm it, and add the details for each credential (event, year, university).
+- **Ruslan's intro:** first person, replacing the marked draft.
+- **Session length** for lessons.
+- **Second location** (where Hannah coaches).
+- **2–3 real testimonials**, used with permission.
+- **Instagram handle**, if you want it in the footer.

@@ -59,9 +59,9 @@
   }
 
   /* CLINICS — preview the empty state with ?state=empty */
-  if (/[?&]state=empty/.test(location.search)) {
+  if (/[?&]state=scheduled/.test(location.search)) {
     var list = $("[data-clinic-list]"), empty = $("[data-clinic-empty]");
-    if (list && empty) { list.hidden = true; empty.hidden = false; }
+    if (list && empty) { list.hidden = false; empty.hidden = true; }
   }
 
   /* CONTACT TABS — #waitlist opens the waitlist form */
@@ -119,8 +119,9 @@
   function initCalendar(root) {
     var $ = function (sel) { return root.querySelector(sel); };
     var $$ = function (sel) { return Array.prototype.slice.call(root.querySelectorAll(sel)); };
-    var COACHES = { ruslan: "Coach Ruslan", "coach-2": "[Coach 2]" };
-    var LOCS = { "loc-1": "[Location 1]", "loc-2": "[Location 2]" };
+    var COACHES = { ruslan: "Ruslan Gaziev", hannah: "Hannah Bach" };
+    var LOCS = { "loc-1": "St. Charles · Bexley", "loc-2": "[Second location]" };
+    var PRICES = { ruslan: { "1:1": 150, "2:1": 160, "3:1": 180, "4:1": 200 }, hannah: { "1:1": 130, "2:1": 150, "3:1": 165, "4:1": 180 } };
     var params = new URLSearchParams(location.search);
     var state = { format: "1:1", coach: "any", location: "any", day: null, slot: null, monthOffset: 0 };
     if (params.get("coach") && COACHES[params.get("coach")]) state.coach = params.get("coach");
@@ -139,6 +140,7 @@
       if (d.getDay() === 0) continue;
       Object.keys(COACHES).forEach(function (c, ci) {
         Object.keys(LOCS).forEach(function (l, li) {
+          if (c === "hannah" && l === "loc-1") return; /* Hannah doesn’t coach at St. Charles */
           [6, 7, 9, 16, 17, 18, 19].forEach(function (h) {
             var seed = (i * 31 + ci * 17 + li * 13 + h * 7) % 10;
             if (seed < 3 && !((ci + li + i) % 3 === 0 && h < 12)) {
@@ -208,8 +210,9 @@
         var d = addDays(today, i);
         wk.appendChild(dayButton(d, avail, "<small>" + DOW[d.getDay()] + "</small>"));
       }
-      var sel = $("[aria-pressed=true]", wk);
-      if (sel && sel.scrollIntoView) sel.scrollIntoView({ block: "nearest", inline: "center" });
+      /* Scroll the day strip sideways only; never move the page. */
+      var sel = wk.querySelector("[aria-pressed=true]");
+      if (sel) wk.scrollLeft = sel.offsetLeft - wk.clientWidth / 2 + sel.offsetWidth / 2;
     }
 
     function renderSlots() {
@@ -231,7 +234,7 @@
         var grid = document.createElement("div"); grid.className = "slots__grid";
         inG.forEach(function (s) {
           var b = document.createElement("button"); b.type = "button"; b.className = "slot";
-          var SHORT = { ruslan: "Ruslan", "coach-2": "Coach 2" };
+          var SHORT = { ruslan: "Ruslan", hannah: "Hannah" };
           var sub = state.coach === "any" ? SHORT[s.coach] : (state.location === "any" ? LOCS[s.location] : "");
           b.innerHTML = fmtTime(s.hour) + (sub ? "<small>" + sub + "</small>" : "");
           b.setAttribute("aria-pressed", String(state.slot === s));
@@ -246,12 +249,12 @@
     function renderSummary() {
       var s = state.slot;
       var rows = [
-        ["Lesson", state.format + " " + { "1:1": "Private", "2:1": "Semi-private", "3:1": "Small group", "4:1": "Small group" }[state.format]],
+        ["Lesson", state.format + " " + { "1:1": "Private", "2:1": "Semi-private", "3:1": "Small group", "4:1": "Group" }[state.format]],
         ["Coach", s ? COACHES[s.coach] : (state.coach === "any" ? "Any coach" : COACHES[state.coach])],
         ["Location", s ? LOCS[s.location] : (state.location === "any" ? "Any location" : LOCS[state.location])],
         ["Date", state.day ? fmtDay(state.day) : "—"],
         ["Time", s ? fmtTime(s.hour) : "Choose a time"],
-        ["Price", "$[—]"]
+        ["Price", s ? "$" + PRICES[s.coach][state.format] : (state.coach !== "any" ? "$" + PRICES[state.coach][state.format] : "From $" + Math.min(PRICES.ruslan[state.format], PRICES.hannah[state.format]))]
       ];
       $("[data-summary]").innerHTML = rows.map(function (r) { return "<li><span>" + r[0] + "</span><span>" + r[1] + "</span></li>"; }).join("");
       $$("[data-next]").forEach(function (b) { b.setAttribute("aria-disabled", String(!s)); });

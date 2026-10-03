@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-{{head:Clinics — Excellence Swimming|Upcoming swim clinics with Excellence Swimming, plus clinics for teams and clubs.}}
+{{head:Clinics — Excellence Swimming|Swim clinics in Columbus, Ohio: starts, turns, underwaters and stroke technique with Olympic and NCAA-level coaches. Team clinics available.}}
 </head>
 <body class="page-clinics">
 <!-- FRAME: 03_Clinics -->
@@ -18,13 +18,13 @@
           <h1 class="t-h1" id="hero-title">Focused clinics.<br>Real gains.</h1>
         </div>
         <div class="page-hero__aside reveal">
-          <p class="t-body-lg t-muted">Short, intensive sessions on one skill, open to individual swimmers or run for your team.</p>
+          <p class="t-body-lg t-muted">Learn elite technique from top-level swimmers in an immersive setting. Open clinics for individual swimmers, or a clinic built for your team.</p>
           <a class="link-arrow" href="#team-clinics"><span class="link-arrow__text">Book a team clinic</span><span class="arrow" aria-hidden="true">↓</span></a>
         </div>
       </div>
       <div class="media ratio-21x9 page-hero__media ph-water reveal">
-        <div class="media__img" style="background-image: url('assets/media/clinics-hero.jpg')" role="img" aria-label="Swimmers gathered on deck before a clinic"></div>
-        <span class="media__tag">Image · Clinic group</span>
+        <div class="media__img" style="background-image: url('assets/media/clinics-hero.jpg')" role="img" aria-label="Ruslan Gaziev racing freestyle in a Team Canada cap"></div>
+        <span class="media__tag">Image · Racing</span>
       </div>
     </div>
   </section>
@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <div class="events" data-clinic-list>
+      <div class="events" data-clinic-list hidden>
         <article class="event reveal">
           <div class="event__date"><span class="event__day ph">[DD]</span><span class="event__month ph">[Mon YYYY]</span></div>
           <div class="event__body"><h3 class="t-h3 ph">[Clinic name]</h3><p class="event__meta ph">[Time] · [Location] · [Age / level]</p><p class="t-body t-muted ph">[One-line summary of what swimmers will work on.]</p></div>
@@ -52,15 +52,32 @@
         </article>
       </div>
 
-      <!-- 03b_Empty_State · shown when no clinics are scheduled. Preview: clinics.html?state=empty -->
-      <div class="empty" data-clinic-empty hidden>
+      <!-- 03b_Empty_State · shown when no clinics are scheduled (the current state). Preview the scheduled list: clinics.html?state=scheduled -->
+      <div class="empty" data-clinic-empty>
         <p class="t-label">No clinics scheduled</p>
         <h3 class="t-h2">New dates<br>coming soon.</h3>
-        <p class="t-body t-muted">Join the clinic waitlist and we’ll email you as soon as the next clinic opens.</p>
+        <p class="t-body t-muted">Clinics sell out quickly. Join the clinic waitlist and we’ll email you as soon as the next one opens.</p>
         <div class="btn-row">
           <a class="btn" href="contact.html#waitlist">Join the waitlist</a>
           <a class="link-arrow" href="calendar.html"><span class="link-arrow__text">Book a lesson instead</span><span class="arrow" aria-hidden="true">→</span></a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03c_Recent_Clinics · real past clinics; in Wix, a Wix Events list filtered to Past events -->
+  <section class="section" id="Recent" aria-labelledby="recent-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-head__text">
+          <p class="t-label eyebrow">Recent clinics</p>
+          <h2 class="t-h2" id="recent-title">What we’ve run.</h2>
+        </div>
+      </div>
+      <div class="events events--past">
+        <article class="event reveal"><div class="event__date"><span class="event__day">29</span><span class="event__month">Aug 2026</span></div><div class="event__body"><h3 class="t-h3">Race Essentials Showcase &amp; Clinic</h3><p class="event__meta">Columbus School for Girls · All competitive swimmers</p><p class="t-body t-muted">A season kickoff showcase: high-performance athletes demonstrate starts, underwaters, breakouts, turns and finishes, then swimmers put them into practice.</p></div></article>
+        <article class="event reveal"><div class="event__date"><span class="event__day">20–21</span><span class="event__month">Dec 2025</span></div><div class="event__body"><h3 class="t-h3">Breaststroke Mastery Series with Hannah Bach</h3><p class="event__meta">St. Charles · 12 &amp; under and 13 &amp; over</p><p class="t-body t-muted">Breaststroke fundamentals, efficiency and race awareness, with age-appropriate cues swimmers can use straight away.</p></div></article>
+        <article class="event reveal"><div class="event__date"><span class="event__day">24–25</span><span class="event__month">Oct 2025</span></div><div class="event__body"><h3 class="t-h3">Race Detail Intensive &amp; Fundamentals</h3><p class="event__meta">St. Charles · Max 6 swimmers, 2 coaches</p><p class="t-body t-muted">Streamlines, breaststroke pullouts, open and crossover turns, and explosive starts, with individual in-water correction.</p></div></article>
       </div>
     </div>
   </section>
@@ -73,11 +90,11 @@
         <h2 class="t-h2" id="team-title">Team clinics.</h2>
         <p class="t-body t-muted">We bring a clinic to your team, built around the skills your coaches want to work on.</p>
         <ul class="ticks">
-          <li>Starts, turns, underwaters or stroke technique</li>
-          <li>At your pool or ours</li>
-          <li>Planned with your head coach</li>
+          <li>In-water instruction and live demonstrations</li>
+          <li>Classroom sessions and Q&amp;As</li>
+          <li>Nutrition advice</li>
+          <li>Customized to your team’s exact needs</li>
         </ul>
-        <p class="note">We reply within [2 business days].</p>
       </div>
       <div class="team-clinics__form reveal">
         <form class="form" data-demo-form novalidate aria-label="Team clinic request">
@@ -86,7 +103,7 @@
           <div class="field"><label for="tc-email">Email <span class="req">*</span></label><input class="input" id="tc-email" name="email" type="email" required autocomplete="email"><span class="field__error">Enter an email address like name@club.com.</span></div>
           <div class="field"><label for="tc-phone">Phone</label><input class="input" id="tc-phone" name="phone" type="tel" autocomplete="tel"></div>
           <div class="field"><label for="tc-size">Number of swimmers <span class="req">*</span></label><input class="input" id="tc-size" name="size" type="number" min="1" inputmode="numeric" required><span class="field__error">Enter roughly how many swimmers.</span></div>
-          <div class="field"><label for="tc-level">Age range / level</label><input class="input" id="tc-level" name="level" placeholder="e.g. 11–14, provincial level"></div>
+          <div class="field"><label for="tc-level">Age range / level</label><input class="input" id="tc-level" name="level" placeholder="e.g. 11–14, club or high school"></div>
           <div class="field field--full"><label for="tc-dates">Preferred dates</label><input class="input" id="tc-dates" name="dates"></div>
           <div class="field field--full"><label for="tc-notes">What would you like the clinic to focus on?</label><textarea class="input" id="tc-notes" name="notes"></textarea></div>
           <div class="form__foot"><p class="note"><span class="req" style="color: var(--gold-ink)">*</span> Required</p><button class="btn" type="submit">Send request</button></div>
