@@ -18,13 +18,12 @@ The HTML in `/site` is the visual source of truth. Import it into Figma with htm
 
 - **Colour:** three brand colours only. Ink Navy `#0E1B2C`, Warm White `#FAF8F4`, Champagne Gold `#C6A969`. Gold Ink `#876628` is the same gold, deepened for small text on white. Everything else is a transparency of Ink or Warm White. Import `design-system/tokens.json`.
 - **Gold rules:** use gold only for thin lines, chips, the credential bar, small labels and the logo mark. Never use it as a background or button fill.
-- **Page flow:** sections alternate **Warm White** `#FAF8F4` and **Sand** `#ECE5D6` (Warm White, deepened) so each section reads as its own block. **Ink** is used for the Home hero, one emphasis section per page (Home: Why Excellence) and the footer. Every section keeps its full top and bottom padding.
-  - Home: Hero (Ink/video) · Credentials + Founder (White) · Why Excellence (Ink) · Book (Sand) · Services (White) · Testimonials (Sand) · Footer (Ink)
-  - Lessons: Hero (White) · Formats (Sand) · Coaches (White)
-  - Clinics: Hero (White) · Upcoming (Sand) · Recent (White) · Team clinics (Sand)
-  - Calendar: Title (White) · Booking widget (Sand)
-  - Contact: Title (White) · Info + forms (Sand)
-- **On Sand:** forms and the booking widget sit on Warm White panels.
+- **Page flow:** sections alternate **Warm White** and **Ink Navy** so each section reads as its own block. Two sections of the same colour never sit next to each other, except right after a page's hero image, which acts as the divider. The last section before the navy footer is always white. Every section keeps its full top and bottom padding.
+  - Home: Hero (video) · Credentials + Founder (White) · Why Excellence (Ink) · Book (White) · Two ways to train (Ink) · Testimonials (White) · Footer (Ink)
+  - Lessons: Hero (White) · Formats (Ink) · Coaches & pricing (White)
+  - Clinics: Hero + image (White) · Upcoming (White) · Recent clinics (Ink) · Team clinics (White)
+  - Calendar, Contact: White, then the footer
+- **On Ink:** text becomes Warm White, body copy Warm White at 74%, lines Warm White at 18–30%, small gold text uses Champagne Gold, and buttons invert (Warm White fill, Ink text). In Wix, set these with the section's background and the on-dark text styles.
 - **Type:** Sora 800 throughout. Display 88, H1 72, H2 52, H3 28, Body Large 19, Body 16, Label 12 with +18% tracking.
 - **Grid:** 12 columns, 64 margin, 24 gutter at 1280. 8 / 40 / 20 at 768. 4 / 20 / 16 at 390.
 - **Imagery:** one strong image per page, at most:

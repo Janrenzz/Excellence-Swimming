@@ -46,12 +46,12 @@ To refresh the hosted copy after changes, copy `site/` onto the `gh-pages` branc
 
 **Premium, athletic, approachable. Built to get returning customers to booking fast, and to make Coach Ruslan's credentials obvious to first-time visitors within seconds.**
 
-- **Three colours.** Ink Navy `#0E1B2C` for text, nav, footer and buttons. Warm White `#FAF8F4` for the page. Champagne Gold `#C6A969` only for thin rules, chips, small labels and the credential bar. Sections alternate Warm White and Sand (a deeper tint of the same warm white) so each one reads as its own block; Ink is used for the hero, one emphasis section on Home, and the footer.
+- **Three colours.** Ink Navy `#0E1B2C` for text, nav, footer and buttons. Warm White `#FAF8F4` for the page. Champagne Gold `#C6A969` only for thin rules, chips, small labels and the credential bar. Sections alternate Warm White and Ink Navy so each one reads as its own block; the section before the navy footer is always white.
 - **Sora 800 throughout.** Oversized uppercase headlines, short body copy capped near 50 characters per line.
 - **Credentials first.** The hero says what we offer in two seconds, the credential bar proves it, and the founder section follows immediately.
 - **Booking everywhere it matters.** Every Book Now goes to the Calendar page, and the same booking calendar is embedded on Home so returning customers can book without leaving it. Phones get a pinned Book Now bar, and the Calendar page has a pinned booking summary.
 - **Selective imagery.** The hero video, Ruslan's portrait, coach portraits, and one image each on Lessons and Clinics. Nothing decorative.
-- **Lines, not boxes.** Content is grouped with 1px rules and space. Panels appear only around forms and the booking widget.
+- **Lines, not boxes.** Content is grouped with 1px rules and space inside each section. Panels appear only around forms and the booking widget.
 
 ## Content honesty
 
