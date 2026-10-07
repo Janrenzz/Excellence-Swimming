@@ -4,21 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Book a Lesson — Excellence Swimming</title>
-<meta name="description" content="Browse live availability by coach and location and book your swim lesson in a few taps.">
-<meta name="theme-color" content="#071A26">
+<meta name="description" content="Browse availability by lesson type, coach and location, and book your swim lesson in a few taps.">
+<meta name="theme-color" content="#061522">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500&display=swap">
 <link rel="preload" href="assets/fonts/sora-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/styles.css?v=65f5d408">
-<script src="assets/js/main.js?v=65f5d408" defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=5ccaa1c2">
+<script src="assets/js/main.js?v=5ccaa1c2" defer></script>
 
 </head>
 <body class="page-calendar">
-<!-- FRAME: 04_Calendar · every Book Now on the site lands here.
-     Wix build: Tabs element (one tab per lesson format) → each tab holds a Wix Bookings
-     "Booking Calendar" widget set to that service, with Location + Staff filters switched on. -->
+<!-- FRAME: 04_Calendar · every booking button on the site lands here.
+     Wix build: Tabs element (one tab per lesson format) → each tab holds a native Wix Bookings
+     "Booking Calendar" widget set to that service, with Location + Staff filters switched on.
+     The widget below is a DESIGN PLACEHOLDER for that native widget, not a working booking system.
+     Custom booking needs (packages, multi-session booking, etc.) are scoped in docs/04-booking-requirements.md. -->
 <a class="skip-link" href="#main">Skip to content</a>
-<!-- 01_Header · Component: Header (State: Transparent on Home hero → Solid on scroll; Solid on all other pages) -->
-<header class="header header--solid" id="Header">
+<!-- 01_Header · Component: Header (State: Transparent over the dark hero → Navy on scroll) -->
+<header class="header" id="Header">
   <div class="header__inner">
+    <!-- Logo: existing placeholder, unchanged until new artwork is approved -->
     <a class="logo" href="index.html" aria-label="Excellence Swimming home">
       <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <path d="M2 12c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
@@ -34,14 +40,14 @@
         <a class="nav__link" href="contact.html">Contact</a>
     </nav>
     <div class="header__cta">
-      <a class="btn btn--sm header__book" href="calendar.html">Book Now</a>
+      <a class="btn btn--sm header__book" href="calendar.html">Book a lesson</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
         <span class="menu-toggle__bars" aria-hidden="true"></span><span class="visually-hidden">Open menu</span>
       </button>
     </div>
   </div>
 </header>
-<div class="mobile-menu" id="mobile-menu">
+<div class="mobile-menu on-dark" id="mobile-menu">
   <nav class="mobile-menu__links" aria-label="Mobile">
         <a class="" href="index.html">Home</a>
         <a class="" href="lessons.html">Lessons</a>
@@ -49,27 +55,36 @@
         <a class="" href="calendar.html" aria-current="page">Calendar</a>
         <a class="" href="contact.html">Contact</a>
   </nav>
-  <a class="btn btn--light btn--block" href="calendar.html">Book Now</a>
+  <a class="btn btn--block" href="calendar.html">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
 </div>
 
 
 <main id="main">
 
-  <section class="cal-head" aria-labelledby="cal-title">
-    <div class="container cal-head__row">
-      <div class="stack gap-2">
-        <p class="t-label eyebrow">Calendar</p>
-        <h1 class="t-h1" id="cal-title">Book a lesson.</h1>
+  <section class="band on-dark" aria-labelledby="cal-title">
+    <div class="container stack gap-3">
+      <div class="band__row">
+        <div class="stack gap-2">
+          <p class="label label--line">Calendar</p>
+          <h1 class="h1" id="cal-title">Book a lesson.</h1>
+        </div>
+        <p class="signin">Booked before? <a href="#">Sign in</a> to see or change your bookings.</p>
       </div>
-      <p class="signin">Booked before? <a href="#">Sign in</a> to see or change your bookings.</p>
+      <ol class="steps" aria-label="How booking works">
+        <li>Choose a lesson type</li>
+        <li>Filter by coach and location</li>
+        <li>Pick a day and time</li>
+        <li>Add swimmer details and pay</li>
+      </ol>
     </div>
   </section>
 
   <section class="cal-shell" aria-label="Availability">
     <div class="container">
-      <!-- Calendar Widget · Wix: Tabs (one per lesson format) → Wix Bookings "Booking Calendar" widget per tab,
-     Location + Staff filters on. Used on the Calendar page and the Home page. -->
-<div class="cal-widget" data-cal-widget>
+      <!-- Calendar Widget · DESIGN PLACEHOLDER for the native Wix Bookings "Booking Calendar" widget.
+     Wix: Tabs (one per lesson format) → Booking Calendar widget per tab, Location + Staff filters on.
+     Full layout on the Calendar page; "compact" preview on Home (week strip + times, no month grid). -->
+<div class="cal-widget " data-cal-widget>
       <div class="tabs cal-tabs" role="tablist" aria-label="Lesson format" data-cal-tabs>
         <button class="tab" role="tab" aria-selected="true" data-format="1:1"><span class="tab__ratio">1:1</span><span class="tab__name"> Private</span><span class="cal-tab__sub">1 swimmer</span></button>
         <button class="tab" role="tab" aria-selected="false" data-format="2:1"><span class="tab__ratio">2:1</span><span class="tab__name"> Semi-private</span><span class="cal-tab__sub">2 swimmers</span></button>
@@ -96,9 +111,9 @@
 
         <div class="cal__month">
           <div class="month__head">
-            <button class="icon-btn" type="button" data-month="-1" aria-label="Previous month">←</button>
+            <button class="icon-btn" type="button" data-month="-1" aria-label="Previous month"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
             <p class="month__title" data-month-title aria-live="polite"></p>
-            <button class="icon-btn" type="button" data-month="1" aria-label="Next month">→</button>
+            <button class="icon-btn" type="button" data-month="1" aria-label="Next month"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
           </div>
           <div class="month__grid" data-month-grid></div>
         </div>
@@ -114,7 +129,7 @@
           <p class="slots__title">Your booking</p>
           <ul class="summary__list" data-summary></ul>
           <a class="btn btn--block" href="#" data-next aria-disabled="true">Next</a>
-          <p class="note">Next takes you to secure checkout to add swimmer details and pay.</p>
+          <p class="note">On the live site, Next opens Wix checkout to add swimmer details and pay.</p>
         </aside>
       </div>
 <!-- Mobile only · booking summary bar (pinned on the Calendar page, inline on Home) -->
@@ -122,22 +137,25 @@
     <p class="cal-sticky__text" data-sticky-text>Pick a time<span>Choose a day, then a time</span></p>
     <a class="btn btn--sm" href="#" data-next aria-disabled="true">Next</a>
   </div>
-      <p class="cal-note">Prototype: availability shown here is sample data. On the live site it comes from Wix Bookings.</p>
+      <p class="cal-note"><span class="design-note">Design placeholder</span> This mock-up shows the native Wix Bookings calendar. The times are sample data and nothing here books a lesson.</p>
 </div>
-
 
     </div>
   </section>
 
+  <div class="wave wave--to-footer" aria-hidden="true"><svg viewBox="0 0 1440 84" preserveAspectRatio="none"><path class="wave__back" d="M0 0H1440V16C1200 44 1000 76 760 78 480 80 240 42 0 36Z"/><path class="wave__front" d="M0 0H1440V6C1180 30 980 58 720 60 460 62 220 26 0 18Z"/></svg></div>
 
 </main>
 
-<!-- Footer · Component: Footer (includes the closing Book Now call to action) -->
+<!-- Footer · Component: Footer (closing booking prompt + links) -->
 <footer class="footer on-dark" id="Footer">
   <div class="container">
     <div class="footer__cta">
-      <h2 class="t-h1">Your next lesson<br>is a few taps away.</h2>
-      <a class="btn btn--light" href="calendar.html">Book Now</a>
+      <div class="stack gap-1">
+        <h2 class="h2">Ready for your next lesson?</h2>
+        <p>See open times by coach and location, then book in a few taps.</p>
+      </div>
+      <a class="btn" href="calendar.html">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
     <div class="footer__grid">
       <div class="footer__brand">
@@ -151,20 +169,20 @@
         <p>“Committed to Excellence.” Elite private lessons and clinics in Columbus, Ohio, led by Canadian Olympian Ruslan Gaziev.</p>
       </div>
       <div class="footer__col">
-        <h2 class="t-label">Pages</h2>
+        <h2 class="label">Pages</h2>
         <a href="index.html">Home</a>
         <a href="lessons.html">Lessons</a>
         <a href="clinics.html">Clinics</a>
         <a href="calendar.html">Calendar</a>
         <a href="contact.html">Contact</a>
       </div>
-      <div class="footer__col">
-        <h2 class="t-label">Contact</h2>
+      <div class="footer__col footer__col--wide">
+        <h2 class="label">Contact</h2>
         <a href="mailto:excellenceswimming@gmail.com">excellenceswimming@gmail.com</a>
         <a href="tel:+16145568238">(614) 556-8238</a>
       </div>
       <div class="footer__col">
-        <h2 class="t-label">Locations</h2>
+        <h2 class="label">Location</h2>
         <p>St. Charles Prep<br>2010 E Broad St<br>Bexley, OH 43209</p>
       </div>
     </div>
@@ -175,7 +193,7 @@
   </div>
 </footer>
 <!-- Mobile Book Bar · pinned to the bottom of the screen on phones (hidden on the Calendar page) -->
-<div class="book-bar" id="Book_Bar"><a class="btn btn--block" href="calendar.html">Book Now</a></div>
+<div class="book-bar" id="Book_Bar"><a class="btn btn--block" href="calendar.html">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
 
 </body>
 </html>

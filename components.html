@@ -4,164 +4,185 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Components — Excellence Swimming</title>
+<meta name="description" content="Design system components for Excellence Swimming (revision 2).">
+<meta name="theme-color" content="#061522">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500&display=swap">
+<link rel="preload" href="assets/fonts/sora-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css?v=5ccaa1c2">
+<script src="assets/js/main.js?v=5ccaa1c2" defer></script>
+
 <meta name="robots" content="noindex">
 <!-- 00_Components board for html.to.design (import at viewport 1440 with ?capture).
-     Uses the live site stylesheet, so every component here is pixel-identical to the pages.
+     Uses the live site stylesheet, so every component here is identical to the pages.
      Variant names follow Figma syntax (Property=Value) in each cell label. -->
-<link rel="stylesheet" href="assets/css/styles.css?v=3">
 <style>
-  body { background: #EFEBE3; }
-  .board { width: 1440px; padding: 80px 40px; display: flex; flex-direction: column; gap: 40px; }
-  .board-head { display: flex; flex-direction: column; gap: 16px; padding-bottom: 32px; border-bottom: 1px solid var(--gold); }
-  .comp { background: var(--paper); padding: 40px; display: flex; flex-direction: column; gap: 24px; }
-  .comp__name { font-size: 22px; text-transform: uppercase; letter-spacing: -0.01em; }
-  .comp__note { font-size: 13px; color: var(--ink-muted); max-width: 90ch; }
+  body { background: #EFE9DC; }
+  .board { width: 1440px; padding: 80px 40px; display: flex; flex-direction: column; gap: 32px; }
+  .board-head { display: flex; flex-direction: column; gap: 16px; padding-bottom: 24px; }
+  .comp { background: var(--cream); border-radius: 28px; padding: 40px; display: flex; flex-direction: column; gap: 24px; }
+  .comp__name { font-family: var(--font-body); font-weight: 700; font-size: 22px; color: var(--navy); }
+  .comp__note { font-size: 14px; max-width: 100ch; }
   .variants { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; }
-  .variants--stack { flex-direction: column; }
+  .variants--stack { flex-direction: column; gap: 20px; }
   .cell { display: flex; flex-direction: column; gap: 12px; }
-  .cell__label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-muted); }
-  .dark { background: var(--ink); color: var(--paper); padding: 28px; }
-  .dark .cell__label { color: var(--paper-muted); }
-  .swatches { display: flex; gap: 24px; }
-  .swatch { width: 220px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; }
-  .swatch div { height: 120px; border: 1px solid var(--ink-line); }
-  .is-hover.btn { background: #1D2F45; }
-  .btn--light.is-hover { background: #FFFFFF; }
-  .is-pressed.btn { transform: translateY(1px); filter: brightness(0.9); }
-  .is-focus .input { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(198,169,105,0.35); }
-  .static-header { position: relative; }
+  .cell__label { font-family: var(--font-label); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+  .dark { background: var(--grad-dark); padding: 32px; border-radius: 24px; }
+  .swatches { display: flex; flex-wrap: wrap; gap: 20px; }
+  .swatch { width: 200px; display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: var(--navy); }
+  .swatch div { height: 100px; border-radius: 18px; border: 1px solid var(--line); }
+  .swatch span { color: var(--text); }
+  .is-hover.btn { background: #8AD5DD; box-shadow: 0 10px 24px -12px rgba(117,202,211,.8); }
+  .btn--outline.is-hover { background: var(--white); border-color: var(--navy); box-shadow: none; }
+  .is-focus .input { border-color: var(--aqua-ink); background: var(--white); box-shadow: 0 0 0 4px rgba(117,202,211,.25); }
+  .board .header { position: relative; width: 1280px; }
   .board .day { width: 44px; height: 44px; }
-  .static-header .header { position: relative; width: 1280px; }
+  .w-300 { width: 300px; } .w-560 { width: 560px; } .w-620 { width: 620px; } .w-1100 { width: 1100px; }
 </style>
 </head>
 <body>
 <div class="board" id="00_Components">
 
   <div class="board-head">
-    <p class="t-label eyebrow">Excellence Swimming · Design system</p>
-    <h1 class="t-h1">Components.</h1>
-    <p class="t-body t-muted">Sora 800 · Ink Navy #0E1B2C · Warm White #FAF8F4 · Champagne Gold #C6A969 (Gold Ink #876628 for small text on white). In Figma: select a component’s variant frames → Create multiple components → rename each to its label → Combine as variants.</p>
+    <p class="label label--line">Excellence Swimming · Design system · Revision 2</p>
+    <h1 class="h1">Components.</h1>
+    <p class="lead">Inter Tight Light (headings) · Manrope (body, bold labels) · Space Grotesk (small uppercase labels). Deep navy, warm cream, white cards and aqua accents. In Figma: select a component’s variant frames → Create multiple components → rename each to its label → Combine as variants.</p>
   </div>
 
-  <div class="comp" id="Colors"><p class="comp__name">Colour</p>
+  <div class="comp" id="Colour"><p class="comp__name">Colour</p>
+    <p class="comp__note">Values sampled from the reference are approximations, adjusted for contrast. Body text on cream is 6.1:1; aqua on navy is 8.5:1; Aqua Ink on cream is 5.0:1.</p>
     <div class="swatches">
-      <div class="swatch"><div style="background:#0E1B2C"></div>Ink Navy · #0E1B2C<br><span class="t-muted">Text, nav, footer, primary buttons</span></div>
-      <div class="swatch"><div style="background:#FAF8F4"></div>Warm White · #FAF8F4<br><span class="t-muted">Page background</span></div>
-      <div class="swatch"><div style="background:#C6A969"></div>Champagne Gold · #C6A969<br><span class="t-muted">Rules, chips, labels on navy</span></div>
-      <div class="swatch"><div style="background:#876628"></div>Gold Ink · #876628<br><span class="t-muted">Small gold text on Warm White</span></div>
+      <div class="swatch"><div style="background:#061522"></div>Abyss · #061522<span>Dark sections, footer</span></div>
+      <div class="swatch"><div style="background:#0B2338"></div>Abyss Top · #0B2338<span>Top of the dark gradient</span></div>
+      <div class="swatch"><div style="background:#172A5A"></div>Navy · #172A5A<span>Headings on light</span></div>
+      <div class="swatch"><div style="background:#4F5D7A"></div>Soft Blue · #4F5D7A<span>Body text on light</span></div>
+      <div class="swatch"><div style="background:#FBF6EC"></div>Cream · #FBF6EC<span>Page background</span></div>
+      <div class="swatch"><div style="background:#FFFFFF"></div>White · #FFFFFF<span>Cards, forms</span></div>
+      <div class="swatch"><div style="background:#75CAD3"></div>Aqua · #75CAD3<span>Buttons, accents on dark</span></div>
+      <div class="swatch"><div style="background:#1C7480"></div>Aqua Ink · #1C7480<span>Icons, numbers on light</span></div>
+      <div class="swatch"><div style="background:#E9F5F5"></div>Aqua Wash · #E9F5F5<span>Icon circles</span></div>
+      <div class="swatch"><div style="background:#E7E1D3"></div>Line · #E7E1D3<span>Card borders</span></div>
+      <div class="swatch"><div style="background:#B3C2D2"></div>Mist Text · #B3C2D2<span>Body text on dark</span></div>
+      <div class="swatch"><div style="background:linear-gradient(180deg,#0B2338,#061522)"></div>Dark gradient<span>Dark section background</span></div>
     </div>
   </div>
 
-  <div class="comp" id="Typography"><p class="comp__name">Type · Sora 800</p>
+  <div class="comp" id="Typography"><p class="comp__name">Type</p>
     <div class="variants variants--stack">
-      <div class="cell"><span class="cell__label">Display · 88 / 96%</span><span class="t-display">Elite Private</span></div>
-      <div class="cell"><span class="cell__label">H1 · 72 / 98%</span><span class="t-h1">Book a lesson.</span></div>
-      <div class="cell"><span class="cell__label">H2 · 52 / 102%</span><span class="t-h2">Choose your coach.</span></div>
-      <div class="cell"><span class="cell__label">H3 · 28 / 112%</span><span class="t-h3">Coach Ruslan</span></div>
-      <div class="cell"><span class="cell__label">Body Large · 19 / 160%</span><span class="t-body-lg">Private, semi-private and small group coaching.</span></div>
-      <div class="cell"><span class="cell__label">Body · 16 / 165%</span><span class="t-body">See live availability by coach and location, then book in a few taps.</span></div>
-      <div class="cell"><span class="cell__label">Label · 12 / +18%</span><span class="t-label">Founder &amp; Head Coach</span></div>
+      <div class="cell"><span class="cell__label">Display · Inter Tight Light 76 / 102% / −3.5%</span><span class="h-display">Elite private lessons <span class="accent">&amp; clinics.</span></span></div>
+      <div class="cell"><span class="cell__label">H1 · Inter Tight Light 60 / 105% / −3%</span><span class="h1">Book a lesson.</span></div>
+      <div class="cell"><span class="cell__label">H2 · Inter Tight Light 46 / 110% / −2.5%</span><span class="h2">Choose your coach.</span></div>
+      <div class="cell"><span class="cell__label">H3 · Manrope Bold 22 / 125%</span><span class="h3">Detail you can see</span></div>
+      <div class="cell"><span class="cell__label">Lead · Manrope Regular 19 / 165%</span><p class="lead">Private, semi-private and small group coaching for swimmers of every age and level.</p></div>
+      <div class="cell"><span class="cell__label">Body · Manrope Regular 16 / 165%</span><p class="body">Video analysis and clear feedback make each change stick.</p></div>
+      <div class="cell"><span class="cell__label">Label · Space Grotesk Medium 12 / +28% / uppercase (with 32px aqua rule)</span><span class="label label--line">Philosophy</span></div>
     </div>
   </div>
 
-  <div class="comp" id="Button"><p class="comp__name">Button</p><p class="comp__note">One frame · one fill · one live text layer · radius 4 · height 52 (Small 44). Gold is never a button fill.</p>
+  <div class="comp" id="Buttons"><p class="comp__name">Button · Link</p>
     <div class="variants">
-      <div class="cell"><span class="cell__label">Style=Primary, State=Default</span><a class="btn">Book Now</a></div>
-      <div class="cell"><span class="cell__label">Style=Primary, State=Hover</span><a class="btn is-hover">Book Now</a></div>
-      <div class="cell"><span class="cell__label">Style=Primary, State=Pressed</span><a class="btn is-pressed">Book Now</a></div>
-      <div class="cell"><span class="cell__label">Style=Primary, State=Disabled</span><a class="btn" aria-disabled="true">Next</a></div>
-      <div class="cell"><span class="cell__label">Style=Outline, State=Default</span><a class="btn btn--outline">Join Waitlist</a></div>
-      <div class="cell"><span class="cell__label">Style=Primary, Size=Small</span><a class="btn btn--sm">Book Now</a></div>
-      <div class="cell dark"><span class="cell__label">Style=Light, State=Default</span><a class="btn btn--light">Book Now</a></div>
-      <div class="cell dark"><span class="cell__label">Style=Light, State=Hover</span><a class="btn btn--light is-hover">Book Now</a></div>
+      <div class="cell"><span class="cell__label">Style=Primary, State=Default</span><a class="btn" href="#">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+      <div class="cell"><span class="cell__label">Style=Primary, State=Hover</span><a class="btn is-hover" href="#">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+      <div class="cell"><span class="cell__label">Style=Primary, State=Disabled</span><a class="btn" href="#" aria-disabled="true">Next</a></div>
+      <div class="cell"><span class="cell__label">Style=Outline, State=Default</span><a class="btn btn--outline" href="#">Meet the coaches</a></div>
+      <div class="cell"><span class="cell__label">Style=Outline, State=Hover</span><a class="btn btn--outline is-hover" href="#">Meet the coaches</a></div>
+      <div class="cell"><span class="cell__label">Size=Small</span><a class="btn btn--sm" href="#">Register <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+      <div class="cell"><span class="cell__label">Text link</span><a class="link" href="#"><span>Open the full calendar</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </div>
+    <div class="dark on-dark variants">
+      <div class="cell"><span class="cell__label">Surface=Dark, Style=Primary</span><a class="btn" href="#">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+      <div class="cell"><span class="cell__label">Surface=Dark, Style=Outline</span><a class="btn btn--outline" href="#">Lessons &amp; pricing</a></div>
+      <div class="cell"><span class="cell__label">Surface=Dark, Text link</span><a class="link" href="#"><span>View clinics</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+      <div class="cell"><span class="cell__label">Round button · Dark</span><div class="slides__controls"><button class="round-btn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button><button class="round-btn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div>
+    </div>
+    <div class="variants"><div class="cell"><span class="cell__label">Round button · Light</span><div class="slides__controls"><button class="round-btn round-btn--light"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button><button class="round-btn round-btn--light"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></div>
   </div>
 
-  <div class="comp" id="Text Link"><p class="comp__name">Text Link</p>
+  <div class="comp" id="Capsules"><p class="comp__name">Capsule · Trust row · Design note</p>
+    <p class="comp__note">Capsules wrap naturally on mobile. Only verified credentials go in them.</p>
     <div class="variants">
-      <div class="cell"><span class="cell__label">Surface=Light</span><a class="link-arrow"><span class="link-arrow__text">Lessons &amp; pricing</span><span class="arrow">→</span></a></div>
-      <div class="cell dark on-dark"><span class="cell__label">Surface=Dark</span><a class="link-arrow"><span class="link-arrow__text">Lessons &amp; pricing</span><span class="arrow">→</span></a></div>
+      <div class="cell"><span class="cell__label">Capsule, Size=Default</span><span class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg> Canadian Olympian · Tokyo 2020</span></div>
+      <div class="cell"><span class="cell__label">Capsule, Size=Small</span><span class="pill pill--sm"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg> Big Ten champion</span></div>
+      <div class="cell"><span class="cell__label">Capsule, Icon=University</span><span class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></span></div>
+      <div class="cell"><span class="cell__label">Design note (placeholder flag)</span><span class="design-note">Draft intro · Ruslan to approve</span></div>
+    </div>
+    <div class="dark on-dark variants">
+      <div class="cell"><span class="cell__label">Capsule, Surface=Dark</span><span class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg> NCAA All-American</span></div>
+      <div class="cell"><span class="cell__label">Trust row</span><ul class="trust"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 2h9.6L14 8.5"/><path d="M10 8.5 7.2 2"/><circle cx="12" cy="15" r="6"/><path d="M12 12.5v5"/></svg> Olympian-led coaching</li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> 1:1 to 4:1 lessons</li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book online</li></ul></div>
+      <div class="cell"><span class="cell__label">Booking steps</span><ol class="steps"><li>Choose a lesson type</li><li>Pick a day and time</li></ol></div>
     </div>
   </div>
 
-  <div class="comp" id="Header"><p class="comp__name">Header</p><p class="comp__note">Fixed. Transparent only over the Home hero; Solid (Warm White) everywhere else and after scrolling.</p>
-    <div class="variants variants--stack">
-      <div class="cell"><span class="cell__label">State=Transparent</span>
-        <div class="static-header" style="background:#31586A"><header class="header"><div class="header__inner"><span class="logo"><svg class="logo__mark" viewBox="0 0 32 32" fill="none"><path d="M2 12c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M2 20c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".55"/></svg><span class="logo__word"><span class="logo__name">EXCELLENCE</span><span class="logo__sub">SWIMMING</span></span></span><nav class="nav"><a class="nav__link" aria-current="page">Home</a><a class="nav__link">Lessons</a><a class="nav__link">Clinics</a><a class="nav__link">Calendar</a><a class="nav__link">Contact</a></nav><div class="header__cta"><a class="btn btn--sm header__book">Book Now</a></div></div></header></div></div>
-      <div class="cell"><span class="cell__label">State=Solid</span>
-        <div class="static-header"><header class="header header--solid"><div class="header__inner"><span class="logo"><svg class="logo__mark" viewBox="0 0 32 32" fill="none"><path d="M2 12c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M2 20c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".55"/></svg><span class="logo__word"><span class="logo__name">EXCELLENCE</span><span class="logo__sub">SWIMMING</span></span></span><nav class="nav"><a class="nav__link">Home</a><a class="nav__link" aria-current="page">Lessons</a><a class="nav__link">Clinics</a><a class="nav__link">Calendar</a><a class="nav__link">Contact</a></nav><div class="header__cta"><a class="btn btn--sm header__book">Book Now</a></div></div></header></div></div>
-    </div>
-  </div>
-
-  <div class="comp" id="Credential Bar"><p class="comp__name">Credential Bar</p>
-    <div class="creds" style="border-top:1px solid var(--ink-line)"><div class="creds__inner" style="padding-inline:0"><span class="creds__item">Canadian Olympian</span><span class="creds__item">World Championship Medallist</span><span class="creds__item">Commonwealth Games Medallist</span><span class="creds__item">NCAA All-American</span><span class="creds__item">B1G Champion</span><span class="creds__item">Pro Swimmer</span></div></div>
-  </div>
-
-  <div class="comp" id="Eyebrow + Section Heading"><p class="comp__name">Section Heading</p>
+  <div class="comp" id="Cards"><p class="comp__name">Cards</p>
     <div class="variants">
-      <div class="cell"><span class="cell__label">Surface=Light</span><div class="section-head__text"><p class="t-label eyebrow">Why Excellence</p><h2 class="t-h2">Olympic standards.<br>Your pace.</h2></div></div>
+      <div class="cell w-300"><span class="cell__label">Philosophy card</span>
+        <article class="card card--static"><div class="card__top"><span class="icon-dot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.87a.5.5 0 0 0-.75-.43L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span><span class="card__index">03</span></div><h3 class="h3">Detail you can see</h3><p class="card__text">Video analysis and clear feedback make each change stick.</p></article></div>
+      <div class="cell w-300"><span class="cell__label">Philosophy card, State=Hover</span>
+        <article class="card" style="transform: translateY(-4px); box-shadow: var(--shadow-lift)"><div class="card__top"><span class="icon-dot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 2h9.6L14 8.5"/><path d="M10 8.5 7.2 2"/><circle cx="12" cy="15" r="6"/><path d="M12 12.5v5"/></svg></span><span class="card__index">01</span></div><h3 class="h3">Elite experience</h3><p class="card__text">Coaching from Olympians, NCAA All-Americans and Big Ten champions.</p></article></div>
+      <div class="cell w-300"><span class="cell__label">Format card</span>
+        <article class="card card--static"><span class="format__ratio">2:1</span><h3 class="h3">Semi-private</h3><p class="card__text">Two swimmers, one coach.</p><p class="card__foot format__price">From $150 <span>/ session</span></p></article></div>
+      <div class="cell w-300"><span class="cell__label">Info card</span>
+        <div class="card card--static info-card"><span class="icon-dot icon-dot--sm"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span class="info-card__text"><span class="label">Phone</span>(614) 556-8238</span></div></div>
     </div>
-  </div>
-
-  <div class="comp" id="Content Blocks"><p class="comp__name">Content blocks</p>
+    <div class="dark on-dark variants">
+      <div class="cell w-560"><span class="cell__label">Service card, Surface=Dark</span>
+        <article class="card card--static"><div class="card__top"><span class="icon-dot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></span><span class="card__index">Individual · Team</span></div><h3 class="h3">Clinics</h3><p class="card__text">Focused technique clinics for individual swimmers, or a clinic built for your team.</p><span class="card__foot link"><span>View clinics</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></article></div>
+      <div class="cell w-300"><span class="cell__label">Past clinic card</span>
+        <article class="card card--static"><p class="past-card__date">24–25 Oct 2025</p><h3 class="h3">Race Detail Intensive &amp; Fundamentals</h3><p class="event-card__meta"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> St. Charles</span></p></article></div>
+    </div>
     <div class="variants">
-      <div class="cell" style="width:340px"><span class="cell__label">Point</span><div class="point"><h3 class="point__title">Small ratios, real attention</h3><p class="point__text">One-on-one up to four swimmers per coach.</p></div></div>
-      <div class="cell" style="width:280px"><span class="cell__label">Format</span><div class="format"><span class="format__ratio">2:1</span><h3 class="format__name">Semi-private</h3><p class="format__text">Two swimmers, one coach.</p></div></div>
-      <div class="cell" style="width:360px"><span class="cell__label">Quote</span><figure class="quote"><blockquote>[Short real quote from a parent.]</blockquote><figcaption>[First name] · [Program]</figcaption></figure></div>
-      <div class="cell" style="width:520px"><span class="cell__label">Honours Row</span><ul class="honours"><li><span class="honours__title">Olympian</span><span class="honours__detail">[Games · year · event]</span></li></ul></div>
-      <div class="cell" style="width:520px"><span class="cell__label">Price Row</span><ul class="price-list"><li><span class="price-list__name">1:1 <span>Private</span></span><span class="price-list__price">$[—]</span></li></ul></div>
-      <div class="cell"><span class="cell__label">Chip</span><span class="chip">Olympian</span></div>
+      <div class="cell w-300"><span class="cell__label">Upcoming clinic card (Wix Events)</span>
+        <article class="card card--static event-card"><div class="media ratio-16x10 media--empty"><span class="event-card__date"><strong class="ph">[DD]</strong><span class="ph">[Mon]</span></span><div class="media__ph"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg><span>Clinic image</span></div></div><div class="event-card__body"><h3 class="h3 ph">[Clinic name]</h3><p class="event-card__meta"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span class="ph">[Time]</span></span><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> <span class="ph">[Location]</span></span></p><a class="btn btn--sm" href="#">Register <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div></article></div>
+      <div class="cell w-620"><span class="cell__label">Location card</span>
+        <article class="card card--static location-card"><div class="media"><div class="media__img" style="background-image: url('assets/media/home-hero-drone-still.jpg'); background-position: 40% 60%"></div></div><div class="location-card__body"><p class="label">Location 1</p><h3 class="h3">St. Charles Prep</h3><p class="small">2010 E Broad St<br>Bexley, OH 43209</p><a class="link card__foot" href="#"><span>Get directions</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div></article></div>
     </div>
   </div>
 
-  <div class="comp" id="Coach Row"><p class="comp__name">Coach Row (Lessons · CMS repeater item)</p>
-    <div class="coach" style="border-top:1px solid var(--ink-line-strong)">
-      <div class="media ratio-3x4 ph-portrait has-photo"><div class="media__img" style="background-image: url('assets/media/coach-ruslan.jpg')"></div><span class="media__tag">Portrait</span></div>
-      <div class="coach__info"><p class="t-label">Founder &amp; Head Coach</p><h3 class="t-h3">Ruslan Gaziev</h3><ul class="coach__creds"><li class="chip">Canadian Olympian</li><li class="chip">NCAA All-American</li><li class="chip">B1G Champion</li></ul><p class="t-body t-muted">Best strokes: Freestyle, backstroke, butterfly</p></div>
-      <div class="prices"><ul class="price-list"><li><span class="price-list__name">1:1 <span>Private</span></span><span class="price-list__price">$150</span></li><li><span class="price-list__name">2:1 <span>Semi-private</span></span><span class="price-list__price">$160</span></li><li><span class="price-list__name">3:1 <span>Small group</span></span><span class="price-list__price">$180</span></li><li><span class="price-list__name">4:1 <span>Group</span></span><span class="price-list__price">$200</span></li></ul><a class="btn">Book with Ruslan</a></div>
-    </div>
-  </div>
-
-  <div class="comp" id="Event Row"><p class="comp__name">Event Row (Clinics · Wix Events list)</p>
-    <div class="variants variants--stack">
-      <div class="cell" style="width:100%"><span class="cell__label">State=Scheduled</span><div class="events"><article class="event"><div class="event__date"><span class="event__day">[DD]</span><span class="event__month">[Mon YYYY]</span></div><div class="event__body"><h3 class="t-h3">[Clinic name]</h3><p class="event__meta">[Time] · [Location] · [Age / level]</p></div><a class="btn">Register</a></article></div></div>
-      <div class="cell" style="width:100%"><span class="cell__label">State=Empty</span><div class="empty"><p class="t-label">No clinics scheduled</p><h3 class="t-h2">New dates<br>coming soon.</h3><div class="btn-row"><a class="btn">Join the waitlist</a><a class="link-arrow"><span class="link-arrow__text">Book a lesson instead</span><span class="arrow">→</span></a></div></div></div>
-    </div>
-  </div>
-
-  <div class="comp" id="Form Field"><p class="comp__name">Form Field (Wix Forms)</p>
+  <div class="comp" id="Media"><p class="comp__name">Founder slideshow · Testimonial slider · Rating</p>
     <div class="variants">
-      <div class="cell" style="width:300px"><span class="cell__label">State=Default</span><div class="field"><label>Email <span class="req">*</span></label><input class="input" value=""></div></div>
-      <div class="cell is-focus" style="width:300px"><span class="cell__label">State=Focus</span><div class="field"><label>Email <span class="req">*</span></label><input class="input" value="name@email"></div></div>
-      <div class="cell" style="width:300px"><span class="cell__label">State=Error</span><div class="field is-invalid"><label>Email <span class="req">*</span></label><input class="input" value="name@"><span class="field__error">Enter an email address like name@email.com.</span></div></div>
-      <div class="cell" style="width:300px"><span class="cell__label">Type=Select</span><div class="field"><label>Coach</label><select class="input"><option>Any coach</option></select></div></div>
+      <div class="cell" style="width: 420px"><span class="cell__label">Slideshow (layered frame + name panel)</span>
+        <div class="frame"><div class="slides"><div class="slides__viewport"><div class="slide is-active"><div class="media__img" style="background-image: url('assets/media/founder-ruslan.jpg'); background-position: 72% center"></div></div></div>
+          <div class="slides__panel"><div><p class="slides__name">Ruslan Gaziev</p><p class="slides__role">Founder &amp; Head Coach</p></div><div class="slides__controls"><span class="slides__count">1 / 2</span><button class="round-btn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button><button class="round-btn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></div></div></div>
+      <div class="cell" style="width: 620px"><span class="cell__label">Testimonial slider</span>
+        <div class="quote-card"><div class="quote-card__mark">“</div><div class="quote-track"><figure class="quote-slide is-active"><blockquote><span class="ph">[Short real quote from a parent.]</span></blockquote><figcaption><strong class="ph">[First name]</strong><span class="ph">[Parent · Private lessons]</span></figcaption></figure></div>
+          <div class="quote-card__foot"><div class="dots"><span class="dot-btn" aria-current="true"></span><span class="dot-btn"></span><span class="dot-btn"></span></div><div class="slides__controls"><button class="round-btn round-btn--light"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button><button class="round-btn round-btn--light"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></div>
+        <span class="cell__label" style="margin-top: 12px">Rating (placeholder until a verified review link exists)</span>
+        <div class="rating"><span class="rating__stars"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span><span class="rating__text"><strong class="ph">[Rating] · [N] reviews</strong>Placeholder until a review link is supplied</span></div>
+      </div>
     </div>
   </div>
 
-  <div class="comp" id="Tabs"><p class="comp__name">Tabs</p>
-    <div class="variants variants--stack">
-      <div class="cell" style="width:560px"><span class="cell__label">Use=Forms</span><div class="tabs"><button class="tab" aria-selected="true">General inquiry</button><button class="tab" aria-selected="false">Waitlist</button></div></div>
-      <div class="cell" style="width:760px"><span class="cell__label">Use=Lesson format</span><div class="tabs cal-tabs"><button class="tab" aria-selected="true"><span class="tab__ratio">1:1</span><span class="tab__name"> Private</span><span class="cal-tab__sub">1 swimmer</span></button><button class="tab" aria-selected="false"><span class="tab__ratio">2:1</span><span class="tab__name"> Semi-private</span><span class="cal-tab__sub">2 swimmers</span></button><button class="tab" aria-selected="false"><span class="tab__ratio">3:1</span><span class="tab__name"> Small group</span><span class="cal-tab__sub">3 swimmers</span></button><button class="tab" aria-selected="false"><span class="tab__ratio">4:1</span><span class="tab__name"> Group</span><span class="cal-tab__sub">4 swimmers</span></button></div></div>
-    </div>
-  </div>
-
-  <div class="comp" id="Calendar Parts"><p class="comp__name">Calendar parts (styled through the Wix Bookings widget design panel)</p>
+  <div class="comp" id="Forms"><p class="comp__name">Form field · Tabs</p>
     <div class="variants">
-      <div class="cell"><span class="cell__label">Day: State=Unavailable / Available / Selected</span><div style="display:flex;gap:8px"><span class="day">3</span><span class="day has-slots">4</span><span class="day has-slots" aria-pressed="true">5</span></div></div>
-      <div class="cell"><span class="cell__label">Slot: State=Default / Selected</span><div style="display:flex;gap:8px"><button class="slot" style="width:112px">7:00 AM<small>Ruslan</small></button><button class="slot" aria-pressed="true" style="width:112px">9:00 AM<small>Ruslan</small></button></div></div>
-      <div class="cell" style="width:320px"><span class="cell__label">Booking Summary</span><div class="cal__summary" style="border:0"><p class="slots__title">Your booking</p><ul class="summary__list"><li><span>Lesson</span><span>1:1 Private</span></li><li><span>Coach</span><span>Coach Ruslan</span></li><li><span>Time</span><span>9:00 AM</span></li></ul><a class="btn btn--block">Next</a></div></div>
+      <div class="cell w-300"><span class="cell__label">Type=Input, State=Default</span><div class="field"><label>Name <span class="req">*</span></label><input class="input"></div></div>
+      <div class="cell w-300"><span class="cell__label">Type=Input, State=Focus</span><div class="field is-focus"><label>Email <span class="req">*</span></label><input class="input" value="name@email.com"></div></div>
+      <div class="cell w-300"><span class="cell__label">Type=Input, State=Error</span><div class="field is-invalid"><label>Email <span class="req">*</span></label><input class="input" value="name@"><span class="field__error">Enter an email address like name@email.com.</span></div></div>
+      <div class="cell w-300"><span class="cell__label">Type=Select</span><div class="field"><label>I’m interested in <span class="req">*</span></label><select class="input"><option>Learn to swim</option></select></div></div>
+      <div class="cell w-300"><span class="cell__label">Type=Checkbox</span><label class="check"><input type="checkbox" checked> Email me about new clinics and lesson openings.</label></div>
+      <div class="cell"><span class="cell__label">Tabs (pill)</span><div class="tabs"><button class="tab" aria-selected="true">General inquiry</button><button class="tab" aria-selected="false">Waitlist</button></div></div>
     </div>
   </div>
 
-  <div class="comp" id="Mobile Bars"><p class="comp__name">Mobile bars (pinned to bottom on phones)</p>
+  <div class="comp" id="Calendar_Parts"><p class="comp__name">Calendar parts (placeholder for the native Wix Bookings widget)</p>
     <div class="variants">
-      <div class="cell" style="width:390px"><span class="cell__label">Book Bar</span><div style="padding:12px 20px;background:var(--paper);box-shadow:0 -1px 0 var(--ink-line)"><a class="btn btn--block">Book Now</a></div></div>
-      <div class="cell" style="width:390px"><span class="cell__label">Calendar Sticky Summary</span><div style="display:flex;gap:12px;align-items:center;padding:12px 20px;background:var(--paper);box-shadow:0 -1px 0 var(--ink-line)"><p style="flex:1;font-size:13px;line-height:1.35">Tue 6 Oct · 9:00 AM<span style="display:block;color:var(--ink-muted);font-size:12px">1:1 · Coach Ruslan · [Location 1]</span></p><a class="btn btn--sm">Next</a></div></div>
+      <div class="cell"><span class="cell__label">Day, State=Available / Selected / Unavailable</span><div class="variants" style="gap: 8px"><button class="day has-slots">12</button><button class="day has-slots" aria-pressed="true">13</button><button class="day" disabled>14</button></div></div>
+      <div class="cell"><span class="cell__label">Week day, State=Default / Selected</span><div class="week" style="display: flex; gap: 8px"><button class="day has-slots"><small>Mon</small>12</button><button class="day has-slots" aria-pressed="true"><small>Tue</small>13</button></div></div>
+      <div class="cell"><span class="cell__label">Slot, State=Default / Selected</span><div class="variants" style="gap: 8px"><button class="slot" style="width: 112px">7:00 AM<small>Ruslan</small></button><button class="slot" aria-pressed="true" style="width: 112px">5:00 PM<small>Hannah</small></button></div></div>
+      <div class="cell"><span class="cell__label">Lesson-format tabs</span><div class="tabs cal-tabs"><button class="tab" aria-selected="true"><span class="tab__ratio">1:1</span><span class="tab__name"> Private</span><span class="cal-tab__sub">1 swimmer</span></button><button class="tab" aria-selected="false"><span class="tab__ratio">2:1</span><span class="tab__name"> Semi-private</span><span class="cal-tab__sub">2 swimmers</span></button></div></div>
     </div>
   </div>
 
-  <div class="comp" id="Footer"><p class="comp__name">Footer (includes the closing Book Now)</p>
-    <footer class="footer on-dark" style="width:1280px"><div class="container"><div class="footer__cta"><h2 class="t-h1">Your next lesson<br>is a few taps away.</h2><a class="btn btn--light">Book Now</a></div><div class="footer__grid"><div class="footer__brand"><span class="logo"><span class="logo__word"><span class="logo__name">EXCELLENCE</span><span class="logo__sub">SWIMMING</span></span></span><p>“Committed to Excellence.” Elite private lessons and clinics in Columbus, Ohio.</p></div><div class="footer__col"><h2 class="t-label">Pages</h2><a>Home</a><a>Lessons</a><a>Clinics</a><a>Calendar</a><a>Contact</a></div><div class="footer__col"><h2 class="t-label">Contact</h2><p>[Email address]</p><p>[Phone number]</p></div><div class="footer__col"><h2 class="t-label">Locations</h2><p>[Location 1]</p><p>[Location 2]</p></div></div><div class="footer__bottom"><p>© 2026 Excellence Swimming</p><div class="footer__legal"><a>Privacy</a><a>Booking policy</a></div></div></div></footer>
+  <div class="comp" id="Wave"><p class="comp__name">Wave divider (Wix: section Shape Divider)</p>
+    <div class="cell"><span class="cell__label">Wave, From=Cream, To=Navy</span><div class="wave wave--to-dark" aria-hidden="true"><svg viewBox="0 0 1440 84" preserveAspectRatio="none"><path class="wave__back" d="M0 0H1440V16C1200 44 1000 76 760 78 480 80 240 42 0 36Z"/><path class="wave__front" d="M0 0H1440V6C1180 30 980 58 720 60 460 62 220 26 0 18Z"/></svg></div></div>
+    <div class="cell"><span class="cell__label">Wave, From=Navy, To=Cream</span><div class="wave wave--from-dark" aria-hidden="true"><svg viewBox="0 0 1440 84" preserveAspectRatio="none"><path class="wave__back" d="M0 0H1440V16C1200 44 1000 76 760 78 480 80 240 42 0 36Z"/><path class="wave__front" d="M0 0H1440V6C1180 30 980 58 720 60 460 62 220 26 0 18Z"/></svg></div></div>
+  </div>
+
+  <div class="comp" id="Header_Footer"><p class="comp__name">Header · Mobile book bar</p>
+    <div class="dark on-dark" style="padding: 0">
+      <header class="header"><div class="header__inner"><a class="logo" href="#"><svg class="logo__mark" viewBox="0 0 32 32" fill="none"><path d="M2 12c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M2 20c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".55"/></svg><span class="logo__word"><span class="logo__name">EXCELLENCE</span><span class="logo__sub">SWIMMING</span></span></a><nav class="nav"><a class="nav__link" aria-current="page" href="#">Home</a><a class="nav__link" href="#">Lessons</a><a class="nav__link" href="#">Clinics</a><a class="nav__link" href="#">Calendar</a><a class="nav__link" href="#">Contact</a></nav><div class="header__cta"><a class="btn btn--sm header__book" href="#">Book a lesson</a></div></div></header>
+    </div>
+    <div class="cell" style="width: 390px"><span class="cell__label">Mobile book bar (pinned, phones only)</span><div style="padding: 10px 16px; background: rgba(6,21,34,.94); border-radius: 16px"><a class="btn btn--block" href="#">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div></div>
   </div>
 
 </div>

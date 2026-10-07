@@ -4,19 +4,23 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Excellence Swimming — Elite Private Lessons &amp; Clinics in Columbus, Ohio</title>
-<meta name="description" content="Elite private swim lessons and clinics in Columbus, Ohio, led by Canadian Olympian Ruslan Gaziev. Private, semi-private and small group coaching at St. Charles in Bexley. Book online.">
-<meta name="theme-color" content="#071A26">
+<meta name="description" content="Elite private swim lessons and clinics in Columbus, Ohio, led by Canadian Olympian Ruslan Gaziev. Private, semi-private and small group coaching. Book online.">
+<meta name="theme-color" content="#061522">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500&display=swap">
 <link rel="preload" href="assets/fonts/sora-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/styles.css?v=65f5d408">
-<script src="assets/js/main.js?v=65f5d408" defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=5ccaa1c2">
+<script src="assets/js/main.js?v=5ccaa1c2" defer></script>
 
 </head>
 <body class="page-home">
-<!-- FRAME: 01_Home · sections are direct children, in visual order -->
+<!-- FRAME: 01_Home · order: Hero · Founder · Philosophy · Lessons overview · Calendar preview · Testimonials + universities -->
 <a class="skip-link" href="#main">Skip to content</a>
-<!-- 01_Header · Component: Header (State: Transparent on Home hero → Solid on scroll; Solid on all other pages) -->
+<!-- 01_Header · Component: Header (State: Transparent over the dark hero → Navy on scroll) -->
 <header class="header" id="Header">
   <div class="header__inner">
+    <!-- Logo: existing placeholder, unchanged until new artwork is approved -->
     <a class="logo" href="index.html" aria-label="Excellence Swimming home">
       <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <path d="M2 12c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
@@ -32,14 +36,14 @@
         <a class="nav__link" href="contact.html">Contact</a>
     </nav>
     <div class="header__cta">
-      <a class="btn btn--sm header__book" href="calendar.html">Book Now</a>
+      <a class="btn btn--sm header__book" href="calendar.html">Book a lesson</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
         <span class="menu-toggle__bars" aria-hidden="true"></span><span class="visually-hidden">Open menu</span>
       </button>
     </div>
   </div>
 </header>
-<div class="mobile-menu" id="mobile-menu">
+<div class="mobile-menu on-dark" id="mobile-menu">
   <nav class="mobile-menu__links" aria-label="Mobile">
         <a class="" href="index.html" aria-current="page">Home</a>
         <a class="" href="lessons.html">Lessons</a>
@@ -47,109 +51,170 @@
         <a class="" href="calendar.html">Calendar</a>
         <a class="" href="contact.html">Contact</a>
   </nav>
-  <a class="btn btn--light btn--block" href="calendar.html">Book Now</a>
+  <a class="btn btn--block" href="calendar.html">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
 </div>
 
 
 <main id="main">
 
-  <!-- 02_Hero · Hero_Video_Background is replaced with the drone/coach video in Wix -->
+  <!-- 02_Hero · Desktop: Hero_Video_Background + navy overlay. Mobile: navy gradient only (video hidden, never loaded). -->
   <section class="hero on-dark" id="Hero" aria-labelledby="hero-title">
     <div class="hero__media" id="Hero_Video_Background">
       <div class="media__img" style="background-image: url('assets/media/home-hero-drone-still.jpg')" aria-hidden="true"></div>
-      <video autoplay muted loop playsinline preload="metadata" aria-hidden="true" poster="assets/media/home-hero-drone-still.jpg">
-        <source src="assets/media/hero-drone.mp4" type="video/mp4">
-      </video>
+      <video muted loop playsinline preload="none" aria-hidden="true" poster="assets/media/home-hero-drone-still.jpg" data-src="assets/media/hero-drone.mp4"></video>
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__content">
       <div class="hero__stack">
-        <p class="t-label eyebrow">Columbus, Ohio · Led by Canadian Olympian Ruslan Gaziev</p>
-        <h1 class="t-display" id="hero-title">Elite Private<br>Lessons &amp; Clinics.</h1>
-        <p class="t-body-lg">Private, semi-private and small group coaching from Olympians, NCAA All-Americans and Big Ten champions, for swimmers of every age and level.</p>
+        <p class="label label--line">Columbus, Ohio · Private swim coaching</p>
+        <h1 class="h-display" id="hero-title">Elite private lessons <span class="accent">&amp; clinics.</span></h1>
+        <p class="lead">Private, semi-private and small group coaching led by Canadian Olympian Ruslan Gaziev, for swimmers of every age and level.</p>
         <div class="btn-row">
-          <a class="btn btn--light" href="calendar.html">Book Now</a>
-          <a class="link-arrow" href="lessons.html"><span class="link-arrow__text">Lessons &amp; Pricing</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn" href="calendar.html">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="btn btn--outline" href="lessons.html">Lessons &amp; pricing</a>
         </div>
+        <ul class="trust" aria-label="At a glance">
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 2h9.6L14 8.5"/><path d="M10 8.5 7.2 2"/><circle cx="12" cy="15" r="6"/><path d="M12 12.5v5"/></svg> Olympian-led coaching</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> 1:1 to 4:1 lessons</li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book online</li>
+        </ul>
       </div>
     </div>
+    <p class="hero__flag design-note">Footage flagged: red/white pool tones clash with the palette · replacement requested</p>
   </section>
 
-  <!-- 03_Credentials · slim proof bar that leads into the founder -->
-  <section class="creds" id="Credentials" aria-label="Coach Ruslan’s credentials">
-    <div class="container creds__inner">
-      <span class="creds__item">Canadian Olympian</span>
-      <span class="creds__item">World Championship Medallist</span>
-      <span class="creds__item">Commonwealth Games Medallist</span>
-      <span class="creds__item">NCAA All-American</span>
-      <span class="creds__item">B1G Champion</span>
-      <span class="creds__item">Pro Swimmer</span>
-    </div>
-  </section>
-
-  <!-- 04_Founder · photo + intro, then a full-width career-highlights band -->
-  <section class="section founder-section" id="Founder" aria-labelledby="founder-title">
-    <div class="container">
-      <div class="grid-12 founder">
-        <div class="media ratio-5x4 founder__media ph-portrait reveal">
-          <div class="media__img" style="background-image: url('assets/media/founder-ruslan.jpg')" role="img" aria-label="Ruslan Gaziev in Team Canada kit, pointing to his name on the Tokyo 2020 Olympians wall"></div>
-          <span class="media__tag">Portrait · Ruslan Gaziev</span>
-        </div>
-        <div class="founder__body reveal">
-          <p class="t-label eyebrow">Founder &amp; Head Coach</p>
-          <h2 class="t-h2" id="founder-title">Ruslan<br>Gaziev</h2>
-          <p class="founder__intro">I started Excellence Swimming as a private lesson service here in Columbus. I’ve raced for Canada at the Olympics and World Championships, I still compete professionally, and I coach every swimmer with the same attention to detail, whatever their age or level.</p>
-          <div class="founder__sign">
-            <a class="link-arrow" href="lessons.html#coaches"><span class="link-arrow__text">Meet the coaches</span><span class="arrow" aria-hidden="true">→</span></a>
+  <!-- 03_Founder · two-photo slideshow + compact intro + credential capsules -->
+  <section class="section" id="Founder" aria-labelledby="founder-title">
+    <div class="container grid-12 founder">
+      <div class="founder__media reveal">
+        <div class="frame">
+          <div class="slides" data-slides aria-roledescription="carousel" aria-label="Photos of Ruslan Gaziev">
+            <div class="slides__viewport">
+              <div class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 2">
+                <div class="media__img" style="background-image: url('assets/media/founder-ruslan.jpg'); background-position: 72% center" role="img" aria-label="Ruslan Gaziev in Team Canada kit beside his name on the Tokyo 2020 Olympians wall"></div>
+              </div>
+              <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 2" aria-hidden="true">
+                <div class="media__img" style="background-image: url('assets/media/clinics-hero.jpg'); background-position: 50% center" role="img" aria-label="Ruslan Gaziev racing freestyle"></div>
+              </div>
+            </div>
+            <div class="slides__panel">
+              <div>
+                <p class="slides__name">Ruslan Gaziev</p>
+                <p class="slides__role">Founder &amp; Head Coach</p>
+              </div>
+              <div class="slides__controls">
+                <span class="slides__count" data-slides-count aria-hidden="true">1 / 2</span>
+                <button class="round-btn" type="button" data-slides-prev aria-label="Previous photo"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
+                <button class="round-btn" type="button" data-slides-next aria-label="Next photo"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+              </div>
+            </div>
           </div>
-          <p class="draft-tag">Draft copy · Ruslan to edit</p>
         </div>
       </div>
-
-      <ul class="highlights reveal" aria-label="Career highlights">
-        <li class="highlight"><span class="highlight__title">Olympic Games</span><span class="highlight__detail">Tokyo 2020 · Team Canada</span></li>
-        <li class="highlight"><span class="highlight__title">World Championships</span><span class="highlight__detail">Medallist</span></li>
-        <li class="highlight"><span class="highlight__title">Commonwealth Games</span><span class="highlight__detail">Medallist</span></li>
-        <li class="highlight"><span class="highlight__title">NCAA</span><span class="highlight__detail">All-American</span></li>
-        <li class="highlight"><span class="highlight__title">Big Ten</span><span class="highlight__detail">Champion</span></li>
-        <li class="highlight"><span class="highlight__title">Professional</span><span class="highlight__detail">Current pro swimmer</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 05_Why_Excellence -->
-  <section class="section section--ink on-dark" id="Why_Excellence" aria-labelledby="why-title">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="section-head__text">
-          <p class="t-label eyebrow">Why Excellence</p>
-          <h2 class="t-h2" id="why-title">Olympic standards.<br>Your pace.</h2>
+      <div class="founder__body reveal">
+        <p class="label label--line">Meet the founder</p>
+        <h2 class="h2" id="founder-title">An Olympian on deck, coaching one swimmer at a time.</h2>
+        <p class="founder__quote">I raced for Canada at the Olympics and World Championships, and I still compete professionally. I coach every swimmer with the same attention to detail, whatever their age or level.</p>
+        <span class="design-note">Draft intro · Ruslan to approve</span>
+        <ul class="pills" aria-label="Ruslan’s credentials">
+          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg> Canadian Olympian · Tokyo 2020</li>
+          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg> World Championship medallist</li>
+          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg> Commonwealth Games medallist</li>
+          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg> NCAA All-American</li>
+          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg> Big Ten champion</li>
+          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg> Professional swimmer</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn" href="calendar.html">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+          <a class="btn btn--outline" href="lessons.html#coaches">Meet the coaches</a>
         </div>
-      </div>
-      <div class="points">
-        <div class="point reveal"><h3 class="point__title">Coached at the highest level</h3><p class="point__text">Our coaches are Olympians, NCAA All-Americans and Big Ten champions who still race professionally.</p></div>
-        <div class="point reveal"><h3 class="point__title">Small ratios, real attention</h3><p class="point__text">One-on-one up to four swimmers per coach. Every swimmer gets feedback every session.</p></div>
-        <div class="point reveal"><h3 class="point__title">Booking that takes seconds</h3><p class="point__text">See live availability by coach and location, then book your next lesson in a few taps.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- 06_Book · same Wix Bookings calendar as the Calendar page, embedded so returning customers can book from Home -->
-  <section class="section" id="Book" aria-labelledby="book-title">
+  <!-- 04_Philosophy · four compact white cards (Wix: Repeater or Grid of containers) -->
+  <section class="section section--tight-top" id="Philosophy" aria-labelledby="philosophy-title">
     <div class="container">
       <div class="section-head reveal">
         <div class="section-head__text">
-          <p class="t-label eyebrow">Book a lesson</p>
-          <h2 class="t-h2" id="book-title">Find your<br>next lesson.</h2>
+          <p class="label label--line">Philosophy</p>
+          <h2 class="h2" id="philosophy-title">How we coach.</h2>
         </div>
-        <div class="stack gap-2" style="align-items: flex-start">
+      </div>
+      <div class="cards cards--4 cards--m2">
+        <article class="card reveal">
+          <div class="card__top"><span class="icon-dot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 2h9.6L14 8.5"/><path d="M10 8.5 7.2 2"/><circle cx="12" cy="15" r="6"/><path d="M12 12.5v5"/></svg></span><span class="card__index">01</span></div>
+          <h3 class="h3">Elite experience</h3>
+          <p class="card__text">Coaching from Olympians, NCAA All-Americans and Big Ten champions.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__top"><span class="icon-dot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="card__index">02</span></div>
+          <h3 class="h3">Real attention</h3>
+          <p class="card__text">One to four swimmers per coach, so every swimmer gets corrections.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__top"><span class="icon-dot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.87a.5.5 0 0 0-.75-.43L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span><span class="card__index">03</span></div>
+          <h3 class="h3">Detail you can see</h3>
+          <p class="card__text">Video analysis and clear feedback make each change stick.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__top"><span class="icon-dot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><span class="card__index">04</span></div>
+          <h3 class="h3">Built around you</h3>
+          <p class="card__text">Every lesson is planned around the swimmer’s goals and level.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave wave--to-dark" aria-hidden="true"><svg viewBox="0 0 1440 84" preserveAspectRatio="none"><path class="wave__back" d="M0 0H1440V16C1200 44 1000 76 760 78 480 80 240 42 0 36Z"/><path class="wave__front" d="M0 0H1440V6C1180 30 980 58 720 60 460 62 220 26 0 18Z"/></svg></div>
+
+  <!-- 05_Services · brief overview, details live on Lessons / Clinics -->
+  <section class="section section--dark on-dark" id="Services" aria-labelledby="services-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-head__text">
+          <p class="label label--line">Train with us</p>
+          <h2 class="h2" id="services-title">Lessons and clinics.</h2>
+        </div>
+        <a class="link" href="lessons.html"><span>All lessons &amp; pricing</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      </div>
+      <div class="cards cards--2">
+        <a class="card reveal" href="lessons.html">
+          <div class="card__top"><span class="icon-dot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg></span><span class="card__index">1:1 · 2:1 · 3:1 · 4:1</span></div>
+          <h3 class="h3">Private &amp; small group lessons</h3>
+          <p class="card__text">Book Ruslan or Hannah for one to four swimmers. From $130 per session.</p>
+          <span class="card__foot link"><span>Lessons &amp; pricing</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+        <a class="card reveal" href="clinics.html">
+          <div class="card__top"><span class="icon-dot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></span><span class="card__index">Individual · Team</span></div>
+          <h3 class="h3">Clinics</h3>
+          <p class="card__text">Focused technique clinics for individual swimmers, or a clinic built for your team.</p>
+          <span class="card__foot link"><span>View clinics</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="wave wave--from-dark" aria-hidden="true"><svg viewBox="0 0 1440 84" preserveAspectRatio="none"><path class="wave__back" d="M0 0H1440V16C1200 44 1000 76 760 78 480 80 240 42 0 36Z"/><path class="wave__front" d="M0 0H1440V6C1180 30 980 58 720 60 460 62 220 26 0 18Z"/></svg></div>
+
+  <!-- 06_Book · compact preview of the Wix Bookings calendar (same widget as the Calendar page) -->
+  <section class="section section--tight-top" id="Book" aria-labelledby="book-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-head__text">
+          <p class="label label--line">Book</p>
+          <h2 class="h2" id="book-title">Find your next lesson.</h2>
+        </div>
+        <div class="section-head__aside">
           <p class="signin">Booked before? <a href="#">Sign in</a> to manage your bookings.</p>
-          <a class="link-arrow" href="calendar.html"><span class="link-arrow__text">Open full calendar</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a class="link" href="calendar.html"><span>Open the full calendar</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
         </div>
       </div>
-      <!-- Calendar Widget · Wix: Tabs (one per lesson format) → Wix Bookings "Booking Calendar" widget per tab,
-     Location + Staff filters on. Used on the Calendar page and the Home page. -->
-<div class="cal-widget" data-cal-widget>
+      <div class="reveal">
+      <!-- Calendar Widget · DESIGN PLACEHOLDER for the native Wix Bookings "Booking Calendar" widget.
+     Wix: Tabs (one per lesson format) → Booking Calendar widget per tab, Location + Staff filters on.
+     Full layout on the Calendar page; "compact" preview on Home (week strip + times, no month grid). -->
+<div class="cal-widget cal-widget--compact" data-cal-widget>
       <div class="tabs cal-tabs" role="tablist" aria-label="Lesson format" data-cal-tabs>
         <button class="tab" role="tab" aria-selected="true" data-format="1:1"><span class="tab__ratio">1:1</span><span class="tab__name"> Private</span><span class="cal-tab__sub">1 swimmer</span></button>
         <button class="tab" role="tab" aria-selected="false" data-format="2:1"><span class="tab__ratio">2:1</span><span class="tab__name"> Semi-private</span><span class="cal-tab__sub">2 swimmers</span></button>
@@ -176,9 +241,9 @@
 
         <div class="cal__month">
           <div class="month__head">
-            <button class="icon-btn" type="button" data-month="-1" aria-label="Previous month">←</button>
+            <button class="icon-btn" type="button" data-month="-1" aria-label="Previous month"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
             <p class="month__title" data-month-title aria-live="polite"></p>
-            <button class="icon-btn" type="button" data-month="1" aria-label="Next month">→</button>
+            <button class="icon-btn" type="button" data-month="1" aria-label="Next month"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
           </div>
           <div class="month__grid" data-month-grid></div>
         </div>
@@ -194,7 +259,7 @@
           <p class="slots__title">Your booking</p>
           <ul class="summary__list" data-summary></ul>
           <a class="btn btn--block" href="#" data-next aria-disabled="true">Next</a>
-          <p class="note">Next takes you to secure checkout to add swimmer details and pay.</p>
+          <p class="note">On the live site, Next opens Wix checkout to add swimmer details and pay.</p>
         </aside>
       </div>
 <!-- Mobile only · booking summary bar (pinned on the Calendar page, inline on Home) -->
@@ -202,63 +267,86 @@
     <p class="cal-sticky__text" data-sticky-text>Pick a time<span>Choose a day, then a time</span></p>
     <a class="btn btn--sm" href="#" data-next aria-disabled="true">Next</a>
   </div>
-      <p class="cal-note">Prototype: availability shown here is sample data. On the live site it comes from Wix Bookings.</p>
+      <p class="cal-note"><span class="design-note">Design placeholder</span> This mock-up shows the native Wix Bookings calendar. The times are sample data and nothing here books a lesson.</p>
 </div>
 
-    </div>
-  </section>
-
-  <!-- 07_Services · Lessons + Clinics, no images (the founder carries this part of the page) -->
-  <section class="section section--ink on-dark" id="Services" aria-labelledby="services-title">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="section-head__text">
-          <p class="t-label eyebrow">What we offer</p>
-          <h2 class="t-h2" id="services-title">Two ways to train.</h2>
-        </div>
-      </div>
-      <div class="offers reveal">
-        <a class="offer" href="lessons.html">
-          <span class="offer__meta">1:1 · 2:1 · 3:1 · 4:1</span>
-          <h3 class="t-h3">Lessons</h3>
-          <p class="t-body t-muted">Private, semi-private and small group lessons, booked around your schedule.</p>
-          <span class="link-arrow"><span class="link-arrow__text">Lessons &amp; pricing</span><span class="arrow" aria-hidden="true">→</span></span>
-        </a>
-        <a class="offer" href="clinics.html">
-          <span class="offer__meta">Individual · Team</span>
-          <h3 class="t-h3">Clinics</h3>
-          <p class="t-body t-muted">Elite technique from top-level swimmers in an immersive setting, open to individuals or built for your team.</p>
-          <span class="link-arrow"><span class="link-arrow__text">Upcoming clinics</span><span class="arrow" aria-hidden="true">→</span></span>
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- 08_Testimonials · real quotes only -->
-  <section class="section" id="Testimonials" aria-labelledby="testimonials-title">
+  <!-- 07_Testimonials · slider with simple controls + university destinations -->
+  <section class="section section--mist section--tight-top" id="Testimonials" aria-labelledby="testimonials-title">
     <div class="container">
-      <div class="section-head reveal">
-        <div class="section-head__text">
-          <p class="t-label eyebrow">From parents &amp; swimmers</p>
-          <h2 class="t-h2" id="testimonials-title">In their words.</h2>
+      <div class="grid-12 voices">
+        <div class="voices__intro reveal">
+          <p class="label label--line">Families &amp; swimmers</p>
+          <h2 class="h2" id="testimonials-title">In their words.</h2>
+          <!-- Review rating · shown only once a verified Google review link is supplied -->
+          <div class="rating" aria-label="Review rating placeholder">
+            <span class="rating__stars" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span>
+            <span class="rating__text"><strong class="ph">[Rating] · [N] reviews</strong>Placeholder until a review link is supplied</span>
+          </div>
+        </div>
+        <div class="voices__slider reveal">
+          <div class="quote-card" data-quotes aria-roledescription="carousel" aria-label="Testimonials">
+            <div class="quote-card__mark" aria-hidden="true">“</div>
+            <div class="quote-track">
+              <figure class="quote-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 3">
+                <blockquote><span class="ph">[Short real quote from a parent, one or two sentences.]</span></blockquote>
+                <figcaption><strong class="ph">[First name]</strong><span class="ph">[Parent of a 9-year-old · Private lessons]</span></figcaption>
+              </figure>
+              <figure class="quote-slide" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
+                <blockquote><span class="ph">[Short real quote from a swimmer.]</span></blockquote>
+                <figcaption><strong class="ph">[First name]</strong><span class="ph">[High school swimmer · Semi-private]</span></figcaption>
+              </figure>
+              <figure class="quote-slide" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
+                <blockquote><span class="ph">[Short real quote about a clinic.]</span></blockquote>
+                <figcaption><strong class="ph">[First name]</strong><span class="ph">[Club coach · Team clinic]</span></figcaption>
+              </figure>
+            </div>
+            <div class="quote-card__foot">
+              <div class="dots" data-quotes-dots></div>
+              <div class="slides__controls">
+                <button class="round-btn round-btn--light" type="button" data-quotes-prev aria-label="Previous testimonial"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
+                <button class="round-btn round-btn--light" type="button" data-quotes-next aria-label="Next testimonial"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+              </div>
+            </div>
+          </div>
+          <p class="note" style="margin-top: 12px"><span class="design-note">Design placeholder</span> Real reviews needed from Ruslan.</p>
         </div>
       </div>
-      <div class="quotes">
-        <figure class="quote reveal"><blockquote><span class="ph">[Short real quote from a parent, one or two sentences.]</span></blockquote><figcaption class="ph">[First name] · [Parent of a 9-year-old]</figcaption></figure>
-        <figure class="quote reveal"><blockquote><span class="ph">[Short real quote from a swimmer.]</span></blockquote><figcaption class="ph">[First name] · [Private lessons]</figcaption></figure>
-        <figure class="quote reveal"><blockquote><span class="ph">[Short real quote about a clinic.]</span></blockquote><figcaption class="ph">[First name] · [Team clinic]</figcaption></figure>
+
+      <!-- University destinations · Wix: Repeater of capsules (CMS "Alumni" collection optional) -->
+      <div class="unis reveal">
+        <div class="unis__head">
+          <h3 class="h3">Where our swimmers go next</h3>
+          <span class="design-note">Placeholder · awaiting university list</span>
+        </div>
+        <ul class="pills" aria-label="University destinations">
+          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></li>
+          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></li>
+          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></li>
+          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></li>
+          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></li>
+          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></li>
+        </ul>
       </div>
     </div>
   </section>
+
+  <div class="wave wave--mist-to-dark" aria-hidden="true"><svg viewBox="0 0 1440 84" preserveAspectRatio="none"><path class="wave__back" d="M0 0H1440V16C1200 44 1000 76 760 78 480 80 240 42 0 36Z"/><path class="wave__front" d="M0 0H1440V6C1180 30 980 58 720 60 460 62 220 26 0 18Z"/></svg></div>
 
 </main>
 
-<!-- Footer · Component: Footer (includes the closing Book Now call to action) -->
+<!-- Footer · Component: Footer (closing booking prompt + links) -->
 <footer class="footer on-dark" id="Footer">
   <div class="container">
     <div class="footer__cta">
-      <h2 class="t-h1">Your next lesson<br>is a few taps away.</h2>
-      <a class="btn btn--light" href="calendar.html">Book Now</a>
+      <div class="stack gap-1">
+        <h2 class="h2">Ready for your next lesson?</h2>
+        <p>See open times by coach and location, then book in a few taps.</p>
+      </div>
+      <a class="btn" href="calendar.html">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
     <div class="footer__grid">
       <div class="footer__brand">
@@ -272,20 +360,20 @@
         <p>“Committed to Excellence.” Elite private lessons and clinics in Columbus, Ohio, led by Canadian Olympian Ruslan Gaziev.</p>
       </div>
       <div class="footer__col">
-        <h2 class="t-label">Pages</h2>
+        <h2 class="label">Pages</h2>
         <a href="index.html">Home</a>
         <a href="lessons.html">Lessons</a>
         <a href="clinics.html">Clinics</a>
         <a href="calendar.html">Calendar</a>
         <a href="contact.html">Contact</a>
       </div>
-      <div class="footer__col">
-        <h2 class="t-label">Contact</h2>
+      <div class="footer__col footer__col--wide">
+        <h2 class="label">Contact</h2>
         <a href="mailto:excellenceswimming@gmail.com">excellenceswimming@gmail.com</a>
         <a href="tel:+16145568238">(614) 556-8238</a>
       </div>
       <div class="footer__col">
-        <h2 class="t-label">Locations</h2>
+        <h2 class="label">Location</h2>
         <p>St. Charles Prep<br>2010 E Broad St<br>Bexley, OH 43209</p>
       </div>
     </div>
@@ -296,7 +384,7 @@
   </div>
 </footer>
 <!-- Mobile Book Bar · pinned to the bottom of the screen on phones (hidden on the Calendar page) -->
-<div class="book-bar" id="Book_Bar"><a class="btn btn--block" href="calendar.html">Book Now</a></div>
+<div class="book-bar" id="Book_Bar"><a class="btn btn--block" href="calendar.html">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
 
 </body>
 </html>

@@ -9,12 +9,12 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
-  /* HEADER — transparent over the Home hero, warm white once scrolled. */
+  /* HEADER — transparent over the dark hero, navy once scrolled (Wix: header Scroll effect). */
   var header = $(".header");
   var bookBar = $(".book-bar");
   var onScroll = function () {
     var y = window.scrollY;
-    if (header && !header.classList.contains("header--solid")) header.classList.toggle("is-scrolled", y > 24);
+    if (header) header.classList.toggle("is-scrolled", y > 24);
     if (bookBar) bookBar.classList.toggle("is-visible", y > window.innerHeight * 0.6);
   };
   onScroll();
@@ -43,9 +43,52 @@
     $$(".mobile-menu a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
   }
 
-  /* HERO VIDEO — paused for reduced-motion users */
+  /* HERO VIDEO — desktop only. Phones get the navy gradient and never download the file;
+     reduced-motion users keep the still frame (Wix: hide the video on the mobile breakpoint). */
   var video = $("#Hero_Video_Background video");
-  if (video && reduceMotion) { video.removeAttribute("autoplay"); video.pause(); }
+  if (video && !reduceMotion && window.matchMedia("(min-width: 768px)").matches) {
+    video.src = video.getAttribute("data-src");
+    video.play && video.play().catch(function () {});
+  }
+
+  /* SLIDESHOWS — founder photos and testimonials: arrows (+ dots), no autoplay
+     (Wix: Slideshow element with arrows/navigation on, autoplay off). */
+  function carousel(root, slideSel, prevSel, nextSel, onChange) {
+    var slides = $$(slideSel, root), i = 0;
+    var go = function (n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function (s, k) {
+        s.classList.toggle("is-active", k === i);
+        if (k === i) s.removeAttribute("aria-hidden"); else s.setAttribute("aria-hidden", "true");
+      });
+      if (onChange) onChange(i, slides.length);
+    };
+    $(prevSel, root).addEventListener("click", function () { go(i - 1); });
+    $(nextSel, root).addEventListener("click", function () { go(i + 1); });
+    root.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") go(i - 1);
+      if (e.key === "ArrowRight") go(i + 1);
+    });
+    return go;
+  }
+  $$("[data-slides]").forEach(function (root) {
+    var count = $("[data-slides-count]", root);
+    carousel(root, ".slide", "[data-slides-prev]", "[data-slides-next]", function (i, n) { if (count) count.textContent = (i + 1) + " / " + n; });
+  });
+  $$("[data-quotes]").forEach(function (root) {
+    var dotsBox = $("[data-quotes-dots]", root), dots = [];
+    var go = carousel(root, ".quote-slide", "[data-quotes-prev]", "[data-quotes-next]", function (i) {
+      dots.forEach(function (d, k) { d.setAttribute("aria-current", String(k === i)); });
+    });
+    $$(".quote-slide", root).forEach(function (s, k) {
+      var d = document.createElement("button");
+      d.type = "button"; d.className = "dot-btn";
+      d.setAttribute("aria-label", "Show testimonial " + (k + 1));
+      d.setAttribute("aria-current", String(k === 0));
+      d.addEventListener("click", function () { go(k); });
+      dotsBox.appendChild(d); dots.push(d);
+    });
+  });
 
   /* REVEAL — fade + 24px rise as content enters the viewport (Wix: Entrance animation "Fade in" + "Slide up"). */
   var reveals = $$(".reveal");
@@ -58,7 +101,7 @@
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  /* CLINICS — preview the empty state with ?state=empty */
+  /* CLINICS — default is "none scheduled"; preview the scheduled list with ?state=scheduled */
   if (/[?&]state=scheduled/.test(location.search)) {
     var list = $("[data-clinic-list]"), empty = $("[data-clinic-empty]");
     if (list && empty) { list.hidden = false; empty.hidden = true; }
