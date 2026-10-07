@@ -125,7 +125,7 @@ button { background: none; border: 0; padding: 0; cursor: pointer; }
 .stack { display: flex; flex-direction: column; }
 .gap-1 { gap: 8px; } .gap-2 { gap: 16px; } .gap-3 { gap: 24px; } .gap-4 { gap: 32px; }
 .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px 32px; flex-wrap: wrap; margin-bottom: clamp(32px, 1.5rem + 2vw, 48px); }
-.section-head__text { display: flex; flex-direction: column; gap: 16px; max-width: 720px; }
+.section-head__text { display: flex; flex-direction: column; gap: 16px; max-width: 640px; }
 .section-head__aside { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; max-width: 44ch; }
 
 /* Wave divider · Wix Studio: section Shape Divider (two layered waves).
@@ -464,13 +464,6 @@ textarea.input { min-height: 120px; resize: vertical; }
 .signin a { font-weight: 600; color: var(--navy); text-decoration: underline; text-decoration-color: var(--aqua); text-underline-offset: 4px; }
 .on-dark .signin a { color: var(--on-dark); }
 
-/* Compact preview (Home): week strip + times + inline summary, no month grid */
-.cal-widget--compact .cal { grid-template-columns: 1fr; }
-.cal-widget--compact .cal__month, .cal-widget--compact .cal__summary { display: none; }
-.cal-widget--compact .week { display: flex; gap: 8px; overflow-x: auto; padding: 16px 24px; border-bottom: 1px solid var(--line); scrollbar-width: none; }
-.cal-widget--compact .cal__slots { min-height: 0; }
-.cal-widget--compact .cal-sticky { display: flex; gap: 16px; align-items: center; padding: 14px 14px 14px 24px; border: 1px solid var(--line); border-radius: 18px; background: var(--white); }
-
 /* Week strip day buttons (mobile + compact) */
 .week::-webkit-scrollbar { display: none; }
 .week .day { flex: 0 0 58px; aspect-ratio: auto; height: 70px; border-radius: 18px; flex-direction: column; gap: 2px; border: 1px solid var(--line); }
@@ -607,13 +600,12 @@ textarea.input { min-height: 120px; resize: vertical; }
   .cal__filters .field { min-width: 0; }
   .cal__tz { grid-column: 1 / -1; margin-left: 0; }
   .cal__month { display: none; }
-  .week, .cal-widget--compact .week { display: flex; gap: 8px; overflow-x: auto; padding: 16px; border-bottom: 1px solid var(--line); scrollbar-width: none; scroll-snap-type: x mandatory; }
+  .week { display: flex; gap: 8px; overflow-x: auto; padding: 16px; border-bottom: 1px solid var(--line); scrollbar-width: none; scroll-snap-type: x mandatory; }
   .week .day { scroll-snap-align: start; }
   .cal__slots { padding: 16px; min-height: 0; }
   .slots__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .cal__summary { display: none; }
   .cal-sticky { display: flex; gap: 12px; align-items: center; position: fixed; left: 0; right: 0; bottom: 0; z-index: 85; padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px)); background: var(--white); box-shadow: 0 -1px 0 var(--line), 0 -12px 24px -16px rgba(23, 42, 90, 0.25); }
-  .cal-widget--compact .cal-sticky { position: static; box-shadow: none; padding: 12px 12px 12px 16px; }
   .page-calendar .footer { padding-bottom: 96px; }
 }
 
@@ -628,3 +620,63 @@ textarea.input { min-height: 120px; resize: vertical; }
 .on-dark .on-light .design-note { border-color: var(--aqua-ink); color: var(--aqua-ink); background: var(--white); }
 .on-dark .on-light :focus-visible { outline-color: var(--aqua-ink); }
 .cal-note { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+
+/* ---------- 22. BOOKING SUMMARY (Home) ----------------------------------- */
+/* Short summary of the calendar: every option links to the Calendar page (Wix: container + buttons/links). */
+.book-summary { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px; padding: 40px; align-items: center; }
+.book-summary__intro { display: flex; flex-direction: column; gap: 18px; align-items: flex-start; }
+.book-summary__options { display: flex; flex-direction: column; gap: 0; padding: 8px 24px; border-radius: 20px; background: var(--cream); }
+.book-option { display: flex; flex-direction: column; gap: 12px; padding-block: 18px; }
+.book-option + .book-option { border-top: 1px solid var(--line); }
+.book-option__title { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 15px; color: var(--navy); }
+.book-option__title .icon-dot { width: 36px; height: 36px; background: var(--white); }
+.book-option__title .icon-dot .icon { width: 18px; height: 18px; }
+.pill--link { transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease), color var(--dur); }
+.pill--link:hover { border-color: var(--aqua-ink); background: var(--aqua-wash); }
+
+/* ---------- 23. FOCUS PANELS (Clinics) ----------------------------------- */
+/* Three image panels; the hovered one widens on desktop. Wix: static layout (one wide + two narrow containers),
+   image zoom + caption fade via Hover interactions; width change is not a native animation. */
+.panels { display: flex; gap: 12px; height: clamp(380px, 22rem + 8vw, 500px); }
+.panel { position: relative; flex: 1 1 0; min-width: 0; border-radius: 22px; overflow: hidden; background: var(--abyss-top); transition: flex-grow 600ms var(--ease); }
+.panel--wide { flex-grow: 2.2; }
+.panels:hover .panel { flex-grow: 1; }
+.panels .panel:hover { flex-grow: 2.2; }
+.panel__img { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 900ms var(--ease); }
+.panel:hover .panel__img { transform: scale(1.04); }
+.panel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6, 21, 34, 0.35) 0%, rgba(6, 21, 34, 0) 30%, rgba(6, 21, 34, 0.15) 55%, rgba(6, 21, 34, 0.88) 100%); }
+.panel__tag { position: absolute; z-index: 2; left: 16px; top: 16px; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: var(--r-pill); border: 1px solid rgba(255, 255, 255, 0.24); background: rgba(6, 21, 34, 0.35); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); font-size: 14px; font-weight: 600; color: var(--on-dark); white-space: nowrap; }
+.panel__tag .icon { width: 16px; height: 16px; color: var(--aqua); }
+.panel__text { position: absolute; z-index: 2; left: 20px; right: 20px; bottom: 20px; max-width: 40ch; font-size: 14.5px; line-height: 1.55; color: var(--on-dark); }
+.panels__note { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 14px; }
+.past-head { margin-top: clamp(56px, 2rem + 4vw, 96px); }
+
+/* ---------- 24. SCHOOL LOGO WALL (Home) ---------------------------------- */
+/* Wix: Gallery grid or Repeater of logo images; greyscale → full colour on hover. */
+.logo-wall { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+.logo-tile { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 16px 12px 14px; background: var(--white); border: 1px solid var(--line); border-radius: 20px; text-align: center; transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+.logo-tile:hover { transform: translateY(-3px); box-shadow: var(--shadow-card); }
+.logo-tile img { height: 56px; width: auto; object-fit: contain; filter: grayscale(1); opacity: 0.75; transition: filter var(--dur), opacity var(--dur); }
+.logo-tile:hover img { filter: none; opacity: 1; }
+.logo-tile__slot { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; width: 100%; height: 72px; border: 1px dashed #D9D1BF; border-radius: 14px; color: var(--aqua-ink); font-family: var(--font-label); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; }
+.logo-tile__slot .icon { width: 22px; height: 22px; }
+.logo-tile__name { font-size: 13.5px; font-weight: 600; color: var(--navy); }
+
+@media (max-width: 1023px) {
+  .book-summary { grid-template-columns: 1fr; gap: 28px; }
+  .logo-wall { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .panels { height: 420px; }
+}
+@media (max-width: 767px) {
+  .book-summary { padding: 20px; }
+  .book-summary__intro .btn-row, .book-summary__intro .btn { width: 100%; }
+  .book-summary__options { padding: 4px 16px; }
+  .panels { flex-direction: column; height: auto; }
+  .panel, .panel--wide, .panels:hover .panel, .panels .panel:hover { flex: none; height: 250px; }
+  .logo-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .panels:hover .panel, .panels .panel:hover { flex-grow: 1; }
+  .panels .panel--wide, .panels:hover .panel--wide { flex-grow: 2.2; }
+  .panel:hover .panel__img, .logo-tile:hover { transform: none; }
+}

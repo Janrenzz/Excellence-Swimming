@@ -25,6 +25,8 @@ Everything below is a native Wix Studio animation.
 | 8 | Testimonial slider | Slideshow transition: fade + 16px slide, arrows + dots, **no autoplay** | 0.5s |
 | 9 | Founder photo frame | **Entrance:** Fade In; frame plate settles from −4° to −2° | 0.9s, once |
 | 10 | Mobile Book bar | Pinned to the bottom; slides up after the hero | 0.3s |
+| 12 | Clinics focus panels | **Hover:** image zoom 1.00 → 1.04; the panel widening seen in the HTML is not a native Wix animation (static wide/narrow layout, or Velo) | 0.6–0.9s |
+| 13 | School logos | **Hover:** greyscale → colour, lift 3px | 0.3s |
 | 11 | Hero video (desktop only) | Muted loop; optional slow parallax via Scroll animation | Low speed |
 
 **Turn off or skip:**

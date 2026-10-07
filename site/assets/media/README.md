@@ -12,3 +12,13 @@ Drop a file in this folder with the exact name below and it appears on the site 
 | `clinics-hero.jpg` | Clinics · the page's one image | Ruslan racing in a Team Canada cap (from excellenceswimming.com) | 21:9 |
 
 Swap in a drone shot of the St. Charles pool for the hero video whenever you have one.
+
+## Stock photos (Clinics · "What clinics cover")
+
+Free under the [Unsplash License](https://unsplash.com/license). Tinted navy (duotone) to match the palette. Replace with Excellence Swimming clinic photos when supplied.
+
+| File | Photographer | Source |
+|---|---|---|
+| `stock-clinic-underwater.jpg` | Jan Antonin Kolar | https://unsplash.com/photos/eCNz5PiiUCc |
+| `stock-clinic-breakout.jpg` | CHUTTERSNAP | https://unsplash.com/photos/G8OyN_tOIwY |
+| `stock-clinic-race.jpg` | Jonathan Chng | https://unsplash.com/photos/N3VEiHD8Sec |

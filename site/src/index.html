@@ -149,21 +149,44 @@
 
   {{wave:from-dark}}
 
-  <!-- 06_Book · compact preview of the Wix Bookings calendar (same widget as the Calendar page) -->
+  <!-- 06_Book · short summary of the booking calendar; every option links to the Calendar page -->
   <section class="section section--tight-top" id="Book" aria-labelledby="book-title">
     <div class="container">
-      <div class="section-head reveal">
-        <div class="section-head__text">
+      <div class="book-summary card card--static reveal">
+        <div class="book-summary__intro">
           <p class="label label--line">Book</p>
           <h2 class="h2" id="book-title">Find your next lesson.</h2>
-        </div>
-        <div class="section-head__aside">
+          <p class="body">See open times by lesson type, coach and location, then book in a few taps. Lessons from $130 per session.</p>
+          <div class="btn-row">
+            <a class="btn" href="calendar.html">Open the calendar {{icon:arrow-right}}</a>
+          </div>
           <p class="signin">Booked before? <a href="#">Sign in</a> to manage your bookings.</p>
-          <a class="link" href="calendar.html"><span>Open the full calendar</span>{{icon:arrow-right}}</a>
         </div>
-      </div>
-      <div class="reveal">
-      {{partial:calendar-widget|cal-widget--compact}}
+        <div class="book-summary__options">
+          <div class="book-option">
+            <p class="book-option__title"><span class="icon-dot icon-dot--sm">{{icon:users}}</span>Lesson type</p>
+            <div class="pills">
+              <a class="pill pill--link" href="calendar.html?format=1:1">1:1 Private</a>
+              <a class="pill pill--link" href="calendar.html?format=2:1">2:1 Semi-private</a>
+              <a class="pill pill--link" href="calendar.html?format=3:1">3:1 Small group</a>
+              <a class="pill pill--link" href="calendar.html?format=4:1">4:1 Group</a>
+            </div>
+          </div>
+          <div class="book-option">
+            <p class="book-option__title"><span class="icon-dot icon-dot--sm">{{icon:user}}</span>Coach</p>
+            <div class="pills">
+              <a class="pill pill--link" href="calendar.html?coach=ruslan">Ruslan Gaziev</a>
+              <a class="pill pill--link" href="calendar.html?coach=hannah">Hannah Bach</a>
+            </div>
+          </div>
+          <div class="book-option">
+            <p class="book-option__title"><span class="icon-dot icon-dot--sm">{{icon:pin}}</span>Location</p>
+            <div class="pills">
+              <a class="pill pill--link" href="calendar.html">St. Charles · Bexley</a>
+              <a class="pill pill--link" href="calendar.html"><span class="ph">[Second location]</span></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -210,19 +233,20 @@
         </div>
       </div>
 
-      <!-- University destinations · Wix: Repeater of capsules (CMS "Alumni" collection optional) -->
+      <!-- University destinations · logo wall. Wix: Gallery (grid) or Repeater of logo images, greyscale → colour on hover.
+           Logos go in only once Ruslan confirms each school (and has permission to show it). -->
       <div class="unis reveal">
         <div class="unis__head">
           <h3 class="h3">Where our swimmers go next</h3>
-          <span class="design-note">Placeholder · awaiting university list</span>
+          <span class="design-note">Placeholder · awaiting school list + logos</span>
         </div>
-        <ul class="pills" aria-label="University destinations">
-          <li class="pill">{{icon:cap}} <span class="ph">[University]</span></li>
-          <li class="pill">{{icon:cap}} <span class="ph">[University]</span></li>
-          <li class="pill">{{icon:cap}} <span class="ph">[University]</span></li>
-          <li class="pill">{{icon:cap}} <span class="ph">[University]</span></li>
-          <li class="pill">{{icon:cap}} <span class="ph">[University]</span></li>
-          <li class="pill">{{icon:cap}} <span class="ph">[University]</span></li>
+        <ul class="logo-wall" aria-label="University destinations">
+          <li class="logo-tile"><span class="logo-tile__slot">{{icon:cap}}<span>School logo</span></span><span class="logo-tile__name ph">[University]</span></li>
+          <li class="logo-tile"><span class="logo-tile__slot">{{icon:cap}}<span>School logo</span></span><span class="logo-tile__name ph">[University]</span></li>
+          <li class="logo-tile"><span class="logo-tile__slot">{{icon:cap}}<span>School logo</span></span><span class="logo-tile__name ph">[University]</span></li>
+          <li class="logo-tile"><span class="logo-tile__slot">{{icon:cap}}<span>School logo</span></span><span class="logo-tile__name ph">[University]</span></li>
+          <li class="logo-tile"><span class="logo-tile__slot">{{icon:cap}}<span>School logo</span></span><span class="logo-tile__name ph">[University]</span></li>
+          <li class="logo-tile"><span class="logo-tile__slot">{{icon:cap}}<span>School logo</span></span><span class="logo-tile__name ph">[University]</span></li>
         </ul>
       </div>
     </div>

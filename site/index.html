@@ -10,8 +10,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500&display=swap">
 <link rel="preload" href="assets/fonts/sora-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/styles.css?v=5ccaa1c2">
-<script src="assets/js/main.js?v=5ccaa1c2" defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=613a001f">
+<script src="assets/js/main.js?v=613a001f" defer></script>
 
 </head>
 <body class="page-home">
@@ -197,79 +197,44 @@
 
   <div class="wave wave--from-dark" aria-hidden="true"><svg viewBox="0 0 1440 84" preserveAspectRatio="none"><path class="wave__back" d="M0 0H1440V16C1200 44 1000 76 760 78 480 80 240 42 0 36Z"/><path class="wave__front" d="M0 0H1440V6C1180 30 980 58 720 60 460 62 220 26 0 18Z"/></svg></div>
 
-  <!-- 06_Book · compact preview of the Wix Bookings calendar (same widget as the Calendar page) -->
+  <!-- 06_Book · short summary of the booking calendar; every option links to the Calendar page -->
   <section class="section section--tight-top" id="Book" aria-labelledby="book-title">
     <div class="container">
-      <div class="section-head reveal">
-        <div class="section-head__text">
+      <div class="book-summary card card--static reveal">
+        <div class="book-summary__intro">
           <p class="label label--line">Book</p>
           <h2 class="h2" id="book-title">Find your next lesson.</h2>
-        </div>
-        <div class="section-head__aside">
-          <p class="signin">Booked before? <a href="#">Sign in</a> to manage your bookings.</p>
-          <a class="link" href="calendar.html"><span>Open the full calendar</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-        </div>
-      </div>
-      <div class="reveal">
-      <!-- Calendar Widget · DESIGN PLACEHOLDER for the native Wix Bookings "Booking Calendar" widget.
-     Wix: Tabs (one per lesson format) → Booking Calendar widget per tab, Location + Staff filters on.
-     Full layout on the Calendar page; "compact" preview on Home (week strip + times, no month grid). -->
-<div class="cal-widget cal-widget--compact" data-cal-widget>
-      <div class="tabs cal-tabs" role="tablist" aria-label="Lesson format" data-cal-tabs>
-        <button class="tab" role="tab" aria-selected="true" data-format="1:1"><span class="tab__ratio">1:1</span><span class="tab__name"> Private</span><span class="cal-tab__sub">1 swimmer</span></button>
-        <button class="tab" role="tab" aria-selected="false" data-format="2:1"><span class="tab__ratio">2:1</span><span class="tab__name"> Semi-private</span><span class="cal-tab__sub">2 swimmers</span></button>
-        <button class="tab" role="tab" aria-selected="false" data-format="3:1"><span class="tab__ratio">3:1</span><span class="tab__name"> Small group</span><span class="cal-tab__sub">3 swimmers</span></button>
-        <button class="tab" role="tab" aria-selected="false" data-format="4:1"><span class="tab__ratio">4:1</span><span class="tab__name"> Group</span><span class="cal-tab__sub">4 swimmers</span></button>
-      </div>
-
-      <div class="cal" data-cal>
-        <div class="cal__filters">
-          <div class="field"><label for="f-coach">Coach</label>
-            <select class="input" id="f-coach" data-filter="coach">
-              <option value="any">Any coach</option>
-              <option value="ruslan">Ruslan Gaziev</option>
-              <option value="hannah">Hannah Bach</option>
-            </select></div>
-          <div class="field"><label for="f-loc">Location</label>
-            <select class="input" id="f-loc" data-filter="location">
-              <option value="any">Any location</option>
-              <option value="loc-1">St. Charles · Bexley</option>
-              <option value="loc-2">[Second location]</option>
-            </select></div>
-          <p class="cal__tz">Times shown in Eastern Time (ET)</p>
-        </div>
-
-        <div class="cal__month">
-          <div class="month__head">
-            <button class="icon-btn" type="button" data-month="-1" aria-label="Previous month"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
-            <p class="month__title" data-month-title aria-live="polite"></p>
-            <button class="icon-btn" type="button" data-month="1" aria-label="Next month"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+          <p class="body">See open times by lesson type, coach and location, then book in a few taps. Lessons from $130 per session.</p>
+          <div class="btn-row">
+            <a class="btn" href="calendar.html">Open the calendar <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
           </div>
-          <div class="month__grid" data-month-grid></div>
+          <p class="signin">Booked before? <a href="#">Sign in</a> to manage your bookings.</p>
         </div>
-
-        <div class="week" data-week aria-label="Choose a day"></div>
-
-        <div class="cal__slots">
-          <p class="slots__title" data-slots-title aria-live="polite"></p>
-          <div data-slots></div>
+        <div class="book-summary__options">
+          <div class="book-option">
+            <p class="book-option__title"><span class="icon-dot icon-dot--sm"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>Lesson type</p>
+            <div class="pills">
+              <a class="pill pill--link" href="calendar.html?format=1:1">1:1 Private</a>
+              <a class="pill pill--link" href="calendar.html?format=2:1">2:1 Semi-private</a>
+              <a class="pill pill--link" href="calendar.html?format=3:1">3:1 Small group</a>
+              <a class="pill pill--link" href="calendar.html?format=4:1">4:1 Group</a>
+            </div>
+          </div>
+          <div class="book-option">
+            <p class="book-option__title"><span class="icon-dot icon-dot--sm"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg></span>Coach</p>
+            <div class="pills">
+              <a class="pill pill--link" href="calendar.html?coach=ruslan">Ruslan Gaziev</a>
+              <a class="pill pill--link" href="calendar.html?coach=hannah">Hannah Bach</a>
+            </div>
+          </div>
+          <div class="book-option">
+            <p class="book-option__title"><span class="icon-dot icon-dot--sm"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>Location</p>
+            <div class="pills">
+              <a class="pill pill--link" href="calendar.html">St. Charles · Bexley</a>
+              <a class="pill pill--link" href="calendar.html"><span class="ph">[Second location]</span></a>
+            </div>
+          </div>
         </div>
-
-        <aside class="cal__summary" aria-label="Booking summary">
-          <p class="slots__title">Your booking</p>
-          <ul class="summary__list" data-summary></ul>
-          <a class="btn btn--block" href="#" data-next aria-disabled="true">Next</a>
-          <p class="note">On the live site, Next opens Wix checkout to add swimmer details and pay.</p>
-        </aside>
-      </div>
-<!-- Mobile only · booking summary bar (pinned on the Calendar page, inline on Home) -->
-  <div class="cal-sticky" data-sticky>
-    <p class="cal-sticky__text" data-sticky-text>Pick a time<span>Choose a day, then a time</span></p>
-    <a class="btn btn--sm" href="#" data-next aria-disabled="true">Next</a>
-  </div>
-      <p class="cal-note"><span class="design-note">Design placeholder</span> This mock-up shows the native Wix Bookings calendar. The times are sample data and nothing here books a lesson.</p>
-</div>
-
       </div>
     </div>
   </section>
@@ -316,19 +281,20 @@
         </div>
       </div>
 
-      <!-- University destinations · Wix: Repeater of capsules (CMS "Alumni" collection optional) -->
+      <!-- University destinations · logo wall. Wix: Gallery (grid) or Repeater of logo images, greyscale → colour on hover.
+           Logos go in only once Ruslan confirms each school (and has permission to show it). -->
       <div class="unis reveal">
         <div class="unis__head">
           <h3 class="h3">Where our swimmers go next</h3>
-          <span class="design-note">Placeholder · awaiting university list</span>
+          <span class="design-note">Placeholder · awaiting school list + logos</span>
         </div>
-        <ul class="pills" aria-label="University destinations">
-          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></li>
-          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></li>
-          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></li>
-          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></li>
-          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></li>
-          <li class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></li>
+        <ul class="logo-wall" aria-label="University destinations">
+          <li class="logo-tile"><span class="logo-tile__slot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg><span>School logo</span></span><span class="logo-tile__name ph">[University]</span></li>
+          <li class="logo-tile"><span class="logo-tile__slot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg><span>School logo</span></span><span class="logo-tile__name ph">[University]</span></li>
+          <li class="logo-tile"><span class="logo-tile__slot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg><span>School logo</span></span><span class="logo-tile__name ph">[University]</span></li>
+          <li class="logo-tile"><span class="logo-tile__slot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg><span>School logo</span></span><span class="logo-tile__name ph">[University]</span></li>
+          <li class="logo-tile"><span class="logo-tile__slot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg><span>School logo</span></span><span class="logo-tile__name ph">[University]</span></li>
+          <li class="logo-tile"><span class="logo-tile__slot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg><span>School logo</span></span><span class="logo-tile__name ph">[University]</span></li>
         </ul>
       </div>
     </div>

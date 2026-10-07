@@ -15,10 +15,12 @@ Everything in the design is buildable with native Wix Studio and Wix apps (Booki
 | Credential capsules | Repeated containers with a pill radius, icon + text (or Buttons with icons) | Yes |
 | Philosophy, service, format, location cards | Containers in a Grid or Repeater; hover: move up 4px + shadow | Yes |
 | Coaches & pricing | CMS "Coaches" collection → Repeater | Yes |
-| Calendar preview on Home + Calendar page | Wix Bookings Booking Calendar widget (see Bookings below) | Yes. **The widget's own layout decides spacing**; we style fonts, colours and buttons in its design panel |
+| Booking summary on Home | Container with text, buttons and pill links. Every link goes to the Calendar page (no widget on Home) | Yes. Links that preselect a lesson type or coach (`?format=`, `?coach=`) need Velo; without it they simply open the Calendar |
+| Calendar page | Wix Bookings Booking Calendar widget (see Bookings below) | Yes. **The widget's own layout decides spacing**; we style fonts, colours and buttons in its design panel |
 | Testimonial slider with arrows + dots | Slideshow element or the Testimonials design element, autoplay off | Yes |
 | Review rating | Text + star icons, typed in once a verified review source exists | Yes (no live feed) |
-| University destinations | Repeater of capsules (optional CMS "Alumni" collection) | Yes |
+| School logo wall | Gallery (grid) or Repeater of logo images; greyscale → colour on hover via Hover interaction | Yes. Add logos only for schools Ruslan confirms; check permission to show each logo |
+| Clinics focus panels (3 image panels) | Three containers (one wide, two narrow) with image backgrounds, overlay, pill label and caption; image zoom on hover via Hover interactions ([Wix guide](https://support.wix.com/en/article/studio-editor-creating-a-custom-click-or-hover-interaction)) | Partly. The "hovered panel widens" effect isn't a standard Wix animation: build it static, or add Velo/custom code |
 | Upcoming clinics with images | Wix Events widget, card/grid layout, images on, upcoming only | Yes |
 | Past clinics | Second Events widget filtered to past events | Yes. Check the past-events option in the widget settings during the build |
 | Forms (inquiry, waitlist, team clinic) | Wix Forms | Yes. See `05-contact-handover.md` for labels |
@@ -33,7 +35,7 @@ Everything in the design is buildable with native Wix Studio and Wix apps (Booki
 2. **Locations:** add St. Charles Prep and the second location.
 3. **Services:** four appointment services: *1:1 Private*, *2:1 Semi-private*, *3:1 Small group*, *4:1 Group*. Assign coaches, locations, duration and price. Prices differ by coach, so use price options by staff member, or one service per coach and format if the plan doesn't support that.
 4. **Calendar page:** Tabs element with four tabs, each holding a Booking Calendar widget for that service, with the Location and Staff filters on. Widget design: Manrope, Navy `#172A5A` text, White background, selected day and slot in Navy with white text, accents Aqua Ink `#1C7480`, button Aqua `#75CAD3` with Abyss text and pill radius.
-5. **Home preview:** the same widget in a shorter layout (weekly or list view if available), plus an "Open the full calendar" link.
+5. **Home:** no widget. A short booking summary links every option to the Calendar page.
 6. **Booking buttons:** link every Book a lesson button to the Calendar page.
 7. **Sign-in:** Wix Members, so returning clients can reschedule from My Bookings.
 

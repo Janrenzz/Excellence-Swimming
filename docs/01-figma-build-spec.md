@@ -24,9 +24,9 @@ Replace the revision-1 frames rather than keeping both: import the new frames, c
 - **Grid:** 12 columns, 64 margin, 24 gutter at 1280. 8 / 40 / 20 at 768. 4 / 20 / 16 at 390.
 - **Radii:** cards 24 (20 on mobile), photos 28, inputs 14, buttons/capsules/tabs/slots pill.
 - **Page flow:** cream sections hold white cards. Dark gradient sections are entered and left through a layered wave divider at selected transitions only.
-  - Home: Hero (dark, video) · Founder (cream) · Philosophy (cream) · wave · Lessons & clinics (dark) · wave · Calendar preview (cream) · Testimonials + universities (cream → mist) · wave · Footer
+  - Home: Hero (dark, video) · Founder (cream) · Philosophy (cream) · wave · Lessons & clinics (dark) · wave · Booking summary (cream, links to Calendar) · Testimonials + school logo wall (cream → mist) · wave · Footer
   - Lessons: Hero (dark, image) · Lesson types + includes (cream) · wave · Coaches & pricing (dark, white cards) · wave · Locations (cream) · wave · Footer
-  - Clinics: Hero (dark, image/video) · Upcoming (cream) · wave · Past clinics (dark) · wave · Team clinics (cream) · wave · Footer
+  - Clinics: Hero (dark, image/video) · Upcoming (cream) · wave · What clinics cover (focus panels) + Past clinics (dark) · wave · Team clinics (cream) · wave · Footer
   - Calendar, Contact: dark title band · cream content · wave · Footer
 - **Mobile hero (Home):** navy gradient, no video. Heading, one sentence, full-width Book button, then the secondary button and trust row.
 
@@ -51,6 +51,9 @@ Replace the revision-1 frames rather than keeping both: import the new frames, c
 | Tabs | Use = Forms / Lesson format | Tabs element, pill style |
 | Calendar parts | Day, Week day, Slot | Wix Bookings Booking Calendar widget design panel |
 | Wave divider | From = Cream / Navy | Section Shape Divider |
+| Booking summary | none | Container + buttons + pill links to the Calendar page |
+| Focus panel | Width = Narrow / Wide | Container with image background, overlay, pill label and caption |
+| School logo tile | State = Placeholder / Logo | Gallery or Repeater item |
 | Header · Mobile book bar | none | Global header with scroll effect; container pinned to the bottom on mobile |
 
 ## Naming

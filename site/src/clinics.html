@@ -75,7 +75,7 @@
         <span class="icon-dot">{{icon:calendar}}</span>
         <div class="stack gap-1">
           <h3 class="h3">No clinics scheduled right now.</h3>
-          <p class="card__text">Clinics fill quickly. Join the waitlist and we’ll email you when the next one opens. Until then, here’s what we’ve run recently.</p>
+          <p class="card__text">Clinics fill quickly. Join the waitlist and we’ll email you when the next one opens. Until then, see what clinics cover and what we’ve run below.</p>
         </div>
         <a class="btn" href="contact.html#waitlist">Join the waitlist {{icon:arrow-right}}</a>
       </div>
@@ -84,15 +84,41 @@
 
   {{wave:to-dark}}
 
-  <!-- 04_Past_Clinics · real past clinics; in Wix, a second Events widget filtered to Past events -->
-  <section class="section section--dark on-dark" id="Past" aria-labelledby="past-title">
+  <!-- 04_Focus_Panels + Past_Clinics (one dark section).
+       Focus panels: three image panels; the hovered panel widens (desktop). Photos are Unsplash stock, tinted navy. -->
+  <section class="section section--dark on-dark" id="Past" aria-labelledby="focus-title">
     <div class="container">
       <div class="section-head reveal">
+        <div class="section-head__text">
+          <p class="label label--line">What clinics cover</p>
+          <h2 class="h2" id="focus-title">Built around the details that decide races.</h2>
+        </div>
+        <p class="section-head__aside">Each clinic focuses on a few race skills, taught in the water by athletes who use them at the highest level.</p>
+      </div>
+      <div class="panels reveal">
+        <article class="panel">
+          <div class="panel__img" style="background-image: url('assets/media/stock-clinic-underwater.jpg'); background-position: 40% 30%" role="img" aria-label="Swimmer gliding underwater over pool tiles (stock photo)"></div>
+          <p class="panel__tag">{{icon:arrow-down}} Starts &amp; underwaters</p>
+          <p class="panel__text">Explosive starts, tight streamlines and strong underwater kicks that set up the whole race.</p>
+        </article>
+        <article class="panel">
+          <div class="panel__img" style="background-image: url('assets/media/stock-clinic-breakout.jpg'); background-position: 45% center" role="img" aria-label="Swimmer breaking out into butterfly in a racing lane (stock photo)"></div>
+          <p class="panel__tag">{{icon:waves}} Turns &amp; breakouts</p>
+          <p class="panel__text">Open and crossover turns, pullouts and breakouts that carry speed off every wall.</p>
+        </article>
+        <article class="panel panel--wide">
+          <div class="panel__img" style="background-image: url('assets/media/stock-clinic-race.jpg'); background-position: 70% center" role="img" aria-label="Freestyle swimmer racing down a lane (stock photo)"></div>
+          <p class="panel__tag">{{icon:target}} Race detail &amp; finishes</p>
+          <p class="panel__text">Stroke efficiency, race awareness and finishes, with individual correction from the coaches.</p>
+        </article>
+      </div>
+      <p class="note panels__note"><span class="design-note">Stock photos</span> Replace with Excellence Swimming clinic photos when supplied.</p>
+
+      <div class="section-head reveal past-head">
         <div class="section-head__text">
           <p class="label label--line">Past clinics</p>
           <h2 class="h2" id="past-title">What we’ve run.</h2>
         </div>
-        <span class="design-note">Clinic photos requested</span>
       </div>
       <div class="cards cards--3">
         <article class="card past-card reveal">
