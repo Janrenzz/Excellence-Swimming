@@ -9,6 +9,19 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
+  /* REVEAL — runs first so a later script error can never leave sections hidden.
+     Fade + 24px rise as content enters the viewport (Wix: Entrance animation "Fade in" + "Slide up"). */
+  var reveals = $$(".reveal");
+  if ("IntersectionObserver" in window && !reduceMotion) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+
   /* HEADER — transparent over the dark hero, navy once scrolled (Wix: header Scroll effect). */
   var header = $(".header");
   var bookBar = $(".book-bar");
