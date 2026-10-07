@@ -168,6 +168,8 @@
     var params = new URLSearchParams(location.search);
     var state = { format: "1:1", coach: "any", location: "any", day: null, slot: null, monthOffset: 0 };
     if (params.get("coach") && COACHES[params.get("coach")]) state.coach = params.get("coach");
+    if (/^[1-4]:1$/.test(params.get("format") || "")) state.format = params.get("format");
+    $$("[data-cal-tabs] [role=tab]").forEach(function (t) { t.setAttribute("aria-selected", String(t.getAttribute("data-format") === state.format)); });
     $("[data-filter=coach]").value = state.coach;
 
     var today = new Date(); today.setHours(0, 0, 0, 0);
