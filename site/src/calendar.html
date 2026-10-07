@@ -1,33 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-{{head:Book a Lesson — Excellence Swimming|Browse live availability by coach and location and book your swim lesson in a few taps.}}
+{{head:Book a Lesson — Excellence Swimming|Browse availability by lesson type, coach and location, and book your swim lesson in a few taps.}}
 </head>
 <body class="page-calendar">
-<!-- FRAME: 04_Calendar · every Book Now on the site lands here.
-     Wix build: Tabs element (one tab per lesson format) → each tab holds a Wix Bookings
-     "Booking Calendar" widget set to that service, with Location + Staff filters switched on. -->
-{{header:solid:calendar}}
+<!-- FRAME: 04_Calendar · every booking button on the site lands here.
+     Wix build: Tabs element (one tab per lesson format) → each tab holds a native Wix Bookings
+     "Booking Calendar" widget set to that service, with Location + Staff filters switched on.
+     The widget below is a DESIGN PLACEHOLDER for that native widget, not a working booking system.
+     Custom booking needs (packages, multi-session booking, etc.) are scoped in docs/04-booking-requirements.md. -->
+{{header:transparent:calendar}}
 
 <main id="main">
 
-  <section class="cal-head" aria-labelledby="cal-title">
-    <div class="container cal-head__row">
-      <div class="stack gap-2">
-        <p class="t-label eyebrow">Calendar</p>
-        <h1 class="t-h1" id="cal-title">Book a lesson.</h1>
+  <section class="band on-dark" aria-labelledby="cal-title">
+    <div class="container stack gap-3">
+      <div class="band__row">
+        <div class="stack gap-2">
+          <p class="label label--line">Calendar</p>
+          <h1 class="h1" id="cal-title">Book a lesson.</h1>
+        </div>
+        <p class="signin">Booked before? <a href="#">Sign in</a> to see or change your bookings.</p>
       </div>
-      <p class="signin">Booked before? <a href="#">Sign in</a> to see or change your bookings.</p>
+      <ol class="steps" aria-label="How booking works">
+        <li>Choose a lesson type</li>
+        <li>Filter by coach and location</li>
+        <li>Pick a day and time</li>
+        <li>Add swimmer details and pay</li>
+      </ol>
     </div>
   </section>
 
   <section class="cal-shell" aria-label="Availability">
     <div class="container">
       {{partial:calendar-widget}}
-
     </div>
   </section>
 
+  {{wave:to-footer}}
 
 </main>
 

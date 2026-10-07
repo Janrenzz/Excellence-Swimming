@@ -1,7 +1,8 @@
 <a class="skip-link" href="#main">Skip to content</a>
-<!-- 01_Header · Component: Header (State: Transparent on Home hero → Solid on scroll; Solid on all other pages) -->
+<!-- 01_Header · Component: Header (State: Transparent over the dark hero → Navy on scroll) -->
 <header class="header{{variant}}" id="Header">
   <div class="header__inner">
+    <!-- Logo: existing placeholder, unchanged until new artwork is approved -->
     <a class="logo" href="index.html" aria-label="Excellence Swimming home">
       <svg class="logo__mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <path d="M2 12c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
@@ -13,16 +14,16 @@
         {{nav}}
     </nav>
     <div class="header__cta">
-      <a class="btn btn--sm header__book" href="calendar.html">Book Now</a>
+      <a class="btn btn--sm header__book" href="calendar.html">Book a lesson</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
         <span class="menu-toggle__bars" aria-hidden="true"></span><span class="visually-hidden">Open menu</span>
       </button>
     </div>
   </div>
 </header>
-<div class="mobile-menu" id="mobile-menu">
+<div class="mobile-menu on-dark" id="mobile-menu">
   <nav class="mobile-menu__links" aria-label="Mobile">
         {{mobile_nav}}
   </nav>
-  <a class="btn btn--light btn--block" href="calendar.html">Book Now</a>
+  <a class="btn btn--block" href="calendar.html">Book a lesson {{icon:arrow-right}}</a>
 </div>

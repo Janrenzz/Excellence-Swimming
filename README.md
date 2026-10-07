@@ -1,12 +1,12 @@
 # Excellence Swimming: Website Design
 
-A premium, minimal and editorial website design for a high-end swimming academy. It is built so it can be recreated in Figma as editable layers and exported to **Wix Studio**.
+A premium, compact swimming-coaching website design (revision 2 of 3). It is built so it can be recreated in Figma as editable layers and exported to **Wix Studio**.
 
 ```
 site/                    Responsive HTML/CSS reference (the visual source of truth)
   index.html                     01 Home
   lessons.html                   02 Lessons (formats, coaches & pricing)
-  clinics.html                   03 Clinics (?state=empty previews the empty state)
+  clinics.html                   03 Clinics (?state=scheduled previews the scheduled-clinics state)
   calendar.html                  04 Calendar (booking; every Book Now lands here)
   contact.html                   05 Contact (general inquiry + waitlist forms)
   components.html                00 Components board for Figma
@@ -17,6 +17,9 @@ design-system/tokens.json        Colour, type, spacing, radius, layout tokens (F
 docs/01-figma-build-spec.md      Figma file, components, page frames
 docs/02-wix-studio-handoff.md    What's native in Wix, Bookings/Events/Forms/CMS setup, content to replace
 docs/03-interactions.md          Motion plan for Wix Studio
+docs/04-booking-requirements.md  Native Wix Bookings vs. future custom booking needs
+docs/05-contact-handover.md      Service-interest form, contact labels, handover for Ruslan
+docs/06-revision-2-status.md     Revision checklist + asset request for the client
 ```
 
 ## View it
@@ -36,23 +39,23 @@ The `gh-pages` branch serves the site at https://janrenzz.github.io/Excellence-S
 | 00_Components | `…/components.html?capture` | 1440 |
 | 01_Home | `…/index.html?capture` | 1280 · 390 |
 | 02_Lessons | `…/lessons.html?capture` | 1280 · 390 |
-| 03_Clinics | `…/clinics.html?capture` (and `?capture&state=empty`) | 1280 · 390 |
+| 03_Clinics | `…/clinics.html?capture` (and `?capture&state=scheduled`) | 1280 · 390 |
 | 04_Calendar | `…/calendar.html?capture` | 1280 · 390 |
 | 05_Contact | `…/contact.html?capture` | 1280 · 390 |
 
 To refresh the hosted copy after changes, copy `site/` onto the `gh-pages` branch and push.
 
-## Art direction
+## Art direction (revision 2)
 
-**Premium, athletic, approachable. Built to get returning customers to booking fast, and to make Coach Ruslan's credentials obvious to first-time visitors within seconds.**
+**Compact, polished and easy to book.** Visual reference: four screenshots of tygerswimfitness.com, adapted to Excellence Swimming's own content and identity.
 
-- **Three colours.** Ink Navy `#0E1B2C` for text, nav, footer and buttons. Warm White `#FAF8F4` for the page. Champagne Gold `#C6A969` only for thin rules, chips, small labels and the credential bar. Sections alternate Warm White and Ink Navy so each one reads as its own block; the section before the navy footer is always white.
-- **Sora 800 throughout.** Oversized uppercase headlines, short body copy capped near 50 characters per line.
-- **Credentials first.** The hero says what we offer in two seconds, the credential bar proves it, and the founder section follows immediately.
-- **Booking everywhere it matters.** Every Book Now goes to the Calendar page, and the same booking calendar is embedded on Home so returning customers can book without leaving it. Phones get a pinned Book Now bar, and the Calendar page has a pinned booking summary.
-- **Selective imagery.** The hero video, Ruslan's portrait, coach portraits, and one image each on Lessons and Clinics. Nothing decorative.
-- **Lines, not boxes.** Content is grouped with 1px rules and space inside each section. Panels appear only around forms and the booking widget.
+- **Palette.** Deep navy gradient sections, warm cream page, white cards, aqua accents and soft blue body text. Sampled values are approximations.
+- **Type.** Inter Tight Light headings in sentence case, Manrope body text and bold card titles, Space Grotesk small uppercase labels. All three were verified from the reference site's own stylesheet.
+- **Cards and capsules.** White rounded cards with thin pale borders; aqua line icons in pale circles with small index numbers; pill-shaped credential capsules; pill buttons (filled aqua or outlined).
+- **Images.** Rounded photos, a layered frame and an overlapping name panel on the founder slideshow. Layered wave dividers at selected light/dark transitions.
+- **Booking first.** A booking button in every hero, the header, the footer and a pinned mobile bar. The Home calendar preview and the Calendar page are placeholders for the native Wix Bookings widget.
+- **Logo.** The existing logo stays as a placeholder until new artwork is approved.
 
 ## Content honesty
 
-Real content (coaches, rates, credentials, location, contact details, clinics, photos) comes from excellenceswimming.com. Anything still in `[brackets]` with a dotted underline is a placeholder: credential details, session length, the second location, testimonials, and Ruslan's first-person intro, which is a marked draft for him to rewrite.
+Real content (coaches, rates, credentials, location, contact details, clinics, photos) comes from excellenceswimming.com. Anything in `[brackets]` with a dotted underline, or flagged with a dashed "design note" capsule, is a placeholder: the founder intro (draft), session length, the second location, testimonials, the review rating, university destinations, clinic images and replacement footage. See `docs/06-revision-2-status.md`.

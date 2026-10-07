@@ -5,32 +5,30 @@
 </head>
 <body class="page-contact">
 <!-- FRAME: 05_Contact -->
-{{header:solid:contact}}
+{{header:transparent:contact}}
 
 <main id="main">
 
-  <section class="page-hero" id="Hero" aria-labelledby="hero-title" style="padding-bottom: 64px">
-    <div class="container">
-      <div class="stack gap-3 reveal">
-        <p class="t-label eyebrow">Contact</p>
-        <h1 class="t-h1" id="hero-title">Get in touch.</h1>
+  <section class="band on-dark" aria-labelledby="hero-title">
+    <div class="container band__row">
+      <div class="stack gap-2">
+        <p class="label label--line">Contact</p>
+        <h1 class="h1" id="hero-title">Get in touch.</h1>
       </div>
+      <p class="lead" style="max-width: 40ch">Questions about lessons, clinics or scheduling? Send a message and we’ll get back to you.</p>
     </div>
   </section>
 
-  <section class="section" id="Contact" style="padding-top: 0">
+  <section class="section section--tight-top" id="Contact">
     <div class="container grid-12 contact-grid">
       <div class="contact-grid__info reveal">
-        <p class="t-body t-muted">Questions about lessons, clinics or scheduling? Leave us a message and we’ll get back to you.</p>
-        <ul class="info-list">
-          <li><span class="t-label">Email</span><a href="mailto:excellenceswimming@gmail.com">excellenceswimming@gmail.com</a></li>
-          <li><span class="t-label">Phone</span><a href="tel:+16145568238">(614) 556-8238</a></li>
-          <li><span class="t-label">Location</span><span>St. Charles Prep<br>2010 E Broad St, Bexley, OH 43209</span></li>
-        </ul>
-        <a class="btn" href="calendar.html" style="align-self: flex-start">Book Now</a>
+        <a class="card info-card" href="mailto:excellenceswimming@gmail.com"><span class="icon-dot icon-dot--sm">{{icon:mail}}</span><span class="info-card__text"><span class="label">Email</span>excellenceswimming@gmail.com</span></a>
+        <a class="card info-card" href="tel:+16145568238"><span class="icon-dot icon-dot--sm">{{icon:phone}}</span><span class="info-card__text"><span class="label">Phone</span>(614) 556-8238</span></a>
+        <div class="card card--static info-card"><span class="icon-dot icon-dot--sm">{{icon:pin}}</span><span class="info-card__text"><span class="label">Location</span>St. Charles Prep, 2010 E Broad St, Bexley, OH 43209</span></div>
+        <a class="btn" href="calendar.html" style="align-self: flex-start">Book a lesson {{icon:arrow-right}}</a>
       </div>
 
-      <!-- Wix: Tabs element · each tab holds one Wix Form -->
+      <!-- Wix: Tabs element · each tab holds one Wix Form. Submissions → Contacts + label by service interest (docs/05-contact-handover.md) -->
       <div class="contact-grid__forms reveal">
         <div class="tabs" role="tablist" aria-label="Choose a form" data-form-tabs>
           <button class="tab" role="tab" id="tab-general" aria-controls="panel-general" aria-selected="true">General inquiry</button>
@@ -41,11 +39,21 @@
           <form class="form" data-demo-form novalidate aria-label="General inquiry">
             <div class="field"><label for="g-name">Name <span class="req">*</span></label><input class="input" id="g-name" required autocomplete="name"><span class="field__error">Enter your name.</span></div>
             <div class="field"><label for="g-email">Email <span class="req">*</span></label><input class="input" id="g-email" type="email" required autocomplete="email"><span class="field__error">Enter an email address like name@email.com.</span></div>
+            <div class="field"><label for="g-interest">I’m interested in <span class="req">*</span></label>
+              <select class="input" id="g-interest" required>
+                <option value="">Choose one</option>
+                <option>Private lessons (1:1)</option>
+                <option>Semi-private or small group (2:1 – 4:1)</option>
+                <option>Competitive swimming / stroke technique</option>
+                <option>Learn to swim</option>
+                <option>Clinics</option>
+                <option>Team clinic for a club or school</option>
+                <option>Something else</option>
+              </select><span class="field__error">Choose what you’re interested in.</span></div>
             <div class="field"><label for="g-phone">Phone</label><input class="input" id="g-phone" type="tel" autocomplete="tel"></div>
-            <div class="field"><label for="g-topic">Topic</label>
-              <select class="input" id="g-topic"><option>Lessons</option><option>Clinics</option><option>Team clinics</option><option>Something else</option></select></div>
-            <div class="field field--full"><label for="g-msg">Message <span class="req">*</span></label><textarea class="input" id="g-msg" required></textarea><span class="field__error">Add a short message.</span></div>
-            <div class="form__foot"><p class="note"><span class="req" style="color: var(--gold-ink)">*</span> Required</p><button class="btn" type="submit">Send message</button></div>
+            <div class="field field--full"><label for="g-msg">Message <span class="req">*</span></label><textarea class="input" id="g-msg" required placeholder="Swimmer’s age, experience and what you’d like help with"></textarea><span class="field__error">Add a short message.</span></div>
+            <label class="check field--full"><input type="checkbox" id="g-optin"> Email me about new clinics and lesson openings that match my interest.</label>
+            <div class="form__foot"><span class="design-note">Form design · Wix Forms setup pending</span><button class="btn" type="submit">Send message {{icon:arrow-right}}</button></div>
           </form>
         </div>
 
@@ -55,17 +63,17 @@
               <select class="input" id="w-for" required><option value="">Choose one</option><option>A lesson time that’s fully booked</option><option>A specific coach</option><option>The next clinic</option></select><span class="field__error">Choose what you’re waiting for.</span></div>
             <div class="field"><label for="w-name">Parent / swimmer name <span class="req">*</span></label><input class="input" id="w-name" required autocomplete="name"><span class="field__error">Enter a name.</span></div>
             <div class="field"><label for="w-email">Email <span class="req">*</span></label><input class="input" id="w-email" type="email" required autocomplete="email"><span class="field__error">Enter an email address like name@email.com.</span></div>
-            <div class="field"><label for="w-format">Lesson format</label><select class="input" id="w-format"><option>Any</option><option>1:1 Private</option><option>2:1 Semi-private</option><option>3:1 Small group</option><option>4:1 Group</option></select></div>
             <div class="field"><label for="w-coach">Coach</label><select class="input" id="w-coach"><option>Any coach</option><option>Ruslan Gaziev</option><option>Hannah Bach</option></select></div>
-            <div class="field"><label for="w-loc">Location</label><select class="input" id="w-loc"><option>Any location</option><option>St. Charles · Bexley</option><option>[Second location]</option></select></div>
-            <div class="field"><label for="w-age">Swimmer age</label><input class="input" id="w-age" type="number" min="2" inputmode="numeric"></div>
+            <div class="field"><label for="w-format">Lesson format</label><select class="input" id="w-format"><option>Any</option><option>1:1 Private</option><option>2:1 Semi-private</option><option>3:1 Small group</option><option>4:1 Group</option></select></div>
             <div class="field field--full"><label for="w-times">Days and times that work</label><input class="input" id="w-times" placeholder="e.g. weekday mornings, Saturday afternoon"><span class="field__hint">We’ll contact you when a matching spot opens.</span></div>
-            <div class="form__foot"><p class="note"><span class="req" style="color: var(--gold-ink)">*</span> Required</p><button class="btn" type="submit">Join waitlist</button></div>
+            <div class="form__foot"><span class="design-note">Form design · Wix Forms setup pending</span><button class="btn" type="submit">Join waitlist {{icon:arrow-right}}</button></div>
           </form>
         </div>
       </div>
     </div>
   </section>
+
+  {{wave:to-footer}}
 
 </main>
 

@@ -1,96 +1,187 @@
 <!doctype html>
 <html lang="en">
 <head>
-{{head:Lessons — Excellence Swimming|Private, semi-private and small group swim lessons in Columbus, Ohio (1:1, 2:1, 3:1, 4:1) with Ruslan Gaziev and Hannah Bach. Rates and online booking.}}
+{{head:Lessons — Excellence Swimming|Private, semi-private and small group swim lessons in Columbus, Ohio (1:1, 2:1, 3:1, 4:1) with Ruslan Gaziev and Hannah Bach. Rates, locations and online booking.}}
 </head>
 <body class="page-lessons">
-<!-- FRAME: 02_Lessons -->
-{{header:solid:lessons}}
+<!-- FRAME: 02_Lessons · Hero · Lesson types + what's included · Coaches & pricing · Locations -->
+{{header:transparent:lessons}}
 
 <main id="main">
 
-  <!-- 02_Hero · the page's one image -->
-  <section class="page-hero" id="Hero" aria-labelledby="hero-title">
-    <div class="container">
-      <div class="grid-12 page-hero__grid">
-        <div class="page-hero__title reveal">
-          <p class="t-label eyebrow">Lessons</p>
-          <h1 class="t-h1" id="hero-title">Private &amp; small<br>group lessons.</h1>
+  <!-- 02_Hero · cinematic image + navy overlay (Wix: section background image + overlay) -->
+  <section class="hero page-hero on-dark" id="Hero" aria-labelledby="hero-title">
+    <div class="hero__media">
+      <div class="media__img" style="background-image: url('assets/media/lessons-hero.jpg'); background-position: 60% center" role="img" aria-label="Coach demonstrating a streamline to two swimmers from the pool deck"></div>
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <div class="hero__stack">
+        <p class="label label--line">Lessons</p>
+        <h1 class="h1" id="hero-title">Private and small group lessons.</h1>
+        <p class="lead">Fully personalized to each swimmer’s goals and level. Pick a format, choose your coach and book a time.</p>
+        <div class="btn-row">
+          <a class="btn" href="calendar.html">Book a lesson {{icon:arrow-right}}</a>
+          <a class="btn btn--outline" href="#coaches">Coaches &amp; pricing</a>
         </div>
-        <div class="page-hero__aside reveal">
-          <p class="t-body-lg t-muted">Fully personalized to each swimmer’s goals and level. Choose how many swimmers share the coach, pick your coach, and book a time.</p>
-          <a class="btn" href="calendar.html">Book Now</a>
-        </div>
-      </div>
-      <div class="media ratio-21x9 page-hero__media ph-water reveal">
-        <div class="media__img" style="background-image: url('assets/media/lessons-hero.jpg')" role="img" aria-label="Coach demonstrating technique to swimmers from the pool deck"></div>
-        <span class="media__tag">Image · Lesson in progress</span>
       </div>
     </div>
   </section>
 
-  <!-- 03_Formats -->
-  <section class="section section--ink on-dark" id="Formats" aria-labelledby="formats-title">
-    <div class="container">
-      <div class="section-head reveal">
-        <div class="section-head__text">
-          <p class="t-label eyebrow">Formats</p>
-          <h2 class="t-h2" id="formats-title">Four ways to book.</h2>
-        </div>
-      </div>
-      <div class="formats">
-        <div class="format reveal"><span class="format__ratio">1:1</span><h3 class="format__name">Private</h3><p class="format__text">The coach’s full attention for the whole session. The fastest way to fix technique.</p></div>
-        <div class="format reveal"><span class="format__ratio">2:1</span><h3 class="format__name">Semi-private</h3><p class="format__text">Two swimmers, one coach. Ideal for siblings or training partners.</p></div>
-        <div class="format reveal"><span class="format__ratio">3:1</span><h3 class="format__name">Small group</h3><p class="format__text">Three swimmers at a similar level, with feedback for each one.</p></div>
-        <div class="format reveal"><span class="format__ratio">4:1</span><h3 class="format__name">Group</h3><p class="format__text">Four swimmers, still small enough for individual corrections.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04_Coaches_Pricing · Wix: CMS collection "Coaches" → repeater (one item per coach) -->
-  <section class="section" id="coaches" aria-labelledby="coaches-title">
+  <!-- 03_Lesson_Types · four format cards + "every lesson includes" (merged: no separate benefits section) -->
+  <section class="section" id="Formats" aria-labelledby="formats-title">
     <div class="container">
       <div class="section-head reveal">
         <div class="section-head__text">
-          <p class="t-label eyebrow">Coaches &amp; pricing</p>
-          <h2 class="t-h2" id="coaches-title">Choose your coach.</h2>
+          <p class="label label--line">Lesson types</p>
+          <h2 class="h2" id="formats-title">Choose your format.</h2>
         </div>
-        <p class="note" style="max-width: 36ch">Rates are per session, in USD. Sessions are [duration] minutes. When a round of availability sells out, the calendar shows no open times. Join the waitlist and we’ll let you know.</p>
+        <p class="section-head__aside">Rates depend on the coach. See each coach’s prices below.</p>
       </div>
-      <div class="coaches">
-
-        <article class="coach reveal" id="coach-ruslan">
-          <div class="media ratio-3x4 ph-portrait"><div class="media__img" style="background-image: url('assets/media/coach-ruslan.jpg')" role="img" aria-label="Portrait of Ruslan Gaziev"></div><span class="media__tag">Portrait</span></div>
-          <div class="coach__info">
-            <p class="t-label">Founder &amp; Head Coach</p>
-            <h3 class="t-h3">Ruslan Gaziev</h3>
-            <ul class="coach__creds" aria-label="Credentials"><li class="chip">Canadian Olympian</li><li class="chip">World Championship Medallist</li><li class="chip">NCAA All-American</li><li class="chip">B1G Champion</li><li class="chip">Pro Swimmer</li></ul>
-            <p class="t-body t-muted">Best strokes: Freestyle, backstroke, butterfly</p>
-          </div>
-          <div class="prices">
-            <ul class="price-list" aria-label="Ruslan Gaziev rates"><li><span class="price-list__name">1:1 <span>Private</span></span><span class="price-list__price">$150</span></li><li><span class="price-list__name">2:1 <span>Semi-private</span></span><span class="price-list__price">$160</span></li><li><span class="price-list__name">3:1 <span>Small group</span></span><span class="price-list__price">$180</span></li><li><span class="price-list__name">4:1 <span>Group</span></span><span class="price-list__price">$200</span></li></ul>
-            <a class="btn" href="calendar.html?coach=ruslan">Book with Ruslan</a>
-          </div>
+      <div class="cards cards--4 cards--m2">
+        <article class="card reveal">
+          <span class="format__ratio">1:1</span>
+          <h3 class="h3">Private</h3>
+          <p class="card__text">The coach’s full attention. The fastest way to fix technique.</p>
+          <p class="card__foot format__price">From $130 <span>/ session</span></p>
         </article>
-
-        <article class="coach reveal" id="coach-hannah">
-          <div class="media ratio-3x4 ph-portrait"><div class="media__img" style="background-image: url('assets/media/coach-hannah.jpg')" role="img" aria-label="Portrait of Hannah Bach"></div><span class="media__tag">Portrait</span></div>
-          <div class="coach__info">
-            <p class="t-label">Partner &amp; Coach</p>
-            <h3 class="t-h3">Hannah Bach</h3>
-            <ul class="coach__creds" aria-label="Credentials"><li class="chip">Olympic Trials Finalist</li><li class="chip">NCAA Medallist</li><li class="chip">B1G Champion</li><li class="chip">Pro Swimmer</li></ul>
-            <p class="t-body t-muted">Best strokes: Breaststroke, butterfly, IM</p>
-          </div>
-          <div class="prices">
-            <ul class="price-list" aria-label="Hannah Bach rates"><li><span class="price-list__name">1:1 <span>Private</span></span><span class="price-list__price">$130</span></li><li><span class="price-list__name">2:1 <span>Semi-private</span></span><span class="price-list__price">$150</span></li><li><span class="price-list__name">3:1 <span>Small group</span></span><span class="price-list__price">$165</span></li><li><span class="price-list__name">4:1 <span>Group</span></span><span class="price-list__price">$180</span></li></ul>
-            <p class="note">Not available at St. Charles.</p><a class="btn" href="calendar.html?coach=hannah">Book with Hannah</a>
-          </div>
+        <article class="card reveal">
+          <span class="format__ratio">2:1</span>
+          <h3 class="h3">Semi-private</h3>
+          <p class="card__text">Two swimmers, one coach. Ideal for siblings or training partners.</p>
+          <p class="card__foot format__price">From $150 <span>/ session</span></p>
         </article>
-
+        <article class="card reveal">
+          <span class="format__ratio">3:1</span>
+          <h3 class="h3">Small group</h3>
+          <p class="card__text">Three swimmers at a similar level, with feedback for each one.</p>
+          <p class="card__foot format__price">From $165 <span>/ session</span></p>
+        </article>
+        <article class="card reveal">
+          <span class="format__ratio">4:1</span>
+          <h3 class="h3">Group</h3>
+          <p class="card__text">Four swimmers, still small enough for individual corrections.</p>
+          <p class="card__foot format__price">From $180 <span>/ session</span></p>
+        </article>
       </div>
-      <p class="note" style="margin-top: 24px">Can’t find a time that works? <a class="link-arrow" href="contact.html#waitlist" style="min-height: 0"><span class="link-arrow__text">Join the waitlist</span><span class="arrow" aria-hidden="true">→</span></a></p>
+
+      <div class="card card--static includes reveal" aria-labelledby="includes-title">
+        <div class="stack gap-2">
+          <p class="label">Every lesson includes</p>
+          <h3 class="h3" id="includes-title">More than time in the water.</h3>
+        </div>
+        <ul class="includes__list">
+          <li class="include"><span class="icon-dot icon-dot--sm">{{icon:video}}</span><div><p class="include__title">Video analysis</p><p class="include__text">Swimmers see their stroke on video, so corrections make sense.</p></div></li>
+          <li class="include"><span class="icon-dot icon-dot--sm">{{icon:message}}</span><div><p class="include__title">Clear feedback</p><p class="include__text">Specific corrections during the lesson and what to work on next.</p></div></li>
+          <li class="include"><span class="icon-dot icon-dot--sm">{{icon:target}}</span><div><p class="include__title">A personal plan</p><p class="include__text">Built around the swimmer’s goals, from technique to race day.</p></div></li>
+          <li class="include"><span class="icon-dot icon-dot--sm">{{icon:clock}}</span><div><p class="include__title ph">[Session length]</p><p class="include__text">Confirm the lesson length with Ruslan.</p></div></li>
+        </ul>
+      </div>
     </div>
   </section>
+
+  {{wave:to-dark}}
+
+  <!-- 04_Coaches_Pricing · Wix: CMS collection "Coaches" → repeater (one white card per coach) -->
+  <section class="section section--dark on-dark" id="coaches" aria-labelledby="coaches-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-head__text">
+          <p class="label label--line">Coaches &amp; pricing</p>
+          <h2 class="h2" id="coaches-title">Choose your coach.</h2>
+        </div>
+        <p class="section-head__aside note">Rates are per session, in USD. When a round of availability sells out, join the waitlist and we’ll let you know.</p>
+      </div>
+
+      <article class="coach-card on-light reveal" id="coach-ruslan">
+        <div class="media ratio-4x5"><div class="media__img" style="background-image: url('assets/media/coach-ruslan.jpg')" role="img" aria-label="Portrait of Ruslan Gaziev"></div></div>
+        <div class="coach-card__info">
+          <div class="coach-card__head stack gap-1">
+            <p class="label">Founder &amp; Head Coach</p>
+            <h3 class="h2" style="font-size: clamp(1.625rem, 1.3rem + 1vw, 2.125rem)">Ruslan Gaziev</h3>
+          </div>
+          <ul class="pills" aria-label="Credentials">
+            <li class="pill pill--sm">{{icon:award}} Canadian Olympian</li>
+            <li class="pill pill--sm">{{icon:award}} World Championship medallist</li>
+            <li class="pill pill--sm">{{icon:award}} NCAA All-American</li>
+            <li class="pill pill--sm">{{icon:award}} Big Ten champion</li>
+            <li class="pill pill--sm">{{icon:award}} Pro swimmer</li>
+          </ul>
+          <ul class="coach-card__meta">
+            <li>{{icon:waves}} <span><strong class="strong">Best strokes:</strong> freestyle, backstroke, butterfly</span></li>
+            <li>{{icon:pin}} <span>St. Charles Prep, Bexley</span></li>
+          </ul>
+        </div>
+        <div class="prices">
+          <ul class="price-list" aria-label="Ruslan Gaziev rates"><li><span class="price-list__name">1:1 <span>Private</span></span><span class="price-list__price">$150</span></li><li><span class="price-list__name">2:1 <span>Semi-private</span></span><span class="price-list__price">$160</span></li><li><span class="price-list__name">3:1 <span>Small group</span></span><span class="price-list__price">$180</span></li><li><span class="price-list__name">4:1 <span>Group</span></span><span class="price-list__price">$200</span></li></ul>
+          <a class="btn btn--block" href="calendar.html?coach=ruslan">Book with Ruslan {{icon:arrow-right}}</a>
+        </div>
+      </article>
+
+      <article class="coach-card on-light reveal" id="coach-hannah">
+        <div class="media ratio-4x5"><div class="media__img" style="background-image: url('assets/media/coach-hannah.jpg')" role="img" aria-label="Portrait of Hannah Bach"></div></div>
+        <div class="coach-card__info">
+          <div class="coach-card__head stack gap-1">
+            <p class="label">Partner &amp; Coach</p>
+            <h3 class="h2" style="font-size: clamp(1.625rem, 1.3rem + 1vw, 2.125rem)">Hannah Bach</h3>
+          </div>
+          <ul class="pills" aria-label="Credentials">
+            <li class="pill pill--sm">{{icon:award}} Olympic Trials finalist</li>
+            <li class="pill pill--sm">{{icon:award}} NCAA medallist</li>
+            <li class="pill pill--sm">{{icon:award}} Big Ten champion</li>
+            <li class="pill pill--sm">{{icon:award}} Pro swimmer</li>
+          </ul>
+          <ul class="coach-card__meta">
+            <li>{{icon:waves}} <span><strong class="strong">Best strokes:</strong> breaststroke, butterfly, IM</span></li>
+            <li>{{icon:pin}} <span><span class="ph">[Second location]</span> · not available at St. Charles</span></li>
+          </ul>
+        </div>
+        <div class="prices">
+          <ul class="price-list" aria-label="Hannah Bach rates"><li><span class="price-list__name">1:1 <span>Private</span></span><span class="price-list__price">$130</span></li><li><span class="price-list__name">2:1 <span>Semi-private</span></span><span class="price-list__price">$150</span></li><li><span class="price-list__name">3:1 <span>Small group</span></span><span class="price-list__price">$165</span></li><li><span class="price-list__name">4:1 <span>Group</span></span><span class="price-list__price">$180</span></li></ul>
+          <a class="btn btn--block" href="calendar.html?coach=hannah">Book with Hannah {{icon:arrow-right}}</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  {{wave:from-dark}}
+
+  <!-- 05_Locations · pool photos + details (Wix: CMS "Locations" repeater or two containers) -->
+  <section class="section section--tight-top" id="locations" aria-labelledby="locations-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="section-head__text">
+          <p class="label label--line">Locations</p>
+          <h2 class="h2" id="locations-title">Where we swim.</h2>
+        </div>
+        <p class="section-head__aside">Can’t find a time that works? <a class="link" href="contact.html#waitlist"><span>Join the waitlist</span>{{icon:arrow-right}}</a></p>
+      </div>
+      <div class="cards cards--2">
+        <article class="card card--static location-card reveal">
+          <div class="media"><div class="media__img" style="background-image: url('assets/media/home-hero-drone-still.jpg'); background-position: 40% 60%" role="img" aria-label="The pool at St. Charles Prep"></div></div>
+          <div class="location-card__body">
+            <p class="label">Location 1</p>
+            <h3 class="h3">St. Charles Prep</h3>
+            <p class="small">2010 E Broad St<br>Bexley, OH 43209</p>
+            <ul class="coach-card__meta"><li>{{icon:user}} <span>Coach: Ruslan Gaziev</span></li></ul>
+            <a class="link card__foot" href="https://maps.google.com/?q=St.+Charles+Preparatory+School,+2010+E+Broad+St,+Bexley,+OH+43209" target="_blank" rel="noopener"><span>Get directions</span>{{icon:arrow-right}}</a>
+          </div>
+        </article>
+        <article class="card card--static location-card reveal">
+          <div class="media media--empty"><div class="media__ph">{{icon:image}}<span>Pool photo needed</span></div></div>
+          <div class="location-card__body">
+            <p class="label">Location 2</p>
+            <h3 class="h3 ph">[Second location name]</h3>
+            <p class="small ph">[Street address]<br>[City, OH ZIP]</p>
+            <ul class="coach-card__meta"><li>{{icon:user}} <span>Coach: Hannah Bach <span class="ph">[confirm]</span></span></li></ul>
+            <span class="design-note card__foot">Details needed from Ruslan</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  {{wave:to-footer}}
 
 </main>
 

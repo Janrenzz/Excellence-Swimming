@@ -1,55 +1,50 @@
-# Wix Studio Build Guide (v2)
+# Wix Studio Build Guide (revision 2)
 
-Everything in the design is buildable with native Wix Studio and Wix apps (Bookings, Events, Forms, CMS). No custom code is required. The table marks the two places where Wix's own widget decides the final look, and the one optional code snippet.
+Everything in the design is buildable with native Wix Studio and Wix apps (Bookings, Events, Forms, CMS, Members). The table marks where a Wix widget decides the final look and where a feature still needs checking during the build.
 
 ## Can Wix do it natively?
 
 | Design element | Wix Studio feature | Native? |
 |---|---|---|
-| 5 pages + nav + Book Now in the header | Pages, global Header, Menu, Button linked to the Calendar page | Yes |
-| Hero video with overlay | Section background → Video, plus an overlay colour | Yes |
-| Header transparent over the hero → solid on scroll | Header scroll effect (background change on scroll) | Yes. If your editor version lacks it, use the Solid header on Home too |
-| Credential bar | Horizontal Stack of text with gold dots | Yes |
-| Founder, Why Excellence, Lessons/Clinics links, quotes | Stacks, Text, Line, Image | Yes |
-| Coaches & pricing rows | CMS collection "Coaches" → Repeater | Yes |
-| Booking calendar embedded on Home | Same Tabs + Booking Calendar widgets as the Calendar page (copy the section, or save it as a reusable section) | Yes |
-| Calendar: lesson-format tabs | Tabs element, one Booking Calendar widget per tab | Yes (setup below) |
-| Calendar: coach + location filters, month view, time slots, summary, Next → checkout | Wix Bookings Booking Calendar widget, with Location and Staff filters turned on | Yes. **The widget's own layout**: we style it (fonts, colours, buttons) in its design panel. Spacing will be close to the mock-up, not identical |
-| Mobile calendar sticky summary | The Bookings widget's mobile layout (its own Next button) | **Approximation**: Wix's widget handles this itself. Our sticky bar shows the intended behaviour |
-| "Book with Ruslan" opens the calendar with Ruslan already selected | URL parameters aren't read by the widget natively | Option A (no code): link to the Calendar, and the customer taps the Coach filter. Option B: a short Velo snippet (provided on request) |
-| Clinics list | Wix Events widget, List layout | Yes |
-| Clinics empty state | The Events widget's "no upcoming events" message, plus a waitlist strip that's always visible | Yes (setup below) |
-| Team clinic form, general inquiry, waitlist | Wix Forms (required fields, success message, email notifications) | Yes |
-| Contact form tabs | Tabs element | Yes |
-| Mobile Book Now bar | Container pinned to the bottom of the screen, mobile breakpoint only | Yes |
-| Sign in to see bookings | Wix Members "My Bookings" page | Yes |
-| Animations | Entrance, scroll, hover and loop animations | Yes (see 03-interactions.md) |
+| Fonts: Inter Tight, Manrope, Space Grotesk | Site Styles → Fonts. If a font isn't in Wix's list, upload it (Google Fonts files, open licence) | Yes |
+| Hero video (desktop) / navy gradient (mobile) | Section background → Video + overlay; on the mobile breakpoint, change the section background to the navy gradient | Yes. Check that the mobile background override doesn't still load the video |
+| Header transparent → navy on scroll | Header scroll effect | Yes |
+| Wave dividers | Section → Shape Dividers. Upload `site/assets/media/wave-divider.svg` (two layered waves) and set the colour per section | Yes ([Wix guide](https://support.wix.com/en/article/studio-editor-adding-and-customizing-shape-dividers)) |
+| Founder slideshow (2 photos, arrows) + overlapping name panel | Slideshow element, arrows on, autoplay off; name panel is a container layered over the bottom edge | Yes |
+| Layered photo frame | Container with a gradient fill, rotated −2°, behind the slideshow | Yes |
+| Credential capsules | Repeated containers with a pill radius, icon + text (or Buttons with icons) | Yes |
+| Philosophy, service, format, location cards | Containers in a Grid or Repeater; hover: move up 4px + shadow | Yes |
+| Coaches & pricing | CMS "Coaches" collection → Repeater | Yes |
+| Calendar preview on Home + Calendar page | Wix Bookings Booking Calendar widget (see Bookings below) | Yes. **The widget's own layout decides spacing**; we style fonts, colours and buttons in its design panel |
+| Testimonial slider with arrows + dots | Slideshow element or the Testimonials design element, autoplay off | Yes |
+| Review rating | Text + star icons, typed in once a verified review source exists | Yes (no live feed) |
+| University destinations | Repeater of capsules (optional CMS "Alumni" collection) | Yes |
+| Upcoming clinics with images | Wix Events widget, card/grid layout, images on, upcoming only | Yes |
+| Past clinics | Second Events widget filtered to past events | Yes. Check the past-events option in the widget settings during the build |
+| Forms (inquiry, waitlist, team clinic) | Wix Forms | Yes. See `05-contact-handover.md` for labels |
+| Mobile Book bar | Container pinned to the bottom, mobile breakpoint only | Yes |
+| Sign in to see bookings | Wix Members → My Bookings | Yes |
+| "Book with Ruslan" opens the calendar filtered to Ruslan | Not native (widget ignores URL parameters) | Option A: link to the Calendar and the client taps the Coach filter. Option B: a short Velo snippet |
+| Motion | Entrance, hover, scroll effects; reduced-motion respected | Yes (see `03-interactions.md`) |
 
-## Wix Bookings setup (do this first; the design depends on it)
+## Wix Bookings setup
 
-1. **Staff:** add each coach (Ruslan, Coach 2, …) with their working hours.
-2. **Locations:** add each pool under Business Info → Locations.
-3. **Services:** create four appointment services: *1:1 Private*, *2:1 Semi-private*, *3:1 Small group*, *4:1 Small group*. For each one:
-   - Assign the coaches who teach it and the locations.
-   - Set the duration.
-   - Set the price. If prices differ by coach, use the service's **price options / variants by staff member**. If your plan doesn't offer that, create one service per coach and format instead (e.g. "1:1 Private · Ruslan").
-4. **Calendar page:** add a Tabs element with four tabs. In each tab, add **Bookings → Booking Calendar**, choose that tab's service, then turn on **Filters: Location, Staff** and pick the Monthly layout. In the widget's design panel, set:
-   - Font: Sora
-   - Text: Ink `#0E1B2C`
-   - Background: Warm White `#FAF8F4`
-   - Selected day and time slot: Ink fill with Warm White text
-   - Accents: Gold `#C6A969`
-   - Button: Ink with a 4px radius
-5. **Home embed:** copy the finished Tabs + calendar section onto the Home page (Book section, after Why Excellence). On the mobile breakpoint, leave the widget's own Next button inline, because Home already has the pinned Book Now bar.
-6. **Book Now:** link every Book Now button to the Calendar page. That's the header, hero, footer, mobile bar and coach rows.
-7. **Sign-in:** add Wix Members, so returning customers can sign in and use "My Bookings" to reschedule.
+1. **Staff:** add Ruslan and Hannah with working hours.
+2. **Locations:** add St. Charles Prep and the second location.
+3. **Services:** four appointment services: *1:1 Private*, *2:1 Semi-private*, *3:1 Small group*, *4:1 Group*. Assign coaches, locations, duration and price. Prices differ by coach, so use price options by staff member, or one service per coach and format if the plan doesn't support that.
+4. **Calendar page:** Tabs element with four tabs, each holding a Booking Calendar widget for that service, with the Location and Staff filters on. Widget design: Manrope, Navy `#172A5A` text, White background, selected day and slot in Navy with white text, accents Aqua Ink `#1C7480`, button Aqua `#75CAD3` with Abyss text and pill radius.
+5. **Home preview:** the same widget in a shorter layout (weekly or list view if available), plus an "Open the full calendar" link.
+6. **Booking buttons:** link every Book a lesson button to the Calendar page.
+7. **Sign-in:** Wix Members, so returning clients can reschedule from My Bookings.
+
+The calendar in the design is a **placeholder for this native widget**. It is not a working booking system and never was. Anything the native widget can't do is listed in `04-booking-requirements.md` for separate scoping.
 
 ## Wix Events setup (Clinics)
 
-- Create each clinic as an event with registration or tickets.
-- On the Clinics page, add the **Events** widget with the List layout and Upcoming events only. Style it like the Event Row component: date, title, details line, Register button.
-- **Empty state:** in the widget settings, change the "no upcoming events" text to "New dates coming soon." Then place a small waitlist strip under the widget ("Want first notice of new clinics? Join the waitlist →"). It's useful whether or not clinics are listed, so no show/hide logic is needed.
-- **Team clinics:** use a Wix Form with the fields shown in the design, and set its email notifications to go to you.
+- Create each clinic as an event with registration, a cover image and a short description.
+- **Upcoming:** Events widget, card layout, upcoming only. In its settings, set the "no upcoming events" message to "No clinics scheduled right now. Join the waitlist and we'll email you when the next one opens."
+- **Past:** a second Events widget showing past events, so the page stays useful between clinics.
+- **Team clinics:** Wix Form, notifications to Ruslan.
 
 ## CMS: "Coaches" collection
 
@@ -58,32 +53,12 @@ Everything in the design is buildable with native Wix Studio and Wix apps (Booki
 | Name | Text |
 | Role | Text |
 | Photo | Image |
-| Credentials | Tags |
-| Focus | Text |
-| Price 1:1 | Text |
-| Price 2:1 | Text |
-| Price 3:1 | Text |
-| Price 4:1 | Text |
+| Credentials | Tags (shown as capsules) |
+| Best strokes | Text |
+| Location | Text |
+| Price 1:1 / 2:1 / 3:1 / 4:1 | Text |
 | Order | Number |
-
-Connect it to a repeater on the Lessons page. The founder section on Home is designed separately, as static content.
 
 ## Content status
 
-Pulled from excellenceswimming.com:
-- Coaches and rates (Ruslan $150 / 160 / 180 / 200; Hannah $130 / 150 / 165 / 180, not at St. Charles)
-- Credentials and best strokes
-- Location: St. Charles Prep, 2010 E Broad St, Bexley, OH 43209
-- Email and phone
-- The "Committed to Excellence" tagline
-- Services copy and team-clinic description
-- Recent clinics
-- Coach photos
-
-Still to confirm or supply before launch:
-- **Commonwealth Games Medallist:** it's in the brief but not on the current site. Confirm it, and add the details for each credential (event, year, university).
-- **Ruslan's intro:** first person, replacing the marked draft.
-- **Session length** for lessons.
-- **Second location** (where Hannah coaches).
-- **2–3 real testimonials**, used with permission.
-- **Instagram handle**, if you want it in the footer.
+Real content from excellenceswimming.com: coaches, rates, credentials, best strokes, St. Charles address, email, phone, tagline, clinic descriptions, past clinics, coach photos. Everything still missing is marked on the pages with a dotted underline or a dashed "design note" capsule, and tracked in `06-revision-2-status.md`.

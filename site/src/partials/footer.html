@@ -1,9 +1,12 @@
-<!-- Footer · Component: Footer (includes the closing Book Now call to action) -->
+<!-- Footer · Component: Footer (closing booking prompt + links) -->
 <footer class="footer on-dark" id="Footer">
   <div class="container">
     <div class="footer__cta">
-      <h2 class="t-h1">Your next lesson<br>is a few taps away.</h2>
-      <a class="btn btn--light" href="calendar.html">Book Now</a>
+      <div class="stack gap-1">
+        <h2 class="h2">Ready for your next lesson?</h2>
+        <p>See open times by coach and location, then book in a few taps.</p>
+      </div>
+      <a class="btn" href="calendar.html">Book a lesson {{icon:arrow-right}}</a>
     </div>
     <div class="footer__grid">
       <div class="footer__brand">
@@ -17,20 +20,20 @@
         <p>“Committed to Excellence.” Elite private lessons and clinics in Columbus, Ohio, led by Canadian Olympian Ruslan Gaziev.</p>
       </div>
       <div class="footer__col">
-        <h2 class="t-label">Pages</h2>
+        <h2 class="label">Pages</h2>
         <a href="index.html">Home</a>
         <a href="lessons.html">Lessons</a>
         <a href="clinics.html">Clinics</a>
         <a href="calendar.html">Calendar</a>
         <a href="contact.html">Contact</a>
       </div>
-      <div class="footer__col">
-        <h2 class="t-label">Contact</h2>
+      <div class="footer__col footer__col--wide">
+        <h2 class="label">Contact</h2>
         <a href="mailto:excellenceswimming@gmail.com">excellenceswimming@gmail.com</a>
         <a href="tel:+16145568238">(614) 556-8238</a>
       </div>
       <div class="footer__col">
-        <h2 class="t-label">Locations</h2>
+        <h2 class="label">Location</h2>
         <p>St. Charles Prep<br>2010 E Broad St<br>Bexley, OH 43209</p>
       </div>
     </div>
@@ -41,4 +44,4 @@
   </div>
 </footer>
 <!-- Mobile Book Bar · pinned to the bottom of the screen on phones (hidden on the Calendar page) -->
-<div class="book-bar" id="Book_Bar"><a class="btn btn--block" href="calendar.html">Book Now</a></div>
+<div class="book-bar" id="Book_Bar"><a class="btn btn--block" href="calendar.html">Book a lesson {{icon:arrow-right}}</a></div>

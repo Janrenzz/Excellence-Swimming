@@ -1,18 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Components — Excellence Swimming</title>
-<meta name="description" content="Design system components for Excellence Swimming (revision 2).">
-<meta name="theme-color" content="#061522">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500&display=swap">
-<link rel="preload" href="assets/fonts/sora-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/styles.css?v=5ccaa1c2">
-<script src="assets/js/main.js?v=5ccaa1c2" defer></script>
-
+{{head:Components — Excellence Swimming|Design system components for Excellence Swimming (revision 2).}}
 <meta name="robots" content="noindex">
 <!-- 00_Components board for html.to.design (import at viewport 1440 with ?capture).
      Uses the live site stylesheet, so every component here is identical to the pages.
@@ -82,34 +71,34 @@
 
   <div class="comp" id="Buttons"><p class="comp__name">Button · Link</p>
     <div class="variants">
-      <div class="cell"><span class="cell__label">Style=Primary, State=Default</span><a class="btn" href="#">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
-      <div class="cell"><span class="cell__label">Style=Primary, State=Hover</span><a class="btn is-hover" href="#">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+      <div class="cell"><span class="cell__label">Style=Primary, State=Default</span><a class="btn" href="#">Book a lesson {{icon:arrow-right}}</a></div>
+      <div class="cell"><span class="cell__label">Style=Primary, State=Hover</span><a class="btn is-hover" href="#">Book a lesson {{icon:arrow-right}}</a></div>
       <div class="cell"><span class="cell__label">Style=Primary, State=Disabled</span><a class="btn" href="#" aria-disabled="true">Next</a></div>
       <div class="cell"><span class="cell__label">Style=Outline, State=Default</span><a class="btn btn--outline" href="#">Meet the coaches</a></div>
       <div class="cell"><span class="cell__label">Style=Outline, State=Hover</span><a class="btn btn--outline is-hover" href="#">Meet the coaches</a></div>
-      <div class="cell"><span class="cell__label">Size=Small</span><a class="btn btn--sm" href="#">Register <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
-      <div class="cell"><span class="cell__label">Text link</span><a class="link" href="#"><span>Open the full calendar</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+      <div class="cell"><span class="cell__label">Size=Small</span><a class="btn btn--sm" href="#">Register {{icon:arrow-right}}</a></div>
+      <div class="cell"><span class="cell__label">Text link</span><a class="link" href="#"><span>Open the full calendar</span>{{icon:arrow-right}}</a></div>
     </div>
     <div class="dark on-dark variants">
-      <div class="cell"><span class="cell__label">Surface=Dark, Style=Primary</span><a class="btn" href="#">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
+      <div class="cell"><span class="cell__label">Surface=Dark, Style=Primary</span><a class="btn" href="#">Book a lesson {{icon:arrow-right}}</a></div>
       <div class="cell"><span class="cell__label">Surface=Dark, Style=Outline</span><a class="btn btn--outline" href="#">Lessons &amp; pricing</a></div>
-      <div class="cell"><span class="cell__label">Surface=Dark, Text link</span><a class="link" href="#"><span>View clinics</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
-      <div class="cell"><span class="cell__label">Round button · Dark</span><div class="slides__controls"><button class="round-btn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button><button class="round-btn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div>
+      <div class="cell"><span class="cell__label">Surface=Dark, Text link</span><a class="link" href="#"><span>View clinics</span>{{icon:arrow-right}}</a></div>
+      <div class="cell"><span class="cell__label">Round button · Dark</span><div class="slides__controls"><button class="round-btn">{{icon:arrow-left}}</button><button class="round-btn">{{icon:arrow-right}}</button></div></div>
     </div>
-    <div class="variants"><div class="cell"><span class="cell__label">Round button · Light</span><div class="slides__controls"><button class="round-btn round-btn--light"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button><button class="round-btn round-btn--light"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></div>
+    <div class="variants"><div class="cell"><span class="cell__label">Round button · Light</span><div class="slides__controls"><button class="round-btn round-btn--light">{{icon:arrow-left}}</button><button class="round-btn round-btn--light">{{icon:arrow-right}}</button></div></div></div>
   </div>
 
   <div class="comp" id="Capsules"><p class="comp__name">Capsule · Trust row · Design note</p>
     <p class="comp__note">Capsules wrap naturally on mobile. Only verified credentials go in them.</p>
     <div class="variants">
-      <div class="cell"><span class="cell__label">Capsule, Size=Default</span><span class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg> Canadian Olympian · Tokyo 2020</span></div>
-      <div class="cell"><span class="cell__label">Capsule, Size=Small</span><span class="pill pill--sm"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg> Big Ten champion</span></div>
-      <div class="cell"><span class="cell__label">Capsule, Icon=University</span><span class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span class="ph">[University]</span></span></div>
+      <div class="cell"><span class="cell__label">Capsule, Size=Default</span><span class="pill">{{icon:award}} Canadian Olympian · Tokyo 2020</span></div>
+      <div class="cell"><span class="cell__label">Capsule, Size=Small</span><span class="pill pill--sm">{{icon:award}} Big Ten champion</span></div>
+      <div class="cell"><span class="cell__label">Capsule, Icon=University</span><span class="pill">{{icon:cap}} <span class="ph">[University]</span></span></div>
       <div class="cell"><span class="cell__label">Design note (placeholder flag)</span><span class="design-note">Draft intro · Ruslan to approve</span></div>
     </div>
     <div class="dark on-dark variants">
-      <div class="cell"><span class="cell__label">Capsule, Surface=Dark</span><span class="pill"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg> NCAA All-American</span></div>
-      <div class="cell"><span class="cell__label">Trust row</span><ul class="trust"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 2h9.6L14 8.5"/><path d="M10 8.5 7.2 2"/><circle cx="12" cy="15" r="6"/><path d="M12 12.5v5"/></svg> Olympian-led coaching</li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> 1:1 to 4:1 lessons</li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Book online</li></ul></div>
+      <div class="cell"><span class="cell__label">Capsule, Surface=Dark</span><span class="pill">{{icon:award}} NCAA All-American</span></div>
+      <div class="cell"><span class="cell__label">Trust row</span><ul class="trust"><li>{{icon:medal}} Olympian-led coaching</li><li>{{icon:users}} 1:1 to 4:1 lessons</li><li>{{icon:calendar}} Book online</li></ul></div>
       <div class="cell"><span class="cell__label">Booking steps</span><ol class="steps"><li>Choose a lesson type</li><li>Pick a day and time</li></ol></div>
     </div>
   </div>
@@ -117,25 +106,25 @@
   <div class="comp" id="Cards"><p class="comp__name">Cards</p>
     <div class="variants">
       <div class="cell w-300"><span class="cell__label">Philosophy card</span>
-        <article class="card card--static"><div class="card__top"><span class="icon-dot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.87a.5.5 0 0 0-.75-.43L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></span><span class="card__index">03</span></div><h3 class="h3">Detail you can see</h3><p class="card__text">Video analysis and clear feedback make each change stick.</p></article></div>
+        <article class="card card--static"><div class="card__top"><span class="icon-dot">{{icon:video}}</span><span class="card__index">03</span></div><h3 class="h3">Detail you can see</h3><p class="card__text">Video analysis and clear feedback make each change stick.</p></article></div>
       <div class="cell w-300"><span class="cell__label">Philosophy card, State=Hover</span>
-        <article class="card" style="transform: translateY(-4px); box-shadow: var(--shadow-lift)"><div class="card__top"><span class="icon-dot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 2h9.6L14 8.5"/><path d="M10 8.5 7.2 2"/><circle cx="12" cy="15" r="6"/><path d="M12 12.5v5"/></svg></span><span class="card__index">01</span></div><h3 class="h3">Elite experience</h3><p class="card__text">Coaching from Olympians, NCAA All-Americans and Big Ten champions.</p></article></div>
+        <article class="card" style="transform: translateY(-4px); box-shadow: var(--shadow-lift)"><div class="card__top"><span class="icon-dot">{{icon:medal}}</span><span class="card__index">01</span></div><h3 class="h3">Elite experience</h3><p class="card__text">Coaching from Olympians, NCAA All-Americans and Big Ten champions.</p></article></div>
       <div class="cell w-300"><span class="cell__label">Format card</span>
         <article class="card card--static"><span class="format__ratio">2:1</span><h3 class="h3">Semi-private</h3><p class="card__text">Two swimmers, one coach.</p><p class="card__foot format__price">From $150 <span>/ session</span></p></article></div>
       <div class="cell w-300"><span class="cell__label">Info card</span>
-        <div class="card card--static info-card"><span class="icon-dot icon-dot--sm"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><span class="info-card__text"><span class="label">Phone</span>(614) 556-8238</span></div></div>
+        <div class="card card--static info-card"><span class="icon-dot icon-dot--sm">{{icon:phone}}</span><span class="info-card__text"><span class="label">Phone</span>(614) 556-8238</span></div></div>
     </div>
     <div class="dark on-dark variants">
       <div class="cell w-560"><span class="cell__label">Service card, Surface=Dark</span>
-        <article class="card card--static"><div class="card__top"><span class="icon-dot"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg></span><span class="card__index">Individual · Team</span></div><h3 class="h3">Clinics</h3><p class="card__text">Focused technique clinics for individual swimmers, or a clinic built for your team.</p><span class="card__foot link"><span>View clinics</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></article></div>
+        <article class="card card--static"><div class="card__top"><span class="icon-dot">{{icon:waves}}</span><span class="card__index">Individual · Team</span></div><h3 class="h3">Clinics</h3><p class="card__text">Focused technique clinics for individual swimmers, or a clinic built for your team.</p><span class="card__foot link"><span>View clinics</span>{{icon:arrow-right}}</span></article></div>
       <div class="cell w-300"><span class="cell__label">Past clinic card</span>
-        <article class="card card--static"><p class="past-card__date">24–25 Oct 2025</p><h3 class="h3">Race Detail Intensive &amp; Fundamentals</h3><p class="event-card__meta"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> St. Charles</span></p></article></div>
+        <article class="card card--static"><p class="past-card__date">24–25 Oct 2025</p><h3 class="h3">Race Detail Intensive &amp; Fundamentals</h3><p class="event-card__meta"><span>{{icon:pin}} St. Charles</span></p></article></div>
     </div>
     <div class="variants">
       <div class="cell w-300"><span class="cell__label">Upcoming clinic card (Wix Events)</span>
-        <article class="card card--static event-card"><div class="media ratio-16x10 media--empty"><span class="event-card__date"><strong class="ph">[DD]</strong><span class="ph">[Mon]</span></span><div class="media__ph"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/></svg><span>Clinic image</span></div></div><div class="event-card__body"><h3 class="h3 ph">[Clinic name]</h3><p class="event-card__meta"><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span class="ph">[Time]</span></span><span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> <span class="ph">[Location]</span></span></p><a class="btn btn--sm" href="#">Register <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div></article></div>
+        <article class="card card--static event-card"><div class="media ratio-16x10 media--empty"><span class="event-card__date"><strong class="ph">[DD]</strong><span class="ph">[Mon]</span></span><div class="media__ph">{{icon:image}}<span>Clinic image</span></div></div><div class="event-card__body"><h3 class="h3 ph">[Clinic name]</h3><p class="event-card__meta"><span>{{icon:clock}} <span class="ph">[Time]</span></span><span>{{icon:pin}} <span class="ph">[Location]</span></span></p><a class="btn btn--sm" href="#">Register {{icon:arrow-right}}</a></div></article></div>
       <div class="cell w-620"><span class="cell__label">Location card</span>
-        <article class="card card--static location-card"><div class="media"><div class="media__img" style="background-image: url('assets/media/home-hero-drone-still.jpg'); background-position: 40% 60%"></div></div><div class="location-card__body"><p class="label">Location 1</p><h3 class="h3">St. Charles Prep</h3><p class="small">2010 E Broad St<br>Bexley, OH 43209</p><a class="link card__foot" href="#"><span>Get directions</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div></article></div>
+        <article class="card card--static location-card"><div class="media"><div class="media__img" style="background-image: url('assets/media/home-hero-drone-still.jpg'); background-position: 40% 60%"></div></div><div class="location-card__body"><p class="label">Location 1</p><h3 class="h3">St. Charles Prep</h3><p class="small">2010 E Broad St<br>Bexley, OH 43209</p><a class="link card__foot" href="#"><span>Get directions</span>{{icon:arrow-right}}</a></div></article></div>
     </div>
   </div>
 
@@ -143,12 +132,12 @@
     <div class="variants">
       <div class="cell" style="width: 420px"><span class="cell__label">Slideshow (layered frame + name panel)</span>
         <div class="frame"><div class="slides"><div class="slides__viewport"><div class="slide is-active"><div class="media__img" style="background-image: url('assets/media/founder-ruslan.jpg'); background-position: 72% center"></div></div></div>
-          <div class="slides__panel"><div><p class="slides__name">Ruslan Gaziev</p><p class="slides__role">Founder &amp; Head Coach</p></div><div class="slides__controls"><span class="slides__count">1 / 2</span><button class="round-btn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button><button class="round-btn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></div></div></div>
+          <div class="slides__panel"><div><p class="slides__name">Ruslan Gaziev</p><p class="slides__role">Founder &amp; Head Coach</p></div><div class="slides__controls"><span class="slides__count">1 / 2</span><button class="round-btn">{{icon:arrow-left}}</button><button class="round-btn">{{icon:arrow-right}}</button></div></div></div></div></div>
       <div class="cell" style="width: 620px"><span class="cell__label">Testimonial slider</span>
         <div class="quote-card"><div class="quote-card__mark">“</div><div class="quote-track"><figure class="quote-slide is-active"><blockquote><span class="ph">[Short real quote from a parent.]</span></blockquote><figcaption><strong class="ph">[First name]</strong><span class="ph">[Parent · Private lessons]</span></figcaption></figure></div>
-          <div class="quote-card__foot"><div class="dots"><span class="dot-btn" aria-current="true"></span><span class="dot-btn"></span><span class="dot-btn"></span></div><div class="slides__controls"><button class="round-btn round-btn--light"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button><button class="round-btn round-btn--light"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div></div></div>
+          <div class="quote-card__foot"><div class="dots"><span class="dot-btn" aria-current="true"></span><span class="dot-btn"></span><span class="dot-btn"></span></div><div class="slides__controls"><button class="round-btn round-btn--light">{{icon:arrow-left}}</button><button class="round-btn round-btn--light">{{icon:arrow-right}}</button></div></div></div>
         <span class="cell__label" style="margin-top: 12px">Rating (placeholder until a verified review link exists)</span>
-        <div class="rating"><span class="rating__stars"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span><span class="rating__text"><strong class="ph">[Rating] · [N] reviews</strong>Placeholder until a review link is supplied</span></div>
+        <div class="rating"><span class="rating__stars">{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}</span><span class="rating__text"><strong class="ph">[Rating] · [N] reviews</strong>Placeholder until a review link is supplied</span></div>
       </div>
     </div>
   </div>
@@ -174,15 +163,15 @@
   </div>
 
   <div class="comp" id="Wave"><p class="comp__name">Wave divider (Wix: section Shape Divider)</p>
-    <div class="cell"><span class="cell__label">Wave, From=Cream, To=Navy</span><div class="wave wave--to-dark" aria-hidden="true"><svg viewBox="0 0 1440 84" preserveAspectRatio="none"><path class="wave__back" d="M0 0H1440V16C1200 44 1000 76 760 78 480 80 240 42 0 36Z"/><path class="wave__front" d="M0 0H1440V6C1180 30 980 58 720 60 460 62 220 26 0 18Z"/></svg></div></div>
-    <div class="cell"><span class="cell__label">Wave, From=Navy, To=Cream</span><div class="wave wave--from-dark" aria-hidden="true"><svg viewBox="0 0 1440 84" preserveAspectRatio="none"><path class="wave__back" d="M0 0H1440V16C1200 44 1000 76 760 78 480 80 240 42 0 36Z"/><path class="wave__front" d="M0 0H1440V6C1180 30 980 58 720 60 460 62 220 26 0 18Z"/></svg></div></div>
+    <div class="cell"><span class="cell__label">Wave, From=Cream, To=Navy</span>{{wave:to-dark}}</div>
+    <div class="cell"><span class="cell__label">Wave, From=Navy, To=Cream</span>{{wave:from-dark}}</div>
   </div>
 
   <div class="comp" id="Header_Footer"><p class="comp__name">Header · Mobile book bar</p>
     <div class="dark on-dark" style="padding: 0">
       <header class="header"><div class="header__inner"><a class="logo" href="#"><svg class="logo__mark" viewBox="0 0 32 32" fill="none"><path d="M2 12c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M2 20c3.5 0 3.5-3 7-3s3.5 3 7 3 3.5-3 7-3 3.5 3 7 3" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".55"/></svg><span class="logo__word"><span class="logo__name">EXCELLENCE</span><span class="logo__sub">SWIMMING</span></span></a><nav class="nav"><a class="nav__link" aria-current="page" href="#">Home</a><a class="nav__link" href="#">Lessons</a><a class="nav__link" href="#">Clinics</a><a class="nav__link" href="#">Calendar</a><a class="nav__link" href="#">Contact</a></nav><div class="header__cta"><a class="btn btn--sm header__book" href="#">Book a lesson</a></div></div></header>
     </div>
-    <div class="cell" style="width: 390px"><span class="cell__label">Mobile book bar (pinned, phones only)</span><div style="padding: 10px 16px; background: rgba(6,21,34,.94); border-radius: 16px"><a class="btn btn--block" href="#">Book a lesson <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div></div>
+    <div class="cell" style="width: 390px"><span class="cell__label">Mobile book bar (pinned, phones only)</span><div style="padding: 10px 16px; background: rgba(6,21,34,.94); border-radius: 16px"><a class="btn btn--block" href="#">Book a lesson {{icon:arrow-right}}</a></div></div>
   </div>
 
 </div>

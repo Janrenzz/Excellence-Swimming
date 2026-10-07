@@ -1,6 +1,7 @@
-<!-- Calendar Widget · Wix: Tabs (one per lesson format) → Wix Bookings "Booking Calendar" widget per tab,
-     Location + Staff filters on. Used on the Calendar page and the Home page. -->
-<div class="cal-widget" data-cal-widget>
+<!-- Calendar Widget · DESIGN PLACEHOLDER for the native Wix Bookings "Booking Calendar" widget.
+     Wix: Tabs (one per lesson format) → Booking Calendar widget per tab, Location + Staff filters on.
+     Full layout on the Calendar page; "compact" preview on Home (week strip + times, no month grid). -->
+<div class="cal-widget {{mod}}" data-cal-widget>
       <div class="tabs cal-tabs" role="tablist" aria-label="Lesson format" data-cal-tabs>
         <button class="tab" role="tab" aria-selected="true" data-format="1:1"><span class="tab__ratio">1:1</span><span class="tab__name"> Private</span><span class="cal-tab__sub">1 swimmer</span></button>
         <button class="tab" role="tab" aria-selected="false" data-format="2:1"><span class="tab__ratio">2:1</span><span class="tab__name"> Semi-private</span><span class="cal-tab__sub">2 swimmers</span></button>
@@ -27,9 +28,9 @@
 
         <div class="cal__month">
           <div class="month__head">
-            <button class="icon-btn" type="button" data-month="-1" aria-label="Previous month">←</button>
+            <button class="icon-btn" type="button" data-month="-1" aria-label="Previous month">{{icon:arrow-left}}</button>
             <p class="month__title" data-month-title aria-live="polite"></p>
-            <button class="icon-btn" type="button" data-month="1" aria-label="Next month">→</button>
+            <button class="icon-btn" type="button" data-month="1" aria-label="Next month">{{icon:arrow-right}}</button>
           </div>
           <div class="month__grid" data-month-grid></div>
         </div>
@@ -45,7 +46,7 @@
           <p class="slots__title">Your booking</p>
           <ul class="summary__list" data-summary></ul>
           <a class="btn btn--block" href="#" data-next aria-disabled="true">Next</a>
-          <p class="note">Next takes you to secure checkout to add swimmer details and pay.</p>
+          <p class="note">On the live site, Next opens Wix checkout to add swimmer details and pay.</p>
         </aside>
       </div>
 <!-- Mobile only · booking summary bar (pinned on the Calendar page, inline on Home) -->
@@ -53,5 +54,5 @@
     <p class="cal-sticky__text" data-sticky-text>Pick a time<span>Choose a day, then a time</span></p>
     <a class="btn btn--sm" href="#" data-next aria-disabled="true">Next</a>
   </div>
-      <p class="cal-note">Prototype: availability shown here is sample data. On the live site it comes from Wix Bookings.</p>
+      <p class="cal-note"><span class="design-note">Design placeholder</span> This mock-up shows the native Wix Bookings calendar. The times are sample data and nothing here books a lesson.</p>
 </div>

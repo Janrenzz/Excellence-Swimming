@@ -1,4 +1,4 @@
-# Figma Build Spec (v2)
+# Figma Build Spec (revision 2)
 
 The HTML in `/site` is the visual source of truth. Import it into Figma with html.to.design (see the README for URLs and viewports), then turn the component board into real components.
 
@@ -8,65 +8,53 @@ The HTML in `/site` is the visual source of truth. Import it into Figma with htm
 00 Components        ← components.html?capture @ 1440
 01 Home              ← index.html @ 1280 and 390
 02 Lessons           ← lessons.html @ 1280 and 390
-03 Clinics           ← clinics.html @ 1280 and 390 (+ ?state=empty for the empty-state frame)
+03 Clinics           ← clinics.html @ 1280 and 390 (+ ?state=scheduled for the scheduled-clinics frame)
 04 Calendar          ← calendar.html @ 1280 and 390
 05 Contact           ← contact.html @ 1280 and 390
 06 Motion notes      ← sticky notes from 03-interactions.md
 ```
 
+Replace the revision-1 frames rather than keeping both: import the new frames, check them, then delete the old ones so the file has one version of each page.
+
 ## Foundations
 
-- **Colour:** three brand colours only. Ink Navy `#0E1B2C`, Warm White `#FAF8F4`, Champagne Gold `#C6A969`. Gold Ink `#876628` is the same gold, deepened for small text on white. Everything else is a transparency of Ink or Warm White. Import `design-system/tokens.json`.
-- **Gold rules:** use gold only for thin lines, chips, the credential bar, small labels and the logo mark. Never use it as a background or button fill.
-- **Page flow:** sections alternate **Warm White** and **Ink Navy** so each section reads as its own block. Two sections of the same colour never sit next to each other, except right after a page's hero image, which acts as the divider. The last section before the navy footer is always white. Every section keeps its full top and bottom padding.
-  - Home: Hero (video) · Credentials + Founder (White) · Why Excellence (Ink) · Book (White) · Two ways to train (Ink) · Testimonials (White) · Footer (Ink)
-  - Lessons: Hero (White) · Formats (Ink) · Coaches & pricing (White)
-  - Clinics: Hero + image (White) · Upcoming (White) · Recent clinics (Ink) · Team clinics (White)
-  - Calendar, Contact: White, then the footer
-- **On Ink:** text becomes Warm White, body copy Warm White at 74%, lines Warm White at 18–30%, small gold text uses Champagne Gold, and buttons invert (Warm White fill, Ink text). In Wix, set these with the section's background and the on-dark text styles.
-- **Type:** Sora 800 throughout. Display 88, H1 72, H2 52, H3 28, Body Large 19, Body 16, Label 12 with +18% tracking.
+- **Colour:** deep navy dark sections, warm cream page, white cards, aqua accents, soft blue body text. Values are in `design-system/tokens.json`. Colours sampled from the reference screenshots are approximations, adjusted for contrast (all text pairs pass WCAG AA).
+- **Type:** verified from the reference site's own stylesheet: **Inter Tight** (headings, Light 300), **Manrope** (body 400, bold card titles and buttons 600–700) and **Space Grotesk** (small uppercase labels, Medium 500). All three are free Google Fonts and available in Figma. Headings are sentence case. Sizes: Display 76, H1 60, H2 46, H3 22, Lead 19, Body 16, Label 12 (+28% tracking).
+- **Logo:** the existing wave mark + Sora wordmark stays as a placeholder until new artwork is approved. Logo design is a separate task.
 - **Grid:** 12 columns, 64 margin, 24 gutter at 1280. 8 / 40 / 20 at 768. 4 / 20 / 16 at 390.
-- **Imagery:** one strong image per page, at most:
-
-  | Page | Image |
-  |---|---|
-  | Home | Hero video and the founder portrait |
-  | Lessons | One 21:9 image, plus coach portraits |
-  | Clinics | One 21:9 image |
-  | Calendar | None |
-  | Contact | None |
+- **Radii:** cards 24 (20 on mobile), photos 28, inputs 14, buttons/capsules/tabs/slots pill.
+- **Page flow:** cream sections hold white cards. Dark gradient sections are entered and left through a layered wave divider at selected transitions only.
+  - Home: Hero (dark, video) · Founder (cream) · Philosophy (cream) · wave · Lessons & clinics (dark) · wave · Calendar preview (cream) · Testimonials + universities (cream → mist) · wave · Footer
+  - Lessons: Hero (dark, image) · Lesson types + includes (cream) · wave · Coaches & pricing (dark, white cards) · wave · Locations (cream) · wave · Footer
+  - Clinics: Hero (dark, image/video) · Upcoming (cream) · wave · Past clinics (dark) · wave · Team clinics (cream) · wave · Footer
+  - Calendar, Contact: dark title band · cream content · wave · Footer
+- **Mobile hero (Home):** navy gradient, no video. Heading, one sentence, full-width Book button, then the secondary button and trust row.
 
 ## Components (from the board)
 
 | Component | Variants | Wix Studio equivalent |
 |---|---|---|
-| Button | Style = Primary / Light / Outline · State = Default / Hover / Pressed / Disabled · Size = Default / Small | Button (design presets) |
-| Text Link | Surface = Light / Dark | Text link, or a button with transparent fill |
-| Header | State = Transparent / Solid · Breakpoint = Desktop / Mobile | Global header with a scroll effect, plus the Menu element |
-| Credential Bar | none | Horizontal Stack of text; a Marquee on mobile (optional) |
-| Section Heading | none | Stack: Label + H2 |
-| Point · Format · Quote · Honours Row · Price Row · Chip | none | Stacks of text with a 1px top line (Line element) |
-| Coach Row | none | CMS "Coaches" repeater item |
-| Event Row | State = Scheduled / Empty | Wix Events widget (List layout); empty state in the widget settings |
-| Form Field | State = Default / Focus / Error · Type = Input / Select / Textarea | Wix Forms fields (styled in the form's design panel) |
-| Tabs | Use = Forms / Lesson format | Tabs element |
-| Calendar Widget (tabs + filters + month + slots + summary) | Placement = Calendar page / Home embed | Wix Bookings Booking Calendar widget (design panel). The same widget is placed on both pages |
-| Calendar parts | Day, Slot, Booking Summary | Parts of that widget |
-| Book Bar · Calendar Sticky Summary | none | Container pinned to the bottom of the screen, mobile breakpoint only |
-| Footer | none | Global footer |
-
-## Page frames
-
-| Frame | Sections, in order |
-|---|---|
-| **Home** | Header (Transparent) · Hero (video) · Credentials · Founder · Why Excellence · Book (embedded booking calendar, same component as the Calendar page) · Services (Lessons + Clinics) · Testimonials · Footer (with Book Now) |
-| **Lessons** | Header · Hero + one image · Formats (1:1, 2:1, 3:1, 4:1) · Coaches & pricing (one row per coach) · Footer |
-| **Clinics** | Header · Hero + one image · Open clinics (Events list, with an empty-state variant) · Team clinics (text + form) · Footer |
-| **Calendar** | Header · Title + sign-in link · Lesson-format tabs · Booking widget (filters, month, slots, summary) · Footer |
-| **Contact** | Header · Title · Info column + tabbed forms (General inquiry / Waitlist) · Footer |
+| Button | Style = Primary / Outline · Surface = Light / Dark · State = Default / Hover / Disabled · Size = Default / Small | Button (design presets, pill radius) |
+| Text link | Surface = Light / Dark | Text link or transparent button with an arrow icon |
+| Round button | Surface = Light / Dark | Button with an icon, circle radius |
+| Capsule | Size = Default / Small · Icon = Award / University · Surface = Light / Dark | Container (pill radius) + icon + text, or a Button with an icon |
+| Trust row · Booking steps | none | Horizontal Stack of icon + text |
+| Design note | none | Remove before launch (it only flags placeholders) |
+| Philosophy card | State = Default / Hover | Container in a Grid or Repeater (white fill, 1px border, 24px radius) |
+| Format card · Service card · Past clinic card · Info card · Location card | none | Containers / Repeater items |
+| Upcoming clinic card | none | Wix Events widget, card layout with images |
+| Coach card | none | CMS "Coaches" repeater item |
+| Founder slideshow | Slide = 1 / 2 | Slideshow element (2 slides, arrows on, autoplay off) with the name panel overlapping |
+| Testimonial slider | Slide = 1 / 2 / 3 | Slideshow element (or Wix "Testimonials" design element), arrows + dots, autoplay off |
+| Rating | none | Text + star icons; only once a verified review link exists |
+| Form field | Type = Input / Select / Checkbox · State = Default / Focus / Error | Wix Forms fields (styled in the form's design panel) |
+| Tabs | Use = Forms / Lesson format | Tabs element, pill style |
+| Calendar parts | Day, Week day, Slot | Wix Bookings Booking Calendar widget design panel |
+| Wave divider | From = Cream / Navy | Section Shape Divider |
+| Header · Mobile book bar | none | Global header with scroll effect; container pinned to the bottom on mobile |
 
 ## Naming
 
-- Sections are named `NN_Name`, e.g. `03_Credentials`.
-- Groups use PascalCase, e.g. `Hero_Video_Background`.
+- Sections are named `NN_Name`, e.g. `03_Founder`.
+- Groups use PascalCase, e.g. `Hero_Video_Background`, `Clinic_Video_Background`.
 - Never leave default layer names, and never outline text.
