@@ -17,8 +17,8 @@ Everything in the design is buildable with native Wix Studio and Wix apps (Booki
 | Coaches & pricing | CMS "Coaches" collection → Repeater | Yes |
 | Booking summary on Home | Container with text, buttons and pill links. Every link goes to the Calendar page (no widget on Home) | Yes. Links that preselect a lesson type or coach (`?format=`, `?coach=`) need Velo; without it they simply open the Calendar |
 | Calendar page | Wix Bookings Booking Calendar widget (see Bookings below) | Yes. **The widget's own layout decides spacing**; we style fonts, colours and buttons in its design panel |
-| Testimonial slider with arrows + dots | Slideshow element or the Testimonials design element, autoplay off | Yes |
-| Review rating | Text + star icons, typed in once a verified review source exists | Yes (no live feed) |
+| Testimonials: sideways-scrolling review cards, rating badge, "Read all reviews" | Slider or horizontal-scroll Repeater of cards (or the Wix Reviews / Google Reviews app), arrows on, autoplay off; edge fade is a gradient overlay | Yes. If you use a reviews app, its widget decides the final card styling |
+| Rating badge (score + stars + count) | Text + star icons typed in, or a reviews app's badge; only once a verified review source exists | Yes |
 | School logo wall | Gallery (grid) or Repeater of logo images; greyscale → colour on hover via Hover interaction | Yes. Add logos only for schools Ruslan confirms; check permission to show each logo |
 | Clinics focus panels (3 image panels) | Three containers (one wide, two narrow) with image backgrounds, overlay, pill label and caption; image zoom on hover via Hover interactions ([Wix guide](https://support.wix.com/en/article/studio-editor-creating-a-custom-click-or-hover-interaction)) | Partly. The "hovered panel widens" effect isn't a standard Wix animation: build it static, or add Velo/custom code |
 | Upcoming clinics with images | Wix Events widget, card/grid layout, images on, upcoming only | Yes |

@@ -45,8 +45,8 @@ Replace the revision-1 frames rather than keeping both: import the new frames, c
 | Upcoming clinic card | none | Wix Events widget, card layout with images |
 | Coach card | none | CMS "Coaches" repeater item |
 | Founder slideshow | Slide = 1 / 2 | Slideshow element (2 slides, arrows on, autoplay off) with the name panel overlapping |
-| Testimonial slider | Slide = 1 / 2 / 3 | Slideshow element (or Wix "Testimonials" design element), arrows + dots, autoplay off |
-| Rating | none | Text + star icons; only once a verified review link exists |
+| Review card | Avatar = Aqua / Amber / Navy | Card in a Slider / horizontal Repeater (or reviews app) |
+| Rating badge | none | Text + star icons; only once a verified review link exists |
 | Form field | Type = Input / Select / Checkbox · State = Default / Focus / Error | Wix Forms fields (styled in the form's design panel) |
 | Tabs | Use = Forms / Lesson format | Tabs element, pill style |
 | Calendar parts | Day, Week day, Slot | Wix Bookings Booking Calendar widget design panel |

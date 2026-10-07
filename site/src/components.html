@@ -128,16 +128,19 @@
     </div>
   </div>
 
-  <div class="comp" id="Media"><p class="comp__name">Founder slideshow · Testimonial slider · Rating</p>
+  <div class="comp" id="Media"><p class="comp__name">Founder slideshow · Review card · Rating badge</p>
     <div class="variants">
       <div class="cell" style="width: 420px"><span class="cell__label">Slideshow (layered frame + name panel)</span>
         <div class="frame"><div class="slides"><div class="slides__viewport"><div class="slide is-active"><div class="media__img" style="background-image: url('assets/media/founder-ruslan.jpg'); background-position: 72% center"></div></div></div>
           <div class="slides__panel"><div><p class="slides__name">Ruslan Gaziev</p><p class="slides__role">Founder &amp; Head Coach</p></div><div class="slides__controls"><span class="slides__count">1 / 2</span><button class="round-btn">{{icon:arrow-left}}</button><button class="round-btn">{{icon:arrow-right}}</button></div></div></div></div></div>
-      <div class="cell" style="width: 620px"><span class="cell__label">Testimonial slider</span>
-        <div class="quote-card"><div class="quote-card__mark">“</div><div class="quote-track"><figure class="quote-slide is-active"><blockquote><span class="ph">[Short real quote from a parent.]</span></blockquote><figcaption><strong class="ph">[First name]</strong><span class="ph">[Parent · Private lessons]</span></figcaption></figure></div>
-          <div class="quote-card__foot"><div class="dots"><span class="dot-btn" aria-current="true"></span><span class="dot-btn"></span><span class="dot-btn"></span></div><div class="slides__controls"><button class="round-btn round-btn--light">{{icon:arrow-left}}</button><button class="round-btn round-btn--light">{{icon:arrow-right}}</button></div></div></div>
-        <span class="cell__label" style="margin-top: 12px">Rating (placeholder until a verified review link exists)</span>
-        <div class="rating"><span class="rating__stars">{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}</span><span class="rating__text"><strong class="ph">[Rating] · [N] reviews</strong>Placeholder until a review link is supplied</span></div>
+      <div class="cell" style="width: 420px"><span class="cell__label">Review card (placeholder)</span>
+        <figure class="review-card" style="flex: none"><span class="review-card__mark review-card__mark--aqua">“</span><blockquote class="review-card__text"><span class="ph">[Short real review from a parent, two or three sentences.]</span></blockquote>
+          <figcaption class="review-card__foot"><span class="avatar avatar--aqua">J</span><span class="review-card__who"><strong class="ph">[First name]</strong><span class="review-stars">{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}</span><span class="review-card__role ph">[Parent · Private lessons]</span></span></figcaption></figure>
+        <span class="cell__label" style="margin-top: 12px">Avatar, Colour=Aqua / Amber / Navy</span>
+        <div class="variants" style="gap: 8px"><span class="avatar avatar--aqua">J</span><span class="avatar avatar--amber">A</span><span class="avatar avatar--navy">M</span></div>
+      </div>
+      <div class="cell"><span class="cell__label">Rating badge (only with a verified review source)</span>
+        <div class="rating-badge"><span class="rating-badge__score ph">[x.x]</span><span class="rating-badge__meta"><span class="review-stars">{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}{{icon:star}}</span><span class="ph">[N] reviews</span></span></div>
       </div>
     </div>
   </div>

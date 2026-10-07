@@ -7,7 +7,7 @@ This is design revision **2 of 3**; one more revision remains. Status key: **Don
 | 1 | Collect the reference links and logo sample from Ruslan | Needs client input | We have four screenshots of tygerswimfitness.com. Still needed: any other reference links, and the logo sample |
 | 2 | Establish the font, palette, spacing, cards, capsules and button system | Done | Fonts verified from the reference site's stylesheet: Inter Tight / Manrope / Space Grotesk. Palette sampled (approximate). `design-system/tokens.json`, component board `site/components.html` |
 | 3 | Apply that system across all five pages | Done | Home, Lessons, Clinics, Calendar, Contact |
-| 4 | Revise the homepage structure | Done | Hero → Founder → Philosophy → Lessons & clinics → Booking summary (links to the Calendar page) → Testimonials + school logo wall |
+| 4 | Revise the homepage structure | Done | Hero → Founder → Philosophy → Lessons & clinics → Booking summary (links to the Calendar page) → Testimonials (review cards + rating badge, placeholders) + school logo wall |
 | 5 | Simplify the mobile hero and booking access | Done | Navy gradient, no video (the file isn't downloaded on phones), full-width Book button first, pinned Book bar after the hero |
 | 6 | Add the founder slideshow and compact credentials | Done | Two photos (Tokyo 2020 portrait, racing shot) with arrows; six credential capsules; intro shortened (still a draft for Ruslan) |
 | 7 | Add lesson inclusions, coaches and pool locations | Done (content partly pending) | Session length, second location and its pool photo are labelled placeholders |

@@ -22,7 +22,7 @@ Everything below is a native Wix Studio animation.
 | 5 | Header | **Scroll effect:** transparent → navy with blur after the hero | 0.3s |
 | 6 | Hero headline + buttons | **Entrance:** Fade In on page load | 0.8s; buttons delayed 0.2s |
 | 7 | Founder slideshow | Slideshow transition: crossfade, arrows only, **no autoplay** | 0.6s |
-| 8 | Testimonial slider | Slideshow transition: fade + 16px slide, arrows + dots, **no autoplay** | 0.5s |
+| 8 | Review cards | Sideways scroll (swipe on mobile), arrows move one card, **no autoplay**; card hover lifts 4px | 0.3–0.5s |
 | 9 | Founder photo frame | **Entrance:** Fade In; frame plate settles from −4° to −2° | 0.9s, once |
 | 10 | Mobile Book bar | Pinned to the bottom; slides up after the hero | 0.3s |
 | 12 | Clinics focus panels | **Hover:** image zoom 1.00 → 1.04; the panel widening seen in the HTML is not a native Wix animation (static wide/narrow layout, or Velo) | 0.6–0.9s |
