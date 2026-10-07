@@ -10,8 +10,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500&display=swap">
 <link rel="preload" href="assets/fonts/sora-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/styles.css?v=613a001f">
-<script src="assets/js/main.js?v=613a001f" defer></script>
+<link rel="stylesheet" href="assets/css/styles.css?v=be46960f">
+<script src="assets/js/main.js?v=be46960f" defer></script>
 
 </head>
 <body class="page-home">
@@ -239,45 +239,74 @@
     </div>
   </section>
 
-  <!-- 07_Testimonials · slider with simple controls + university destinations -->
+  <!-- 07_Testimonials · header + rating badge, sideways-scrolling review cards with faded edges, "Read all reviews".
+       Wix: Slider / Repeater (horizontal scroll) or the Wix Reviews / Google Reviews app; rating badge = text + icons. -->
   <section class="section section--mist section--tight-top" id="Testimonials" aria-labelledby="testimonials-title">
     <div class="container">
-      <div class="grid-12 voices">
-        <div class="voices__intro reveal">
-          <p class="label label--line">Families &amp; swimmers</p>
-          <h2 class="h2" id="testimonials-title">In their words.</h2>
-          <!-- Review rating · shown only once a verified Google review link is supplied -->
-          <div class="rating" aria-label="Review rating placeholder">
-            <span class="rating__stars" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span>
-            <span class="rating__text"><strong class="ph">[Rating] · [N] reviews</strong>Placeholder until a review link is supplied</span>
-          </div>
+      <div class="section-head reveal">
+        <div class="section-head__text">
+          <p class="label label--line">From Columbus families</p>
+          <h2 class="h2" id="testimonials-title">Families notice the difference.</h2>
         </div>
-        <div class="voices__slider reveal">
-          <div class="quote-card" data-quotes aria-roledescription="carousel" aria-label="Testimonials">
-            <div class="quote-card__mark" aria-hidden="true">“</div>
-            <div class="quote-track">
-              <figure class="quote-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 3">
-                <blockquote><span class="ph">[Short real quote from a parent, one or two sentences.]</span></blockquote>
-                <figcaption><strong class="ph">[First name]</strong><span class="ph">[Parent of a 9-year-old · Private lessons]</span></figcaption>
-              </figure>
-              <figure class="quote-slide" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true">
-                <blockquote><span class="ph">[Short real quote from a swimmer.]</span></blockquote>
-                <figcaption><strong class="ph">[First name]</strong><span class="ph">[High school swimmer · Semi-private]</span></figcaption>
-              </figure>
-              <figure class="quote-slide" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true">
-                <blockquote><span class="ph">[Short real quote about a clinic.]</span></blockquote>
-                <figcaption><strong class="ph">[First name]</strong><span class="ph">[Club coach · Team clinic]</span></figcaption>
-              </figure>
-            </div>
-            <div class="quote-card__foot">
-              <div class="dots" data-quotes-dots></div>
-              <div class="slides__controls">
-                <button class="round-btn round-btn--light" type="button" data-quotes-prev aria-label="Previous testimonial"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
-                <button class="round-btn round-btn--light" type="button" data-quotes-next aria-label="Next testimonial"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
-              </div>
-            </div>
-          </div>
-          <p class="note" style="margin-top: 12px"><span class="design-note">Design placeholder</span> Real reviews needed from Ruslan.</p>
+        <div class="rating-badge" aria-label="Review rating placeholder">
+          <span class="rating-badge__score ph">[x.x]</span>
+          <span class="rating-badge__meta"><span class="review-stars review-stars--ph" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span><span class="ph">[N] reviews</span></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews reveal" data-reviews aria-roledescription="carousel" aria-label="Reviews">
+      <div class="reviews__track" data-reviews-track tabindex="0">
+          <figure class="review-card" role="group" aria-roledescription="slide" aria-label="1 of 5">
+            <span class="review-card__mark review-card__mark--aqua" aria-hidden="true">“</span>
+            <blockquote class="review-card__text"><span class="ph">[Short real review from a parent: what changed for their swimmer, two or three sentences.]</span></blockquote>
+            <figcaption class="review-card__foot">
+              <span class="avatar avatar--aqua" aria-hidden="true">J</span>
+              <span class="review-card__who"><strong class="ph">[First name]</strong><span class="review-stars review-stars--ph" aria-label="Rating placeholder"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span><span class="review-card__role ph">[Parent of a 9-year-old · Private lessons]</span></span>
+            </figcaption>
+          </figure>
+          <figure class="review-card" role="group" aria-roledescription="slide" aria-label="2 of 5">
+            <span class="review-card__mark review-card__mark--amber" aria-hidden="true">“</span>
+            <blockquote class="review-card__text"><span class="ph">[Short real review from a swimmer about a lesson or a coach.]</span></blockquote>
+            <figcaption class="review-card__foot">
+              <span class="avatar avatar--amber" aria-hidden="true">A</span>
+              <span class="review-card__who"><strong class="ph">[First name]</strong><span class="review-stars review-stars--ph" aria-label="Rating placeholder"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span><span class="review-card__role ph">[High school swimmer · Semi-private]</span></span>
+            </figcaption>
+          </figure>
+          <figure class="review-card" role="group" aria-roledescription="slide" aria-label="3 of 5">
+            <span class="review-card__mark review-card__mark--navy" aria-hidden="true">“</span>
+            <blockquote class="review-card__text"><span class="ph">[Short real review about a clinic and what the team took away from it.]</span></blockquote>
+            <figcaption class="review-card__foot">
+              <span class="avatar avatar--navy" aria-hidden="true">M</span>
+              <span class="review-card__who"><strong class="ph">[First name]</strong><span class="review-stars review-stars--ph" aria-label="Rating placeholder"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span><span class="review-card__role ph">[Club coach · Team clinic]</span></span>
+            </figcaption>
+          </figure>
+          <figure class="review-card" role="group" aria-roledescription="slide" aria-label="4 of 5">
+            <span class="review-card__mark review-card__mark--aqua" aria-hidden="true">“</span>
+            <blockquote class="review-card__text"><span class="ph">[Short real review from a parent about progress and confidence in the water.]</span></blockquote>
+            <figcaption class="review-card__foot">
+              <span class="avatar avatar--aqua" aria-hidden="true">S</span>
+              <span class="review-card__who"><strong class="ph">[First name]</strong><span class="review-stars review-stars--ph" aria-label="Rating placeholder"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span><span class="review-card__role ph">[Parent · Small group]</span></span>
+            </figcaption>
+          </figure>
+          <figure class="review-card" role="group" aria-roledescription="slide" aria-label="5 of 5">
+            <span class="review-card__mark review-card__mark--amber" aria-hidden="true">“</span>
+            <blockquote class="review-card__text"><span class="ph">[Short real review about technique, video feedback or race results.]</span></blockquote>
+            <figcaption class="review-card__foot">
+              <span class="avatar avatar--amber" aria-hidden="true">K</span>
+              <span class="review-card__who"><strong class="ph">[First name]</strong><span class="review-stars review-stars--ph" aria-label="Rating placeholder"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span><span class="review-card__role ph">[Swimmer · Private lessons]</span></span>
+            </figcaption>
+          </figure>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="reviews__foot reveal">
+        <a class="btn btn--outline" href="#">Read all reviews <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <span class="design-note">Placeholder · real reviews + review link needed</span>
+        <div class="slides__controls reviews__controls">
+          <button class="round-btn round-btn--light" type="button" data-reviews-prev aria-label="Previous reviews"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></button>
+          <button class="round-btn round-btn--light" type="button" data-reviews-next aria-label="Next reviews"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
         </div>
       </div>
 

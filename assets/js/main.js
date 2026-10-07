@@ -75,31 +75,17 @@
     var count = $("[data-slides-count]", root);
     carousel(root, ".slide", "[data-slides-prev]", "[data-slides-next]", function (i, n) { if (count) count.textContent = (i + 1) + " / " + n; });
   });
-  $$("[data-quotes]").forEach(function (root) {
-    var dotsBox = $("[data-quotes-dots]", root), dots = [];
-    var go = carousel(root, ".quote-slide", "[data-quotes-prev]", "[data-quotes-next]", function (i) {
-      dots.forEach(function (d, k) { d.setAttribute("aria-current", String(k === i)); });
-    });
-    $$(".quote-slide", root).forEach(function (s, k) {
-      var d = document.createElement("button");
-      d.type = "button"; d.className = "dot-btn";
-      d.setAttribute("aria-label", "Show testimonial " + (k + 1));
-      d.setAttribute("aria-current", String(k === 0));
-      d.addEventListener("click", function () { go(k); });
-      dotsBox.appendChild(d); dots.push(d);
-    });
+  /* REVIEWS — sideways-scrolling cards; arrows move by one card (Wix: Slider / horizontal Repeater). */
+  $$("[data-reviews]").forEach(function (root) {
+    var track = $("[data-reviews-track]", root);
+    var step = function (dir) {
+      var card = $(".review-card", track);
+      track.scrollBy({ left: dir * (card.offsetWidth + 24), behavior: reduceMotion ? "auto" : "smooth" });
+    };
+    var prev = $("[data-reviews-prev]"), next = $("[data-reviews-next]");
+    if (prev) prev.addEventListener("click", function () { step(-1); });
+    if (next) next.addEventListener("click", function () { step(1); });
   });
-
-  /* REVEAL — fade + 24px rise as content enters the viewport (Wix: Entrance animation "Fade in" + "Slide up"). */
-  var reveals = $$(".reveal");
-  if ("IntersectionObserver" in window && !reduceMotion) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); } });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
-    reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add("is-visible"); });
-  }
 
   /* CLINICS — default is "none scheduled"; preview the scheduled list with ?state=scheduled */
   if (/[?&]state=scheduled/.test(location.search)) {
