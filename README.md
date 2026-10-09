@@ -21,6 +21,7 @@ docs/03-interactions.md          Motion plan for Wix Studio
 docs/04-booking-requirements.md  Native Wix Bookings vs. future custom booking needs
 docs/05-contact-handover.md      Service-interest form, contact labels, handover for Ruslan
 docs/06-revision-2-status.md     Revision checklist + asset request for the client
+docs/07-figma-import-and-prototype.md  Figma import plan (pairs, positions) + Prototype-tab animation tutorial
 ```
 
 ## View it
