@@ -155,7 +155,8 @@
     });
   });
 
-  /* CALENDAR — stand-in for the Wix Bookings Booking Calendar widget, with sample availability. */
+  /* BOOKING CALENDAR — stand-in for Wix Bookings' native Booking Calendar page (one service per page,
+     chosen on the Service List), with sample availability. */
   $$("[data-cal-widget]").forEach(initCalendar);
 
   function initCalendar(root) {
@@ -167,8 +168,11 @@
     var params = new URLSearchParams(location.search);
     var state = { format: "1:1", coach: "any", location: "any", day: null, slot: null, monthOffset: 0 };
     if (params.get("coach") && COACHES[params.get("coach")]) state.coach = params.get("coach");
-    if (/^[1-4]:1$/.test(params.get("format") || "")) state.format = params.get("format");
-    $$("[data-cal-tabs] [role=tab]").forEach(function (t) { t.setAttribute("aria-selected", String(t.getAttribute("data-format") === state.format)); });
+    var svc = params.get("service") || params.get("format") || "";
+    if (/^[1-4]:1$/.test(svc)) state.format = svc;
+    var NAMES = { "1:1": "1:1 Private lesson", "2:1": "2:1 Semi-private lesson", "3:1": "3:1 Small group lesson", "4:1": "4:1 Group lesson" };
+    var title = $("[data-service-title]");
+    if (title) { title.textContent = NAMES[state.format]; document.title = NAMES[state.format] + " — Excellence Swimming"; }
     $("[data-filter=coach]").value = state.coach;
 
     var today = new Date(); today.setHours(0, 0, 0, 0);
@@ -268,51 +272,36 @@
         return;
       }
       title.textContent = fmtDay(state.day);
-      var groups = [["Morning", 0, 12], ["Afternoon", 12, 17], ["Evening", 17, 24]];
-      var slots = slotsFor(state.day).sort(function (a, b) { return a.hour - b.hour || a.coach.localeCompare(b.coach); });
-      groups.forEach(function (g) {
-        var inG = slots.filter(function (s) { return s.hour >= g[1] && s.hour < g[2]; });
-        if (!inG.length) return;
-        var wrap = document.createElement("div"); wrap.className = "slots__group";
-        wrap.innerHTML = '<p class="slots__label">' + g[0] + "</p>";
-        var grid = document.createElement("div"); grid.className = "slots__grid";
-        inG.forEach(function (s) {
-          var b = document.createElement("button"); b.type = "button"; b.className = "slot";
-          var SHORT = { ruslan: "Ruslan", hannah: "Hannah" };
-          var sub = state.coach === "any" ? SHORT[s.coach] : (state.location === "any" ? LOCS[s.location] : "");
-          b.innerHTML = fmtTime(s.hour) + (sub ? "<small>" + sub + "</small>" : "");
-          b.setAttribute("aria-pressed", String(state.slot === s));
-          b.setAttribute("aria-label", fmtTime(s.hour) + " with " + COACHES[s.coach] + " at " + LOCS[s.location]);
-          b.addEventListener("click", function () { state.slot = s; renderSlots(); renderSummary(); });
-          grid.appendChild(b);
-        });
-        wrap.appendChild(grid); box.appendChild(wrap);
+      /* Native daily view: one plain grid of times. If several coaches are free at the same time,
+         Wix assigns an available staff member, so each time appears once. */
+      var seen = {}, slots = slotsFor(state.day).sort(function (a, b) { return a.hour - b.hour || a.coach.localeCompare(b.coach); })
+        .filter(function (s) { if (seen[s.hour]) return false; seen[s.hour] = true; return true; });
+      var grid = document.createElement("div"); grid.className = "slots__grid";
+      slots.forEach(function (s) {
+        var b = document.createElement("button"); b.type = "button"; b.className = "slot";
+        b.textContent = fmtTime(s.hour);
+        b.setAttribute("aria-pressed", String(state.slot === s));
+        b.addEventListener("click", function () { state.slot = s; renderSlots(); renderSummary(); });
+        grid.appendChild(b);
       });
+      box.appendChild(grid);
     }
 
     function renderSummary() {
       var s = state.slot;
+      /* Native booking summary fields: service, date & time, location, staff, duration, price */
       var rows = [
-        ["Lesson", state.format + " " + { "1:1": "Private", "2:1": "Semi-private", "3:1": "Small group", "4:1": "Group" }[state.format]],
-        ["Coach", s ? COACHES[s.coach] : (state.coach === "any" ? "Any coach" : COACHES[state.coach])],
-        ["Location", s ? LOCS[s.location] : (state.location === "any" ? "Any location" : LOCS[state.location])],
-        ["Date", state.day ? fmtDay(state.day) : "—"],
-        ["Time", s ? fmtTime(s.hour) : "Choose a time"],
+        ["Service", NAMES[state.format]],
+        ["Date & time", s ? fmtDay(state.day) + ", " + fmtTime(s.hour) : (state.day ? fmtDay(state.day) + " · choose a time" : "—")],
+        ["Location", s ? LOCS[s.location] : (state.location === "any" ? "All locations" : LOCS[state.location])],
+        ["Coach", s ? COACHES[s.coach] : (state.coach === "any" ? "All coaches" : COACHES[state.coach])],
+        ["Duration", "<span class=\"ph\">[Duration]</span>"],
         ["Price", s ? "$" + PRICES[s.coach][state.format] : (state.coach !== "any" ? "$" + PRICES[state.coach][state.format] : "From $" + Math.min(PRICES.ruslan[state.format], PRICES.hannah[state.format]))]
       ];
       $("[data-summary]").innerHTML = rows.map(function (r) { return "<li><span>" + r[0] + "</span><span>" + r[1] + "</span></li>"; }).join("");
       $$("[data-next]").forEach(function (b) { b.setAttribute("aria-disabled", String(!s)); });
-      $("[data-sticky-text]").innerHTML = s
-        ? fmtDay(state.day) + " · " + fmtTime(s.hour) + "<span>" + state.format + " · " + COACHES[s.coach] + " · " + LOCS[s.location] + "</span>"
-        : "Pick a time<span>" + (state.day ? fmtDay(state.day) + " · tap a time above" : "Choose a day, then a time") + "</span>";
     }
 
-    $$("[data-cal-tabs] [role=tab]").forEach(function (t) {
-      t.addEventListener("click", function () {
-        $$("[data-cal-tabs] [role=tab]").forEach(function (x) { x.setAttribute("aria-selected", String(x === t)); });
-        state.format = t.getAttribute("data-format"); state.slot = null; render();
-      });
-    });
     $$("[data-filter]").forEach(function (sel) {
       sel.addEventListener("change", function () { state[sel.getAttribute("data-filter")] = sel.value; state.slot = null; render(); });
     });

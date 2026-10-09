@@ -423,9 +423,6 @@ textarea.input { min-height: 120px; resize: vertical; }
 .steps li { counter-increment: step; display: inline-flex; align-items: center; gap: 10px; min-height: 40px; padding: 5px 16px 5px 5px; border: 1px solid var(--on-dark-line); border-radius: var(--r-pill); font-size: 14px; color: var(--on-dark); }
 .steps li::before { content: counter(step); display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: rgba(117, 202, 211, 0.16); color: var(--aqua); font-weight: 700; font-size: 13px; }
 .cal-shell { padding: 40px 0 var(--section-y); }
-.cal-widget { display: flex; flex-direction: column; gap: 16px; }
-.cal-tabs .tab { display: inline-flex; flex-direction: column; justify-content: center; line-height: 1.2; padding: 8px 20px; min-height: 52px; }
-.cal-tab__sub { display: block; margin-top: 2px; font-size: 11.5px; font-weight: 400; opacity: 0.8; }
 .cal { display: grid; grid-template-columns: 330px minmax(0, 1fr) 310px; background: var(--white); border: 1px solid var(--line); border-radius: var(--r-card); overflow: hidden; color: var(--text); }
 .cal__filters { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 16px 20px; align-items: flex-end; padding: 20px 24px; border-bottom: 1px solid var(--line); }
 .cal__filters .field { min-width: 210px; }
@@ -452,7 +449,7 @@ textarea.input { min-height: 120px; resize: vertical; }
 .slots__group { display: flex; flex-direction: column; gap: 10px; }
 .slots__label { font-family: var(--font-label); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
 .slots__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 8px; }
-.slot { min-height: 48px; padding: 6px 8px; border: 1px solid var(--line); border-radius: var(--r-pill); font-size: 14px; font-weight: 600; color: var(--navy); font-variant-numeric: tabular-nums; line-height: 1.2; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: border-color 160ms var(--ease), background-color 160ms var(--ease); }
+.slot { min-height: 48px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 10px; font-size: 14px; font-weight: 600; color: var(--navy); font-variant-numeric: tabular-nums; line-height: 1.2; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: border-color 160ms var(--ease), background-color 160ms var(--ease); }
 .slot small { font-size: 10.5px; font-weight: 400; color: var(--text); }
 .slot:hover { border-color: var(--aqua-ink); background: var(--aqua-wash); }
 .slot[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: var(--on-dark); }
@@ -460,8 +457,7 @@ textarea.input { min-height: 120px; resize: vertical; }
 .slots__empty { padding: 20px; border-radius: 16px; background: var(--cream); font-size: 15px; }
 .cal__summary { padding: 24px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 18px; background: var(--cream); }
 .summary__list li { display: grid; grid-template-columns: 84px 1fr; gap: 12px; padding-block: 9px; border-bottom: 1px solid var(--line); font-size: 14px; color: var(--navy); }
-.summary__list li span:first-child { font-family: var(--font-label); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text); padding-top: 2px; }
-.cal-sticky { display: none; }
+.summary__list li > span:first-child { font-family: var(--font-label); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text); padding-top: 2px; }
 .cal-note { font-size: 13px; }
 .signin { font-size: 14px; }
 .signin a { font-weight: 600; color: var(--navy); text-decoration: underline; text-decoration-color: var(--aqua); text-underline-offset: 4px; }
@@ -473,8 +469,6 @@ textarea.input { min-height: 120px; resize: vertical; }
 .week .day small { font-family: var(--font-label); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 400; }
 .week .day.has-slots::after { bottom: 8px; }
 .week .day[aria-pressed="true"] { border-color: var(--navy); }
-.cal-sticky__text { flex: 1; min-width: 0; font-size: 14px; font-weight: 600; line-height: 1.35; color: var(--navy); }
-.cal-sticky__text span { display: block; font-weight: 400; color: var(--text); font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 /* ---------- 16. CONTACT ------------------------------------------------- */
 .contact-grid { align-items: start; row-gap: 32px; }
@@ -589,14 +583,10 @@ textarea.input { min-height: 120px; resize: vertical; }
   .tabs { display: flex; align-self: stretch; }
   .tabs .tab { flex: 1; padding: 0 12px; }
 
-  /* Calendar → week strip + slot grid + sticky summary */
+  /* Booking Calendar → native mobile Weekly layout: week strip, times, booking details below */
   .band { padding: calc(var(--header-h) + 28px) 0 32px; }
   .steps li { font-size: 13px; }
   .cal-shell { padding-top: 24px; }
-  .cal-tabs { display: grid; grid-template-columns: repeat(4, 1fr); }
-  .cal-tabs .tab { padding: 8px 4px; text-align: center; align-items: center; }
-  .cal-tabs .tab__ratio { font-size: 16px; }
-  .cal-tabs .tab__name { display: none; }
   .cal { grid-template-columns: 1fr; }
   .cal__filters { padding: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .cal__filters .field { min-width: 0; }
@@ -606,9 +596,7 @@ textarea.input { min-height: 120px; resize: vertical; }
   .week .day { scroll-snap-align: start; }
   .cal__slots { padding: 16px; min-height: 0; }
   .slots__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .cal__summary { display: none; }
-  .cal-sticky { display: flex; gap: 12px; align-items: center; position: fixed; left: 0; right: 0; bottom: 0; z-index: 85; padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px)); background: var(--white); box-shadow: 0 -1px 0 var(--line), 0 -12px 24px -16px rgba(23, 42, 90, 0.25); }
-  .page-calendar .footer { padding-bottom: 96px; }
+  .cal__summary { border-top: 1px solid var(--line); }
 }
 
 /* ---------- 21. LIGHT SURFACES INSIDE DARK SECTIONS ----------------------- */
@@ -692,3 +680,48 @@ textarea.input { min-height: 120px; resize: vertical; }
   .reviews__controls { margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .reviews__track { scroll-behavior: auto; } .review-card:hover { transform: none; } }
+
+/* ---------- 25. NATIVE WIX BOOKINGS: SERVICE LIST + BOOKING CALENDAR PAGE --- */
+/* Service List element: grid layout, 4 cards per row. Only native display options are used:
+   image, name, tagline, duration, price, Book Now button, More Info link. */
+.svc-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--gap); }
+.svc-card { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-radius: var(--r-card); overflow: hidden; }
+.svc-card__img { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--abyss-top); }
+.svc-card__img .media__img { transition: transform var(--dur-slow) var(--ease); }
+.svc-card:hover .svc-card__img .media__img { transform: scale(1.04); }
+.svc-card__body { display: flex; flex-direction: column; gap: 8px; padding: 22px 22px 0; flex: 1; }
+.svc-card__name { font-weight: 700; font-size: 18px; line-height: 1.3; color: var(--navy); }
+.svc-card__tagline { font-size: 14.5px; line-height: 1.55; }
+.svc-card__meta { font-size: 14px; font-weight: 600; color: var(--navy); margin-top: auto; padding-top: 6px; }
+.svc-card__actions { display: flex; align-items: center; gap: 16px; padding: 18px 22px 22px; }
+.svc-card__more { font-size: 14px; font-weight: 600; color: var(--navy); text-decoration: underline; text-decoration-color: var(--aqua); text-underline-offset: 4px; }
+
+/* Booking Calendar page (Wix's dynamic Bookings page): header + filters, date picker, times, booking details.
+   Styled only with the widget's Design tab: background, header, borders, dividers, fonts, colours, selections. */
+.band--slim { padding: calc(var(--header-h) + 20px) 0 20px; }
+.wix-cal { background: var(--white); border: 1px solid var(--line); border-radius: var(--r-card); overflow: hidden; }
+.wix-cal__header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px 32px; padding: 28px 28px 24px; background: var(--cream); border-bottom: 1px solid var(--line); }
+.wix-cal__title { display: flex; flex-direction: column; gap: 6px; }
+.wix-cal__service { font-family: var(--font-display); font-weight: 300; font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.375rem); line-height: 1.1; letter-spacing: -0.02em; color: var(--navy); }
+.wix-cal__subtitle { font-size: 14.5px; }
+.wix-cal__filters { display: flex; gap: 12px 16px; flex-wrap: wrap; }
+.wix-cal__filters .field { min-width: 200px; }
+.wix-cal__filters .input { min-height: 46px; padding-block: 10px; background-color: var(--white); }
+.wix-cal .cal { border: 0; border-radius: 0; }
+.wix-cal__step { font-weight: 700; font-size: 15px; color: var(--navy); margin-bottom: 14px; }
+.page-booking .cal__tz { margin: 14px 0 0; }
+.page-booking .cal__slots { min-height: 360px; }
+
+@media (max-width: 1023px) {
+  .svc-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 767px) {
+  .svc-list { grid-template-columns: 1fr; }
+  .svc-card__actions .btn { flex: 1; }
+  .wix-cal { border-radius: 20px; }
+  .wix-cal__header { padding: 20px 16px; }
+  .wix-cal__filters { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+  .wix-cal__filters .field { min-width: 0; }
+  .wix-cal__step { display: none; }
+  .page-booking .cal__slots { min-height: 0; }
+}
