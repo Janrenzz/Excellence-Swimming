@@ -12,7 +12,7 @@ This is design revision **2 of 3**; one more revision remains. Status key: **Don
 | 6 | Add the founder slideshow and compact credentials | Done | Two photos (Tokyo 2020 portrait, racing shot) with arrows; six credential capsules; intro shortened (still a draft for Ruslan) |
 | 7 | Add lesson inclusions, coaches and pool locations | Done (content partly pending) | Session length, second location and its pool photo are labelled placeholders |
 | 8 | Design upcoming and past clinic states | Done | None-scheduled (default) and scheduled (`?state=scheduled`); past clinics always visible; "What clinics cover" image panels (Unsplash stock photos, labelled) |
-| 9 | Retain native Wix booking as the current placeholder | Done | Calendar labelled as a design placeholder with sample data |
+| 9 | Retain native Wix booking as the current placeholder | Done | Redesigned to native-only: Calendar page = Wix Service List; Booking Calendar page mirrors Wix's own Booking Calendar (one service, header filters, daily date picker, times, booking details). Labelled as a placeholder with sample data |
 | 10 | Document the future custom booking requirements | Done | `docs/04-booking-requirements.md`, with Wix capabilities checked against Wix's help centre |
 | 11 | Design the service-interest form and outline contact grouping | Done (backend pending) | Form designed; Wix Forms, labels and automations still to be set up and tested in Wix (`docs/05-contact-handover.md`) |
 | 12 | Request professional and swimming photos, pool photos, replacement videos, university details and review links | Pending | We still need to send this request. List below |

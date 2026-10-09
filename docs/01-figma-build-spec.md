@@ -9,7 +9,8 @@ The HTML in `/site` is the visual source of truth. Import it into Figma with htm
 01 Home              ← index.html @ 1280 and 390
 02 Lessons           ← lessons.html @ 1280 and 390
 03 Clinics           ← clinics.html @ 1280 and 390 (+ ?state=scheduled for the scheduled-clinics frame)
-04 Calendar          ← calendar.html @ 1280 and 390
+04 Calendar          ← calendar.html @ 1280 and 390 (Service List)
+04b Booking Calendar ← booking-calendar.html?service=1:1 @ 1280 and 390 (native Wix Bookings page)
 05 Contact           ← contact.html @ 1280 and 390
 06 Motion notes      ← sticky notes from 03-interactions.md
 ```
@@ -27,7 +28,9 @@ Replace the revision-1 frames rather than keeping both: import the new frames, c
   - Home: Hero (dark, video) · Founder (cream) · Philosophy (cream) · wave · Lessons & clinics (dark) · wave · Booking summary (cream, links to Calendar) · Testimonials + school logo wall (cream → mist) · wave · Footer
   - Lessons: Hero (dark, image) · Lesson types + includes (cream) · wave · Coaches & pricing (dark, white cards) · wave · Locations (cream) · wave · Footer
   - Clinics: Hero (dark, image/video) · Upcoming (cream) · wave · What clinics cover (focus panels) + Past clinics (dark) · wave · Team clinics (cream) · wave · Footer
-  - Calendar, Contact: dark title band · cream content · wave · Footer
+  - Calendar: dark title band · Service List (cream) · wave · Footer
+  - Booking Calendar: slim dark band (back link) · native Booking Calendar (cream) · wave · Footer
+  - Contact: dark title band · cream content · wave · Footer
 - **Mobile hero (Home):** navy gradient, no video. Heading, one sentence, full-width Book button, then the secondary button and trust row.
 
 ## Components (from the board)
@@ -49,7 +52,8 @@ Replace the revision-1 frames rather than keeping both: import the new frames, c
 | Rating badge | none | Text + star icons; only once a verified review link exists |
 | Form field | Type = Input / Select / Checkbox · State = Default / Focus / Error | Wix Forms fields (styled in the form's design panel) |
 | Tabs | Use = Forms / Lesson format | Tabs element, pill style |
-| Calendar parts | Day, Week day, Slot | Wix Bookings Booking Calendar widget design panel |
+| Service card | none | Wix Bookings Service List item (native display options only) |
+| Booking Calendar parts | Day, Week day, Slot | Wix Bookings Booking Calendar page, Design tab |
 | Wave divider | From = Cream / Navy | Section Shape Divider |
 | Booking summary | none | Container + buttons + pill links to the Calendar page |
 | Focus panel | Width = Narrow / Wide | Container with image background, overlay, pill label and caption |

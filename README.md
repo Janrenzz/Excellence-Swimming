@@ -7,7 +7,8 @@ site/                    Responsive HTML/CSS reference (the visual source of tru
   index.html                     01 Home
   lessons.html                   02 Lessons (formats, coaches & pricing)
   clinics.html                   03 Clinics (?state=scheduled previews the scheduled-clinics state)
-  calendar.html                  04 Calendar (booking; every Book Now lands here)
+  calendar.html                  04 Calendar: native Wix Bookings Service List (every Book a lesson lands here)
+  booking-calendar.html          04b Native Wix Booking Calendar page (?service=1:1 … 4:1)
   contact.html                   05 Contact (general inquiry + waitlist forms)
   components.html                00 Components board for Figma
   src/                           Page sources + shared header/footer partials
@@ -41,6 +42,7 @@ The `gh-pages` branch serves the site at https://janrenzz.github.io/Excellence-S
 | 02_Lessons | `…/lessons.html?capture` | 1280 · 390 |
 | 03_Clinics | `…/clinics.html?capture` (and `?capture&state=scheduled`) | 1280 · 390 |
 | 04_Calendar | `…/calendar.html?capture` | 1280 · 390 |
+| 04b_Booking_Calendar | `…/booking-calendar.html?capture&service=1:1` | 1280 · 390 |
 | 05_Contact | `…/contact.html?capture` | 1280 · 390 |
 
 To refresh the hosted copy after changes, copy `site/` onto the `gh-pages` branch and push.
@@ -53,7 +55,7 @@ To refresh the hosted copy after changes, copy `site/` onto the `gh-pages` branc
 - **Type.** Inter Tight Light headings in sentence case, Manrope body text and bold card titles, Space Grotesk small uppercase labels. All three were verified from the reference site's own stylesheet.
 - **Cards and capsules.** White rounded cards with thin pale borders; aqua line icons in pale circles with small index numbers; pill-shaped credential capsules; pill buttons (filled aqua or outlined).
 - **Images.** Rounded photos, a layered frame and an overlapping name panel on the founder slideshow. Layered wave dividers at selected light/dark transitions.
-- **Booking first.** A booking button in every hero, the header, the footer and a pinned mobile bar. The Home calendar preview and the Calendar page are placeholders for the native Wix Bookings widget.
+- **Booking first.** A booking button in every hero, the header, the footer and a pinned mobile bar. Booking uses only native Wix Bookings: a Service List, then Wix's own Booking Calendar page.
 - **Logo.** The existing logo stays as a placeholder until new artwork is approved.
 
 ## Content honesty

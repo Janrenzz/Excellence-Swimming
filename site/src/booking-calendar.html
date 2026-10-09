@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+{{head:Booking Calendar — Excellence Swimming|Pick a coach, location and time for your lesson.}}
+<meta name="robots" content="noindex">
+</head>
+<body class="page-calendar page-booking">
+<!-- FRAME: 04b_Booking_Calendar · NATIVE WIX ONLY.
+     This is Wix Bookings' own dynamic "Booking Calendar" page (Pages & Menu → Bookings Pages). It is designed once
+     and shows whichever service the visitor chose. Only these native options are used:
+       Layout: Daily view · text left · padding sliders
+       Display: header subtitle ON · filters ON (Location, Staff) · open on first available date · show available slots only
+       Design: background, header, borders, dividers, text fonts + colours, selection colours
+       Text: filter labels ("Coach" for Staff), booking summary text, "Next" button label
+     Visitors switch lesson type by going back to the Service List. Times below are sample data. -->
+{{header:transparent:calendar}}
+
+<main id="main">
+
+  <section class="band band--slim on-dark" aria-label="Booking">
+    <div class="container">
+      <a class="link" href="calendar.html">{{icon:arrow-left}}<span>All lesson types</span></a>
+    </div>
+  </section>
+
+  <section class="cal-shell" aria-label="Booking Calendar">
+    <div class="container">
+      <div class="wix-cal" data-cal-widget>
+        <!-- Header: service title + subtitle + filters (native header) -->
+        <header class="wix-cal__header">
+          <div class="wix-cal__title">
+            <h1 class="wix-cal__service" data-service-title>1:1 Private lesson</h1>
+            <p class="wix-cal__subtitle">Check out our availability and book the date and time that works for you</p>
+          </div>
+          <div class="wix-cal__filters">
+            <div class="field"><label for="f-loc">Location</label>
+              <select class="input" id="f-loc" data-filter="location">
+                <option value="any">All locations</option>
+                <option value="loc-1">St. Charles · Bexley</option>
+                <option value="loc-2">[Second location]</option>
+              </select></div>
+            <div class="field"><label for="f-coach">Coach</label>
+              <select class="input" id="f-coach" data-filter="coach">
+                <option value="any">All coaches</option>
+                <option value="ruslan">Ruslan Gaziev</option>
+                <option value="hannah">Hannah Bach</option>
+              </select></div>
+          </div>
+        </header>
+
+        <div class="cal" data-cal>
+          <!-- Date picker (Daily view) -->
+          <div class="cal__month">
+            <p class="wix-cal__step">Select a Date and Time</p>
+            <div class="month__head">
+              <button class="icon-btn" type="button" data-month="-1" aria-label="Previous month">{{icon:arrow-left}}</button>
+              <p class="month__title" data-month-title aria-live="polite"></p>
+              <button class="icon-btn" type="button" data-month="1" aria-label="Next month">{{icon:arrow-right}}</button>
+            </div>
+            <div class="month__grid" data-month-grid></div>
+            <p class="cal__tz">Time zone: Eastern Time (ET)</p>
+          </div>
+
+          <!-- Mobile weekly strip (native mobile layout: Weekly) -->
+          <div class="week" data-week aria-label="Choose a day"></div>
+
+          <!-- Time slots for the selected day -->
+          <div class="cal__slots">
+            <p class="slots__title" data-slots-title aria-live="polite"></p>
+            <div data-slots></div>
+          </div>
+
+          <!-- Booking details (native booking summary) -->
+          <aside class="cal__summary" aria-label="Booking details">
+            <p class="slots__title">Booking Details</p>
+            <ul class="summary__list" data-summary></ul>
+            <a class="btn btn--block" href="#" data-next aria-disabled="true">Next</a>
+          </aside>
+        </div>
+      </div>
+      <p class="cal-note" style="margin-top: 16px"><span class="design-note">Design placeholder</span> Mock-up of the native Wix Bookings calendar page. Times are sample data and nothing here books a lesson.</p>
+    </div>
+  </section>
+
+  {{wave:to-footer}}
+
+</main>
+
+{{footer}}
+</body>
+</html>

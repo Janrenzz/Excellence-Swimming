@@ -15,8 +15,9 @@ Everything in the design is buildable with native Wix Studio and Wix apps (Booki
 | Credential capsules | Repeated containers with a pill radius, icon + text (or Buttons with icons) | Yes |
 | Philosophy, service, format, location cards | Containers in a Grid or Repeater; hover: move up 4px + shadow | Yes |
 | Coaches & pricing | CMS "Coaches" collection → Repeater | Yes |
-| Booking summary on Home | Container with text, buttons and pill links. Every link goes to the Calendar page (no widget on Home) | Yes. Links that preselect a lesson type or coach (`?format=`, `?coach=`) need Velo; without it they simply open the Calendar |
-| Calendar page | Wix Bookings Booking Calendar widget (see Bookings below) | Yes. **The widget's own layout decides spacing**; we style fonts, colours and buttons in its design panel |
+| Booking summary on Home | Container with text, buttons and pill links. Lesson-type pills link to that service's Booking Calendar page URL; coach and location pills link to the Calendar page | Yes |
+| Calendar page (Step 1) | Regular Studio page: title section + Members Login Bar + Wix Bookings **Service List** element (grid, 4 cards: image, name, tagline, duration, price, Book Now, More Info) | Yes. Card content comes from each service in Bookings ([Wix guide](https://support.wix.com/en/article/wix-bookings-setting-up-your-service-list)) |
+| Booking Calendar (Step 2) | Wix Bookings' own dynamic **Booking Calendar page** (Pages & Menu → Bookings Pages), designed once for all services: Daily layout, header subtitle + Location and Staff filters on, open on first available date, available slots only; Design tab colours/fonts only; mobile layout Weekly | Yes ([Wix guide](https://support.wix.com/en/article/wix-bookings-customizing-your-booking-calendar-page)). One service per page: visitors change lesson type by going back to the Service List |
 | Testimonials: sideways-scrolling review cards, rating badge, "Read all reviews" | Slider or horizontal-scroll Repeater of cards (or the Wix Reviews / Google Reviews app), arrows on, autoplay off; edge fade is a gradient overlay | Yes. If you use a reviews app, its widget decides the final card styling |
 | Rating badge (score + stars + count) | Text + star icons typed in, or a reviews app's badge; only once a verified review source exists | Yes |
 | School logo wall | Gallery (grid) or Repeater of logo images; greyscale → colour on hover via Hover interaction | Yes. Add logos only for schools Ruslan confirms; check permission to show each logo |
@@ -26,7 +27,7 @@ Everything in the design is buildable with native Wix Studio and Wix apps (Booki
 | Forms (inquiry, waitlist, team clinic) | Wix Forms | Yes. See `05-contact-handover.md` for labels |
 | Mobile Book bar | Container pinned to the bottom, mobile breakpoint only | Yes |
 | Sign in to see bookings | Wix Members → My Bookings | Yes |
-| "Book with Ruslan" opens the calendar filtered to Ruslan | Not native (widget ignores URL parameters) | Option A: link to the Calendar and the client taps the Coach filter. Option B: a short Velo snippet |
+| Opening the calendar already filtered to one coach | Not native. Design avoids it: "Book with Ruslan/Hannah" opens the Calendar page and the visitor picks the coach in the calendar's Coach filter | Velo only, if ever wanted |
 | Motion | Entrance, hover, scroll effects; reduced-motion respected | Yes (see `03-interactions.md`) |
 
 ## Wix Bookings setup
@@ -34,12 +35,13 @@ Everything in the design is buildable with native Wix Studio and Wix apps (Booki
 1. **Staff:** add Ruslan and Hannah with working hours.
 2. **Locations:** add St. Charles Prep and the second location.
 3. **Services:** four appointment services: *1:1 Private*, *2:1 Semi-private*, *3:1 Small group*, *4:1 Group*. Assign coaches, locations, duration and price. Prices differ by coach, so use price options by staff member, or one service per coach and format if the plan doesn't support that.
-4. **Calendar page:** Tabs element with four tabs, each holding a Booking Calendar widget for that service, with the Location and Staff filters on. Widget design: Manrope, Navy `#172A5A` text, White background, selected day and slot in Navy with white text, accents Aqua Ink `#1C7480`, button Aqua `#75CAD3` with Abyss text and pill radius.
-5. **Home:** no widget. A short booking summary links every option to the Calendar page.
-6. **Booking buttons:** link every Book a lesson button to the Calendar page.
-7. **Sign-in:** Wix Members, so returning clients can reschedule from My Bookings.
+4. **Calendar page (Service List):** add Bookings → Service List, choose the four lesson services, grid layout (4 / 2 / 1 per row), show image, name, tagline, duration, price, Book Now and More Info. Clicking a service opens its Booking Calendar (the default).
+5. **Booking Calendar page:** Pages & Menu → Bookings Pages → Booking Calendar. Settings: Layout = Daily (mobile: Weekly); Display = subtitle + filters on, first available date, available slots only; Text = rename the Staff filter to "Coach". Design tab: Manrope, Navy `#172A5A` text, White background, Cream `#FBF6EC` header, Line `#E7E1D3` borders/dividers, selected date and time in Navy with white text, Next button Aqua `#75CAD3` with Abyss text. If a corner radius isn't offered, Wix's default applies.
+6. **Home:** no widget. The booking summary's lesson-type links use each service's Booking Calendar URL.
+7. **Booking buttons:** link every Book a lesson button to the Calendar page.
+8. **Sign-in:** Wix Members, so returning clients can reschedule from My Bookings.
 
-The calendar in the design is a **placeholder for this native widget**. It is not a working booking system and never was. Anything the native widget can't do is listed in `04-booking-requirements.md` for separate scoping.
+The calendar in the design is a **placeholder for this native page**. It is not a working booking system and never was. Anything the native widget can't do is listed in `04-booking-requirements.md` for separate scoping.
 
 ## Wix Events setup (Clinics)
 

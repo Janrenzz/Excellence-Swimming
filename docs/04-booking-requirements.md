@@ -1,6 +1,6 @@
 # Booking: native placeholder now, custom requirements later
 
-**Current decision:** the site uses the **native Wix Bookings Booking Calendar widget**. The calendar in the design files is a visual placeholder for that widget. Its times are sample data, and it does not take bookings. Nothing on the site should be described to clients as a custom booking system.
+**Current decision:** the site uses only **native Wix Bookings**: a Service List element on the Calendar page, then Wix's own Booking Calendar page for the chosen service. The calendar in the design files is a visual placeholder for that native page. Its times are sample data, and it does not take bookings. Nothing on the site should be described to clients as a custom booking system.
 
 This page records what a custom booking flow might need, so it can be scoped and priced separately later. None of it is in the current build.
 
@@ -8,8 +8,8 @@ This page records what a custom booking flow might need, so it can be scoped and
 
 | Need | Native? | Notes |
 |---|---|---|
-| Choose lesson type (1:1 – 4:1) | Yes | One service per format, shown as tabs on the Calendar page |
-| Filter by coach and location | Yes | Booking Calendar widget, Staff and Location filters |
+| Choose lesson type (1:1 – 4:1) | Yes | One service per format, shown as cards in the Service List |
+| Filter by coach and location | Yes | Booking Calendar page header filters (Location, Staff renamed "Coach") |
 | Different price per coach | Yes, with limits | Price options by staff member, or one service per coach and format |
 | Pay online at checkout | Yes | Wix Payments or another connected provider |
 | Clients view / reschedule bookings | Yes | Wix Members → My Bookings |
