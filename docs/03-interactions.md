@@ -27,6 +27,7 @@ Everything below is a native Wix Studio animation.
 | 10 | Mobile Book bar | Pinned to the bottom; slides up after the hero | 0.3s |
 | 12 | Clinics focus panels | **Hover:** image zoom 1.00 → 1.04; the panel widening seen in the HTML is not a native Wix animation (static wide/narrow layout, or Velo) | 0.6–0.9s |
 | 13 | School logos | **Hover:** greyscale → colour, lift 3px | 0.3s |
+| 14 | Hero → Founder cover (Home) | Hero section pinned (sticky) at the top; the founder section, with a solid cream background and higher in the stack, scrolls up over it. Hero content group: **Scroll animation → Out → Fade** (+ slight move up), so it fades with scroll and reverses on the way back. Check in Preview: Wix documents sticky/pinned positions for headers and scroll "Out" fades for elements, but not a sticky *section* explicitly; if the editor doesn't offer it, use the hero background scroll effect "Reveal" or a small Velo snippet | Fade complete at ~70% overlap; off with reduced motion |
 | 11 | Hero video (desktop only) | Muted loop; optional slow parallax via Scroll animation | Low speed |
 
 **Turn off or skip:**

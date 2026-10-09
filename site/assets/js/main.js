@@ -64,6 +64,24 @@
     video.play && video.play().catch(function () {});
   }
 
+  /* HERO → FOUNDER — while the founder section slides over the pinned hero, fade the hero content.
+     Progress is read from scroll position on every frame, so it reverses smoothly when scrolling back up.
+     Fully faded once the founder covers ~70% of the hero; the video pauses while the hero is fully covered. */
+  var heroStack = $("[data-hero-stack]");
+  if (heroStack && !reduceMotion) {
+    var stackHero = $(".hero", heroStack), heroTicking = false;
+    var updateHero = function () {
+      heroTicking = false;
+      var p = Math.min(Math.max(window.scrollY / (stackHero.offsetHeight * 0.7), 0), 1);
+      stackHero.style.setProperty("--hero-fade", (1 - p).toFixed(3));
+      if (video && video.src) { if (window.scrollY >= stackHero.offsetHeight) video.pause(); else if (video.paused) video.play().catch(function () {}); }
+    };
+    var queueHero = function () { if (!heroTicking) { heroTicking = true; requestAnimationFrame(updateHero); } };
+    window.addEventListener("scroll", queueHero, { passive: true });
+    window.addEventListener("resize", queueHero);
+    updateHero();
+  }
+
   /* SLIDESHOWS — founder photos and testimonials: arrows (+ dots), no autoplay
      (Wix: Slideshow element with arrows/navigation on, autoplay off). */
   function carousel(root, slideSel, prevSel, nextSel, onChange) {

@@ -8,6 +8,7 @@ Everything in the design is buildable with native Wix Studio and Wix apps (Booki
 |---|---|---|
 | Fonts: Inter Tight, Manrope, Space Grotesk | Site Styles → Fonts. If a font isn't in Wix's list, upload it (Google Fonts files, open licence) | Yes |
 | Hero video (desktop) / navy gradient (mobile) | Section background → Video + overlay; on the mobile breakpoint, change the section background to the navy gradient | Yes. Check that the mobile background override doesn't still load the video |
+| Hero → Founder scroll cover (founder slides over the pinned hero, hero text fades with scroll) | Sticky hero section + founder section above it in the stack; hero content gets a Scroll animation "Out → Fade" ([Wix: scroll animations](https://support.wix.com/en/article/studio-editor-adding-a-scroll-animation)) | Fade: yes. Sticky section: verify in Preview; fallback is the section background scroll effect or Velo |
 | Header transparent → navy on scroll | Header scroll effect | Yes |
 | Wave dividers | Section → Shape Dividers. Upload `site/assets/media/wave-divider.svg` (two layered waves) and set the colour per section | Yes ([Wix guide](https://support.wix.com/en/article/studio-editor-adding-and-customizing-shape-dividers)) |
 | Founder slideshow (2 photos, arrows) + overlapping name panel | Slideshow element, arrows on, autoplay off; name panel is a container layered over the bottom edge | Yes |

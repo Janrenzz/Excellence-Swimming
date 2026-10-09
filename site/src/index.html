@@ -9,6 +9,10 @@
 
 <main id="main">
 
+  <!-- Hero_Stack · the hero pins to the top while the founder section slides up over it.
+       Wix Studio: hero section sticky (or background scroll effect "Reveal"), founder section above it in the stack. -->
+  <div class="hero-stack" data-hero-stack>
+
   <!-- 02_Hero · Desktop: Hero_Video_Background + navy overlay. Mobile: navy gradient only (video hidden, never loaded). -->
   <section class="hero on-dark" id="Hero" aria-labelledby="hero-title">
     <div class="hero__media" id="Hero_Video_Background">
@@ -36,7 +40,7 @@
   </section>
 
   <!-- 03_Founder · two-photo slideshow + compact intro + credential capsules -->
-  <section class="section" id="Founder" aria-labelledby="founder-title">
+  <section class="section founder-cover" id="Founder" aria-labelledby="founder-title">
     <div class="container grid-12 founder">
       <div class="founder__media reveal">
         <div class="frame">
@@ -83,6 +87,8 @@
       </div>
     </div>
   </section>
+
+  </div><!-- /Hero_Stack -->
 
   <!-- 04_Philosophy · four compact white cards (Wix: Repeater or Grid of containers) -->
   <section class="section section--tight-top" id="Philosophy" aria-labelledby="philosophy-title">
