@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 64" role="img" aria-label="Sample university logo (stock placeholder)">
+<g transform="translate(2 2) scale(0.9375)"><path d="M8 6h48v24c0 15-10 25-24 30C18 55 8 45 8 30Z" fill="#172A5A"/><path d="M8 6h48v14H8Z" fill="#1C7480"/><path d="M14 32c4-3 8-3 12 0s8 3 12 0 8-3 12 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M14 42c4-3 8-3 12 0s8 3 12 0 8-3 12 0" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"/></g>
+<rect x="72" y="20" width="90" height="9" rx="4.5" fill="#172A5A"/>
+<rect x="72" y="36" width="62" height="6" rx="3" fill="#1C7480" opacity=".7"/>
+</svg>

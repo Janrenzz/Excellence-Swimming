@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 64" role="img" aria-label="Sample university logo (stock placeholder)">
+<g transform="translate(2 2) scale(0.9375)"><path d="M18 50C8 42 6 26 14 14" fill="none" stroke="#1C7480" stroke-width="3" stroke-linecap="round"/><path d="M46 50c10-8 12-24 4-36" fill="none" stroke="#1C7480" stroke-width="3" stroke-linecap="round"/><ellipse cx="11" cy="22" rx="5" ry="2.6" transform="rotate(-60 11 22)" fill="#1C7480"/><ellipse cx="9" cy="32" rx="5" ry="2.6" transform="rotate(-80 9 32)" fill="#1C7480"/><ellipse cx="11" cy="42" rx="5" ry="2.6" transform="rotate(-110 11 42)" fill="#1C7480"/><ellipse cx="53" cy="22" rx="5" ry="2.6" transform="rotate(60 53 22)" fill="#1C7480"/><ellipse cx="55" cy="32" rx="5" ry="2.6" transform="rotate(80 55 32)" fill="#1C7480"/><ellipse cx="53" cy="42" rx="5" ry="2.6" transform="rotate(110 53 42)" fill="#1C7480"/><path d="M27 30h10l-2 22h-6Z" fill="#172A5A"/><path d="M32 12c5 6 6 10 3 15h-6c-3-5-2-9 3-15Z" fill="#75CAD3"/></g>
+<rect x="72" y="20" width="90" height="9" rx="4.5" fill="#172A5A"/>
+<rect x="72" y="36" width="62" height="6" rx="3" fill="#1C7480" opacity=".7"/>
+</svg>

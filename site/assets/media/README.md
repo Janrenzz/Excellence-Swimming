@@ -22,3 +22,7 @@ Free under the [Unsplash License](https://unsplash.com/license). Tinted navy (du
 | `stock-clinic-underwater.jpg` | Jan Antonin Kolar | https://unsplash.com/photos/eCNz5PiiUCc |
 | `stock-clinic-breakout.jpg` | CHUTTERSNAP | https://unsplash.com/photos/G8OyN_tOIwY |
 | `stock-clinic-race.jpg` | Jonathan Chng | https://unsplash.com/photos/N3VEiHD8Sec |
+
+## Sample school logos (Home · "Where our swimmers go next")
+
+`logos/sample-logo-1.svg` … `sample-logo-6.svg` are generic, made-up crest marks drawn for this project as stock placeholders. They are not real university logos. Swap each one for a real school's logo once Ruslan confirms the school and permission to show it.
