@@ -366,3 +366,53 @@ In each page frame's Prototype settings, set a **flow starting point** (the ▶ 
 - one flow per remaining page and size
 
 **Share → Copy prototype link** gives Ruslan a single link where he can pick each flow from the left sidebar.
+
+
+---
+
+## Revision update: Ruslan's feedback + Wix-native pass
+
+### Which pages changed (compared with the version imported into Figma, commit b888bb2)
+
+| Page | Changed? | What |
+|---|---|---|
+| 01 Home | **Yes** | Adult Swimming Lessons card + "Competitive Private & Small Group Lessons" title; founder section compact on mobile (2 credential badges, 4:3 photo); founder slideshow arrows moved onto the photo, counter removed; school logos full colour at 75% |
+| 02 Lessons | **Yes** | Hero title; coach About / Credentials tabs with two-paragraph About; headshot + action slideshows with arrows on the photo |
+| 05 Contact | Content only | "Adult swimming lessons" added inside the interest dropdown, not visible in a static frame, so **no re-import needed** |
+| 03 Clinics, 04 Calendar, 04b Booking Calendar, 00 Components | No content change | Leave untouched |
+
+**Site-wide style changes that show on every page:**
+- **Header Book button:** now always aqua-filled. It used to be outlined over the hero.
+- **Phone Book bar:** always visible on mobile, except on the Calendar pages.
+
+The unchanged pages' frames are otherwise correct. Rather than re-importing them, update the header Book button (and, on mobile frames, add the Book bar) by hand or through the Header component.
+
+### Re-import (replaces the existing frames in place)
+
+Use html.to.design → URL with **Replace selection** (Claude passes `intoNodeId`), so frame IDs and prototype connections are kept:
+
+| Frame | Node ID | Address | Width |
+|---|---|---|---|
+| 01 Home — Desktop | 48:2690 | `index.html?capture&v=b6cbdc9` | 1280 |
+| 01 Home — Mobile | 48:4495 | `index.html?capture&v=b6cbdc9` | 390 |
+| 02 Lessons — Desktop | 48:5454 | `lessons.html?capture&v=b6cbdc9` | 1280 |
+| 02 Lessons — Mobile | 48:6192 | `lessons.html?capture&v=b6cbdc9` | 390 |
+
+Replacing a frame keeps its ID, so connections that **point to** the frame survive. Connections drawn on layers **inside** it are rebuilt by the import, so re-add the ones below.
+
+### Prototype connections for the changed parts
+
+| Interaction | Build in Figma | Trigger → action | Timing |
+|---|---|---|---|
+| Founder slideshow (Home) | Component `Slide=1` (Tokyo 2020 portrait) / `Slide=2` (racing); arrows on the photo's left and right; no counter | ← and → **On click → Change to** the other variant | **Dissolve**, custom bezier `0.22, 0.61, 0.36, 1`, **600 ms** |
+| Coach photo slideshows (Lessons) | Per coach: `Slide=1` (action photo) / `Slide=2` (headshot); arrows on the photo | ← / → **On click → Change to** the other variant | Dissolve, same easing, **600 ms** |
+| About / Credentials (Lessons) | Per coach: `Show=About` / `Show=Credentials` (pill switch only, no arrows). Each variant is its own height | Inactive pill **On click → Change to** the other variant | **Smart Animate**, same easing, **400 ms** (content fade + 12 px slide); height changes instantly |
+| Adult card, service cards (Home) | Card `State=Default` / `Hover` (4 px lift + shadow) | **While hovering → Change to** Hover | Smart Animate, **280 ms** |
+| School logos (Home) | Tile `Default` (logo 75%) / `Hover` (100%, 3 px lift) | **While hovering → Change to** Hover | Smart Animate, **280 ms** |
+| Hero → founder cover + hero fade (Home) | Unchanged: section 1 above (Option A drag frames, or Sticky without the fade) | — | — |
+
+### Can't be reproduced exactly in Figma
+- **Hero text fading with scroll position:** Figma has no scroll trigger. The closest version is the On-drag Smart Animate approximation (section 1, Option A).
+- **Section fade-ins on scroll:** only an approximation with After delay on the first screen (section 2).
+- **Phone Book bar "always visible":** this one *is* reproducible. Set it to Position: Fixed at the bottom of the mobile frames.
+- **Reduced motion:** Figma prototypes can't follow the device setting.
