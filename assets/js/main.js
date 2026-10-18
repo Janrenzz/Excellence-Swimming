@@ -106,6 +106,14 @@
     var count = $("[data-slides-count]", root);
     carousel(root, ".slide", "[data-slides-prev]", "[data-slides-next]", function (i, n) { if (count) count.textContent = (i + 1) + " / " + n; });
   });
+  /* COACH ABOUT / ACHIEVEMENTS — two-slide panel with labelled buttons + arrows. */
+  $$("[data-info-slides]").forEach(function (root) {
+    var tabs = $$("[data-info-goto]", root);
+    var go = carousel(root, ".info-slide", "[data-info-prev]", "[data-info-next]", function (i) {
+      tabs.forEach(function (t, k) { t.setAttribute("aria-pressed", String(k === i)); });
+    });
+    tabs.forEach(function (t) { t.addEventListener("click", function () { go(Number(t.getAttribute("data-info-goto"))); }); });
+  });
   /* REVIEWS — sideways-scrolling cards; arrows move by one card (Wix: Slider / horizontal Repeater). */
   $$("[data-reviews]").forEach(function (root) {
     var track = $("[data-reviews-track]", root);
