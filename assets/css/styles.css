@@ -772,3 +772,28 @@ textarea.input { min-height: 120px; resize: vertical; }
 .info-slide { grid-area: 1 / 1; display: flex; flex-direction: column; gap: 12px; opacity: 0; visibility: hidden; transform: translateX(12px); transition: opacity 400ms var(--ease), transform 400ms var(--ease), visibility 400ms; }
 .info-slide.is-active { opacity: 1; visibility: visible; transform: none; }
 @media (prefers-reduced-motion: reduce) { .info-slide { transform: none; } }
+
+/* ---------- 29. RUSLAN FEEDBACK: services row, tap targets, founder on mobile ---------- */
+/* Services: three cards on desktop; on tablet the third card spans the row so the grid stays balanced. */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .services-cards > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+.coach-card__bio + .coach-card__bio { margin-top: 2px; }
+.ph-bio { padding: 10px 14px; border: 1px dashed #D9D1BF; border-radius: 12px; background: var(--cream); }
+/* Slideshow controls: no hover needed; 40px on desktop, 44px touch targets on phones. */
+.round-btn--glass { width: 40px; height: 40px; }
+@media (max-width: 767px) {
+  .round-btn--glass, .round-btn--sm, .slides__controls .round-btn { width: 44px; height: 44px; }
+  .info-tab { min-height: 44px; padding: 0 16px; }
+
+  /* Homepage second section (Meet the Founder): compact on phones only. Desktop and tablet unchanged. */
+  #Founder.section { padding-block: 44px; }
+  #Founder .founder { row-gap: 28px; }
+  #Founder .frame { padding: 0 0 14px 14px; }
+  #Founder .frame::before { top: 14px; right: 14px; }
+  #Founder .slides__viewport { aspect-ratio: 4 / 3; }
+  #Founder .founder__body { gap: 16px; }
+  #Founder .founder__quote { font-size: 16px; line-height: 1.6; }
+  /* Show two credentials (the core message); the full list stays on desktop and on the Lessons page. */
+  #Founder .pills li:nth-child(n+3) { display: none; }
+}
