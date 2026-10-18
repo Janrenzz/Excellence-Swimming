@@ -108,10 +108,16 @@
   });
   /* COACH ABOUT / ACHIEVEMENTS — two-slide panel with labelled buttons + arrows. */
   $$("[data-info-slides]").forEach(function (root) {
-    var tabs = $$("[data-info-goto]", root);
+    var tabs = $$("[data-info-goto]", root), track = $(".info-slides__track", root);
+    /* Size the panel to the slide on screen, so a shorter slide doesn't leave empty space. */
+    var fit = function () { var a = $(".info-slide.is-active", root); if (a) track.style.height = a.offsetHeight + "px"; };
     var go = carousel(root, ".info-slide", "[data-info-prev]", "[data-info-next]", function (i) {
       tabs.forEach(function (t, k) { t.setAttribute("aria-pressed", String(k === i)); });
+      fit();
     });
+    fit();
+    window.addEventListener("resize", fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
     tabs.forEach(function (t) { t.addEventListener("click", function () { go(Number(t.getAttribute("data-info-goto"))); }); });
   });
   /* REVIEWS — sideways-scrolling cards; arrows move by one card (Wix: Slider / horizontal Repeater). */

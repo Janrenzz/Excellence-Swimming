@@ -797,3 +797,8 @@ textarea.input { min-height: 120px; resize: vertical; }
   /* Show two credentials (the core message); the full list stays on desktop and on the Lessons page. */
   #Founder .pills li:nth-child(n+3) { display: none; }
 }
+
+/* Coach panel: height follows the slide on screen (no space reserved for the hidden slide), easing between the two. */
+.info-slides__track { position: relative; display: block; overflow: hidden; transition: height 400ms var(--ease); }
+.info-slide { position: absolute; top: 0; left: 0; right: 0; }
+.info-slide.is-active { position: relative; }
