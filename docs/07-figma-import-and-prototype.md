@@ -275,6 +275,13 @@ Figma prototypes have no **scroll-position trigger**. Nothing can react to how f
 3. **Easing:** **Dissolve**, Custom bezier `0.22, 0.61, 0.36, 1`, **600 ms**, the same as the founder slideshow.
 4. **Test:** present `02 Lessons — Desktop` and click the arrows on each coach's photo.
 
+### 9c. Coach About / Achievements panel (Lessons) — direct
+
+1. **Variants:** make each coach's info panel a component with `Show=About` (the bio paragraph) and `Show=Achievements` (credential capsules + best strokes). The "About | Achievements" pill switch and the two small arrows sit at the top of both variants; the selected pill is navy. Keep both variants the same height.
+2. **Connections:** in `Show=About`, the "Achievements" pill and both arrows: **On click → Change to** `Show=Achievements`. In `Show=Achievements`, the "About" pill and both arrows go back to `Show=About`.
+3. **Easing:** **Smart Animate**, Custom bezier `0.22, 0.61, 0.36, 1`, **400 ms**. Name the bio and capsule groups the same in both variants, and set the hidden one to 0% opacity and 12 px to the right, so it fades and slides.
+4. **Test:** present `02 Lessons — Desktop`, click "Achievements", then an arrow.
+
 ### 10. Reviews carousel — direct
 
 1. **Frames:** put the review cards in a horizontal auto layout frame, about 1280 wide on desktop and 390 on mobile, with **Overflow → Horizontal scrolling** and **Clip content** on.
