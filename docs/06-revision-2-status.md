@@ -28,3 +28,17 @@ This is design revision **2 of 3**; one more revision remains. Status key: **Don
 - **Reviews:** a Google (or other) review link, and 2–3 written testimonials with permission.
 - **Copy:** approve or rewrite the founder intro; session length; second location name and address; which coach teaches where; confirmation and details of each credential (event, year), including the Commonwealth Games medal.
 - **Business decisions:** revised delivery date; logo pricing, number of concepts and deliverables; whether lesson packs or recurring bookings are needed (see `04-booking-requirements.md`).
+
+## Ruslan's feedback round (October 2026)
+
+| Item | Status | Notes |
+|---|---|---|
+| Coach biographies (1–2 paragraphs, About / Credentials switch) | Done (copy pending) | About = personal-background placeholder + credentials-based draft paragraph; Credentials = badges + best strokes. Pricing and Book buttons unchanged beside it |
+| Coach photo slideshows (headshot + competition photo) | Done (asset pending) | Arrow buttons + counter, tap-friendly (44 px on phones), no hover needed. Hannah's competition photo is a labelled stock stand-in |
+| Adult Swimming Lessons card | Done (details pending) | Third card on Home beside "Competitive Private & Small Group Lessons" (provisional title) and Clinics; links to Contact. "Adult swimming lessons" added to the Contact interest list. No booking changes |
+| Homepage second section (Meet the Founder) on mobile | Done | Phones only: tighter spacing, 4:3 photo, two credential badges. Section height 1,384 → 956 px. Desktop and tablet unchanged |
+| Animations preserved | Done | New elements reuse the existing fade-in, hover lift and slider timings; hero → founder cover unchanged; reduced motion respected |
+| Logo | Pending asset | Current logo kept as placeholder until the final file is supplied |
+| Booking | Unchanged by request | Flow, filters, availability, lesson selection, packages, discounts, payments untouched |
+
+**Still needed:** personal-background paragraphs for Ruslan and Hannah; approval of the two draft credential paragraphs; a competition photo of Hannah; adult-lesson pricing, coach(es), format and age range; confirmation of the "Competitive Private & Small Group Lessons" title; final logo file.

@@ -16,6 +16,7 @@ Dropdown options, each mapped to one contact label:
 | Semi-private or small group (2:1 – 4:1) | Interest: Small group |
 | Competitive swimming / stroke technique | Interest: Competitive |
 | Learn to swim | Interest: Learn to swim |
+| Adult swimming lessons | Interest: Adult lessons |
 | Clinics | Interest: Clinics |
 | Team clinic for a club or school | Interest: Team clinic |
 | Something else | Interest: Other |
