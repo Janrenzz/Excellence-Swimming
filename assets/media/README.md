@@ -26,3 +26,7 @@ Free under the [Unsplash License](https://unsplash.com/license). Tinted navy (du
 ## Sample school logos (Home · "Where our swimmers go next")
 
 `logos/sample-logo-1.svg` … `sample-logo-6.svg` are generic, made-up crest marks drawn for this project as stock placeholders. They are not real university logos. Swap each one for a real school's logo once Ruslan confirms the school and permission to show it.
+
+| `stock-coach-hannah-swim.jpg` (Lessons · Hannah slider, cropped) | Arisa Chattasa | https://unsplash.com/photos/woman-swimming-on-pool-2w-uabuglqY |
+
+The Hannah swimming slide is a stock stand-in labelled "Stock photo" on the page. Replace it with a real photo of Hannah when supplied.
