@@ -67,3 +67,27 @@ The calendar in the design is a **placeholder for this native page**. It is not 
 ## Content status
 
 Real content from excellenceswimming.com: coaches, rates, credentials, best strokes, St. Charles address, email, phone, tagline, clinic descriptions, past clinics, coach photos. Everything still missing is marked on the pages with a dotted underline or a dashed "design note" capsule, and tracked in `06-revision-2-status.md`.
+
+## Native check (October 2026)
+
+Every element of the current design was checked against Wix Studio's documented features. Anything that needed custom code was changed so the build stays native.
+
+| Element | Native in Wix Studio? | What the design uses |
+|---|---|---|
+| Header transparent → navy on scroll, frosted | Yes | Header **Color while scrolling** + container **Glass effect** ([header scroll effects](https://support.wix.com/en/article/studio-editor-adding-header-scroll-effects), [glass effect](https://support.wix.com/en/article/studio-editor-applying-a-glass-effect)) |
+| Header Book button changing style on scroll | **Not documented → changed** | Button now keeps one style (aqua) at all times |
+| Menu hover underline that grows | **Not native → changed** | Hover / current-page state appears instantly (menu states) |
+| Hero pinned, founder covers it, hero text fades with scroll | Yes | Sticky section + scroll animation "Out → Fade" triggered by the founder section |
+| Founder slideshow with arrows inside the name panel + "1 / 2" counter | **Custom controls need code → changed** | Native Slideshow arrows on the photo; name panel is a plain overlapping container; no counter |
+| Coach photo slideshows with counter | **Counter not native → changed** | Native Slideshow arrows on the photo; no counter |
+| Coach About / Credentials with extra arrows | **Arrows driving tabs need code → changed** | Tabs element with two tabs; coaches are two static containers (no repeater) |
+| Coach panel easing its height between tabs | Not documented → changed | Panel resizes instantly to the tab's content; content still fades in |
+| Clinics panels widening on hover | **Not native → changed** | Fixed layout (one wide, two narrow); photo zoom on hover kept |
+| School logos grey → colour on hover | Not documented → changed | 75% → 100% opacity and a small lift on hover |
+| Review cards cut off after five lines | Not documented → changed | Cards grow with their text |
+| Mobile Book bar sliding in after the hero | **Pinned elements can't be scroll-triggered → changed** | Bar is pinned to the bottom and always visible on phones (hidden on the Calendar pages) |
+| Review carousel (sideways, arrows, edge fade) | Yes | Flexbox slider with scroll snap + navigation arrows; edge fade = gradient overlay containers |
+| Cards, capsules, waves, gradients, layered photo frame, overlapping panels | Yes | Containers, custom SVG shape dividers, gradient fills, rotation, layering |
+| Fade-ins, hover lift, photo zoom, arrow nudge on buttons | Yes | Entrance animations, hover interactions, button icon animations |
+| Forms, tabs, Events lists, Service List, Booking Calendar page | Yes | Wix Forms, Tabs, Wix Events, Wix Bookings (booking unchanged) |
+| Mobile-only changes (founder shows 2 credentials, smaller photo) | Yes | Hide elements and resize per breakpoint |

@@ -802,3 +802,39 @@ textarea.input { min-height: 120px; resize: vertical; }
 .info-slides__track { position: relative; display: block; overflow: hidden; transition: height 400ms var(--ease); }
 .info-slide { position: absolute; top: 0; left: 0; right: 0; }
 .info-slide.is-active { position: relative; }
+
+/* ---------- 30. WIX STUDIO NATIVE PASS ---------------------------------- */
+/* Everything below keeps the design inside what Wix Studio does without custom code. */
+
+/* Slideshow arrows sit on the photo (native Slideshow arrows), vertically centred; no slide counter. */
+.slide-arrows { position: absolute; inset: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; pointer-events: none; }
+.slide-arrows .round-btn { pointer-events: auto; }
+#Founder .slides__viewport .slide-arrows { padding-bottom: 28px; } /* keep arrows clear of the name panel */
+
+/* Header: Wix changes the header background on scroll ("Color while scrolling" + glass effect),
+   not the style of buttons inside it, so the Book button keeps one style throughout. */
+.header__book, .header__book:hover, .header.is-scrolled .header__book { background: var(--aqua); color: var(--abyss); border-color: var(--aqua); }
+.header__book:hover { background: #8AD5DD; }
+
+/* Menu: hover / current-page state appears instantly (Wix menu states), no growing underline animation. */
+.nav__link::after { transition: none; }
+
+/* Clinics focus panels: fixed wide + narrow layout (hover can't change widths natively); photo zoom on hover stays. */
+.panel { transition: none; }
+.panels:hover .panel, .panels .panel:hover { flex-grow: 1; }
+.panels .panel--wide, .panels:hover .panel--wide, .panels .panel--wide:hover { flex-grow: 2.2; }
+
+/* School logos: opacity + lift on hover (native hover interaction) instead of a greyscale filter swap. */
+.logo-tile img { filter: none; opacity: 0.75; }
+.logo-tile:hover img { filter: none; opacity: 1; }
+
+/* Review cards: no line clamp (Wix text boxes grow with their content). */
+.review-card__text { display: block; -webkit-line-clamp: unset; overflow: visible; }
+
+/* Coach About / Credentials (Wix Tabs): panel resizes instantly to the tab's content; the content still fades in. */
+.info-slides__track { transition: none; }
+
+/* Mobile Book bar: a pinned element is always visible in Wix (it can't slide in on scroll). */
+@media (max-width: 767px) {
+  .book-bar { transform: none; }
+}

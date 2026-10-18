@@ -94,8 +94,9 @@
       });
       if (onChange) onChange(i, slides.length);
     };
-    $(prevSel, root).addEventListener("click", function () { go(i - 1); });
-    $(nextSel, root).addEventListener("click", function () { go(i + 1); });
+    var prevBtn = $(prevSel, root), nextBtn = $(nextSel, root);
+    if (prevBtn) prevBtn.addEventListener("click", function () { go(i - 1); });
+    if (nextBtn) nextBtn.addEventListener("click", function () { go(i + 1); });
     root.addEventListener("keydown", function (e) {
       if (e.key === "ArrowLeft") go(i - 1);
       if (e.key === "ArrowRight") go(i + 1);
