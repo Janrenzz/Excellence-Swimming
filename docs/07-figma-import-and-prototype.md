@@ -268,6 +268,13 @@ Figma prototypes have no **scroll-position trigger**. Nothing can react to how f
 3. **Easing:** **Dissolve**, Custom bezier, **600 ms**. This matches the site's crossfade.
 4. **Test:** present Home and click the arrows on the name panel.
 
+### 9b. Coach photo sliders (Lessons) — direct
+
+1. **Variants:** for each coach, make the photo frame a component with `Slide=1` (swimming photo) and `Slide=2` (portrait). Each variant has the round ← and → buttons and the "1 / 2" or "2 / 2" counter at the bottom of the photo. Hannah's swimming photo is a labelled stock stand-in.
+2. **Connections:** in `Slide=1`, → and ← both use **On click → Change to** `Slide=2`. In `Slide=2`, both go to `Slide=1`.
+3. **Easing:** **Dissolve**, Custom bezier `0.22, 0.61, 0.36, 1`, **600 ms**, the same as the founder slideshow.
+4. **Test:** present `02 Lessons — Desktop` and click the arrows on each coach's photo.
+
 ### 10. Reviews carousel — direct
 
 1. **Frames:** put the review cards in a horizontal auto layout frame, about 1280 wide on desktop and 390 on mobile, with **Overflow → Horizontal scrolling** and **Clip content** on.

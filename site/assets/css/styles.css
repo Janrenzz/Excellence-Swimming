@@ -740,3 +740,20 @@ textarea.input { min-height: 120px; resize: vertical; }
   .js .hero-stack > .hero { position: relative; }
   .hero-stack .hero__content, .hero-stack .hero__flag { opacity: 1; transform: none; }
 }
+
+/* ---------- 27. COACH PHOTO SLIDER + BIO (Lessons) ---------------------- */
+/* Wix: Slideshow element per coach (CMS "Coaches" → Photos field), arrows on, autoplay off. */
+.coach-slides { position: relative; }
+.coach-slides__viewport { position: relative; aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; background: var(--abyss-top); }
+.coach-slides .slide.media--empty { display: flex; align-items: center; justify-content: center; }
+.coach-slides__controls { position: absolute; left: 10px; right: 10px; bottom: 10px; z-index: 3; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.round-btn--glass { width: 36px; height: 36px; background: rgba(6, 21, 34, 0.55); border-color: rgba(255, 255, 255, 0.3); color: var(--on-dark); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.round-btn--glass .icon { width: 16px; height: 16px; }
+.coach-slides__count { padding: 3px 10px; border-radius: var(--r-pill); background: rgba(6, 21, 34, 0.55); color: var(--on-dark); font-size: 12px; font-variant-numeric: tabular-nums; }
+.coach-slides__tag { position: absolute; left: 10px; top: 10px; z-index: 2; padding: 3px 10px; border-radius: var(--r-pill); background: rgba(6, 21, 34, 0.6); color: var(--on-dark); font-family: var(--font-label); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; }
+.coach-card__bio { font-size: 14.5px; line-height: 1.65; max-width: 64ch; }
+.design-note--inline { margin-left: 4px; padding: 2px 8px; font-size: 10px; vertical-align: 1px; }
+@media (max-width: 767px) {
+  .coach-card { grid-template-columns: 1fr; }
+  .coach-slides__viewport { aspect-ratio: 4 / 3; }
+}

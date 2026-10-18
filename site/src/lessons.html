@@ -94,12 +94,24 @@
       </div>
 
       <article class="coach-card on-light reveal" id="coach-ruslan">
-        <div class="media ratio-4x5"><div class="media__img" style="background-image: url('assets/media/coach-ruslan.jpg')" role="img" aria-label="Portrait of Ruslan Gaziev"></div></div>
+        <!-- Coach photo slider · Wix: Slideshow element (arrows on, autoplay off) -->
+        <div class="coach-slides" data-slides aria-roledescription="carousel" aria-label="Photos of Ruslan Gaziev">
+          <div class="coach-slides__viewport">
+            <div class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 2"><div class="media__img" style="background-image: url('assets/media/clinics-hero.jpg'); background-position: 42% center" role="img" aria-label="Ruslan Gaziev racing freestyle"></div></div>
+            <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 2" aria-hidden="true"><div class="media__img" style="background-image: url('assets/media/coach-ruslan.jpg')" role="img" aria-label="Portrait of Ruslan Gaziev"></div></div>
+          </div>
+          <div class="coach-slides__controls">
+            <button class="round-btn round-btn--glass" type="button" data-slides-prev aria-label="Previous photo of Ruslan Gaziev">{{icon:arrow-left}}</button>
+            <span class="coach-slides__count" data-slides-count aria-hidden="true">1 / 2</span>
+            <button class="round-btn round-btn--glass" type="button" data-slides-next aria-label="Next photo of Ruslan Gaziev">{{icon:arrow-right}}</button>
+          </div>
+        </div>
         <div class="coach-card__info">
           <div class="coach-card__head stack gap-1">
             <p class="label">Founder &amp; Head Coach</p>
             <h3 class="h2" style="font-size: clamp(1.625rem, 1.3rem + 1vw, 2.125rem)">Ruslan Gaziev</h3>
           </div>
+          <p class="coach-card__bio">Ruslan raced for Canada at the Tokyo 2020 Olympics and has won medals at the World Championships and Commonwealth Games. He was an NCAA All-American and Big Ten champion, and he still races professionally. He founded Excellence Swimming to bring that race-level attention to detail to every lesson. <span class="design-note design-note--inline">Draft · coach to approve</span></p>
           <ul class="pills" aria-label="Credentials">
             <li class="pill pill--sm">{{icon:award}} Canadian Olympian</li>
             <li class="pill pill--sm">{{icon:award}} World Championship medallist</li>
@@ -119,12 +131,24 @@
       </article>
 
       <article class="coach-card on-light reveal" id="coach-hannah">
-        <div class="media ratio-4x5"><div class="media__img" style="background-image: url('assets/media/coach-hannah.jpg')" role="img" aria-label="Portrait of Hannah Bach"></div></div>
+        <!-- Coach photo slider · Wix: Slideshow element (arrows on, autoplay off) -->
+        <div class="coach-slides" data-slides aria-roledescription="carousel" aria-label="Photos of Hannah Bach">
+          <div class="coach-slides__viewport">
+            <div class="slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 2"><div class="media__img" style="background-image: url('assets/media/stock-coach-hannah-swim.jpg'); background-position: 30% center" role="img" aria-label="Swimmer racing freestyle (stock photo)"></div><span class="coach-slides__tag">Stock photo</span></div>
+            <div class="slide" role="group" aria-roledescription="slide" aria-label="2 of 2" aria-hidden="true"><div class="media__img" style="background-image: url('assets/media/coach-hannah.jpg')" role="img" aria-label="Portrait of Hannah Bach"></div></div>
+          </div>
+          <div class="coach-slides__controls">
+            <button class="round-btn round-btn--glass" type="button" data-slides-prev aria-label="Previous photo of Hannah Bach">{{icon:arrow-left}}</button>
+            <span class="coach-slides__count" data-slides-count aria-hidden="true">1 / 2</span>
+            <button class="round-btn round-btn--glass" type="button" data-slides-next aria-label="Next photo of Hannah Bach">{{icon:arrow-right}}</button>
+          </div>
+        </div>
         <div class="coach-card__info">
           <div class="coach-card__head stack gap-1">
             <p class="label">Partner &amp; Coach</p>
             <h3 class="h2" style="font-size: clamp(1.625rem, 1.3rem + 1vw, 2.125rem)">Hannah Bach</h3>
           </div>
+          <p class="coach-card__bio">Hannah is an Olympic Trials finalist, NCAA medallist and Big Ten champion who still swims professionally. Breaststroke is her specialty, and she leads our Breaststroke Mastery Series clinics. As partner and coach, she brings the same eye for technique to swimmers of every age and level. <span class="design-note design-note--inline">Draft · coach to approve</span></p>
           <ul class="pills" aria-label="Credentials">
             <li class="pill pill--sm">{{icon:award}} Olympic Trials finalist</li>
             <li class="pill pill--sm">{{icon:award}} NCAA medallist</li>
